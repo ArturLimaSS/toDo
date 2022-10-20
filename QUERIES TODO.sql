@@ -1,0 +1,15 @@
+CREATE DATABASE todo;
+
+USE todo;
+
+CREATE TABLE tb_listagem (
+
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	descricao VARCHAR(45),
+	responsavel BIGINT(255)
+);
+
+CREATE TABLE tb_usuario (
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	nome VARCHAR(45)
+);
