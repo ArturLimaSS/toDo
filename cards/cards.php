@@ -60,7 +60,7 @@ if (!isset($_SESSION['userID'])) {
         </span>
     </div>
 </nav>
-<div class="container">
+<div class="">
 
     <div class="atendimento-cards"></div>
 </div>
