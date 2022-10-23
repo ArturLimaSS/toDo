@@ -15,14 +15,17 @@ if (isset($_SESSION['userID'])) {
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <script src="index.js"></script>
 
     <title>toDO</title>
 </head>
 
 <body>
     <style>
-        #login{
+        #card{
             box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+            background-image: linear-gradient(to right, #00C8C8, #00A0AA);
+            border-radius: 1rem
         }
     </style>
 
@@ -32,8 +35,8 @@ if (isset($_SESSION['userID'])) {
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                    <div class="card bg-dark text-white" style="border-radius: 1rem;">
-                        <div class="card-body p-5 text-center">
+                    <div class="card text-white" id="card">
+                        <div class="card-body p-5 text-center" >
 
                             <form action="autentica.php" method="POST">
                                 <div class="mb-md-5 mt-md-4 pb-5">
@@ -48,10 +51,10 @@ if (isset($_SESSION['userID'])) {
 
                                     <div class="form-outline form-white mb-4">
                                         <input type="password" id="senha" name="senha" placeholder="Digite sua senha!" class="form-control form-control-lg" />
-                                        <label class="form-label" for="senha">Password</label>
+                                        <label class="form-label" for="senha">Senha</label>
                                     </div>
 
-                                    <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+                                    <button class="btn btn-outline-light btn-lg px-5" type="submit" onclick="verifica()">Login</button>
 
                                     <div class="d-flex justify-content-center text-center mt-4 pt-1">
                                         <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
@@ -75,7 +78,7 @@ if (isset($_SESSION['userID'])) {
     </section>
     <footer class="bg-light text-center text-lg-start">
   <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+  <div class="text-center p-3" style="background-image: linear-gradient(to right, #00C8C8, #00A0AA);;">
     © 2022 Copyright:
     <a class="text-dark">Artur Lima</a>
   </div>
