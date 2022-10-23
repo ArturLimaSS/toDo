@@ -73,26 +73,6 @@ if (!isset($_SESSION['userID'])) {
                 <div class="col-12 col-lg-6 col-xl-3">
                     <div class="card card-border-primary">
                         <div class="card-header">
-                            <div class="card-actions float-right">
-                                <div class="dropdown show">
-                                    <a href="#" data-toggle="dropdown" data-display="static">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="feather feather-more-horizontal align-middle">
-                                            <circle cx="12" cy="12" r="1"></circle>
-                                            <circle cx="19" cy="12" r="1"></circle>
-                                            <circle cx="5" cy="12" r="1"></circle>
-                                        </svg>
-                                    </a>
-
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
-                                </div>
-                            </div>
                             <h5 class="card-title">Em atendimento</h5>
                             <h6 class="card-subtitle text-muted">Tickets dentro do prazo</h6>
                         </div>
@@ -105,28 +85,8 @@ if (!isset($_SESSION['userID'])) {
                 </div>
 
                 <div class="col-12 col-lg-6 col-xl-3">
-                    <div class="card card-border-primary">
+                    <div class="card card-border-primary" style="background-color: yellow;">
                         <div class="card-header" id="ticketEmVencimento">
-                            <div class="card-actions float-right">
-                                <div class="dropdown show">
-                                    <a href="#" data-toggle="dropdown" data-display="static">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="feather feather-more-horizontal align-middle">
-                                            <circle cx="12" cy="12" r="1"></circle>
-                                            <circle cx="19" cy="12" r="1"></circle>
-                                            <circle cx="5" cy="12" r="1"></circle>
-                                        </svg>
-                                    </a>
-
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
-                                </div>
-                            </div>
                             <h5 class="card-title">Em atendimento</h5>
                             <h6 class="card-subtitle text-muted" id="ticketsV">Tickets próximos ao vencimento</h6>
                         </div>
@@ -138,28 +98,8 @@ if (!isset($_SESSION['userID'])) {
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 col-xl-3">
-                    <div class="card card-border-primary">
+                    <div class="card card-border-primary" style="background-color: red;">
                         <div class="card-header" id="ticketsVencidos">
-                            <div class="card-actions float-right">
-                                <div class="dropdown show">
-                                    <a href="#" data-toggle="dropdown" data-display="static">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="feather feather-more-horizontal align-middle">
-                                            <circle cx="12" cy="12" r="1"></circle>
-                                            <circle cx="19" cy="12" r="1"></circle>
-                                            <circle cx="5" cy="12" r="1"></circle>
-                                        </svg>
-                                    </a>
-
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
-                                </div>
-                            </div>
                             <h5 class="card-title">Vencidos!</h5>
                             <h6 class="card-subtitle" id="ticketsV">Tickets vencidos</h6>
                         </div>

@@ -42,19 +42,33 @@ CREATE TABLE tb_chamados (
 	
 );
 
+CREATE TABLE tb_tipo_chamado(
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	nome VARCHAR(45)
+);
+
+ALTER TABLE tb_chamados ADD COLUMN tipo_chamado INT(45);
 
 SELECT
-  c.`id` AS id_chamado,
-  cl.`nome` AS cliente,
-  c.`resumo` AS resumo,
-  c.`descricao` AS descricao,
-  e.`nome` AS envolvido,
-  e.`email` AS email,
-  e.`telefone` AS telefone
+c.`id` AS id_chamado,
+cl.`nome` AS cliente,
+c.`resumo` AS resumo,
+c.`descricao` AS descricao,
+e.`nome` AS envolvido,
+e.`email` AS email,
+e.`telefone` AS telefone,
+tc.`nome` AS tipo_chamado,
+c.`cadastrado_em` AS cadastrado_em,
+tc.`prazo` AS prazo
 FROM
-  tb_chamados c
-  JOIN tb_envolvido e
-    ON c.`envolvido` = e.`id`
-  JOIN tb_cliente cl
-    ON e.`cliente` = cl.`id`;
+tb_chamados c
+JOIN tb_envolvido e
+  ON c.`envolvido` = e.`id`
+JOIN tb_cliente cl
+  ON e.`cliente` = cl.`id`
+  JOIN tb_tipo_chamado tc 
+  ON c.`tipo_chamado` = tc.`id`;
+  
+  ALTER TABLE tb_chamados ADD COLUMN cadastrado_em DATETIME DEFAULT CURRENT_TIMESTAMP;
+  ALTER TABLE tb_tipo_chamado ADD COLUMN prazo INT(10);
 

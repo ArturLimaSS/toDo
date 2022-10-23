@@ -9,13 +9,16 @@ c.`resumo` AS resumo,
 c.`descricao` AS descricao,
 e.`nome` AS envolvido,
 e.`email` AS email,
-e.`telefone` AS telefone
+e.`telefone` AS telefone,
+tc.`nome` AS tipo_chamado
 FROM
 tb_chamados c
 JOIN tb_envolvido e
   ON c.`envolvido` = e.`id`
 JOIN tb_cliente cl
-  ON e.`cliente` = cl.`id`;
+  ON e.`cliente` = cl.`id`
+  JOIN tb_tipo_chamado tc 
+  ON c.`tipo_chamado` = tc.`id`;
 ');
 
 

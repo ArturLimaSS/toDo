@@ -1,6 +1,7 @@
 <?php
-if (isset($_SESSION['userID'])) {
-    header("Location: /autentica.php");
+session_start();
+if (isset($_SESSION['username'])) {
+    header("Location: /cards/cards.php");
 }
 ?>
 <!DOCTYPE html>
