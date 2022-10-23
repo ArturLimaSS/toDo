@@ -22,10 +22,14 @@ if (isset($_SESSION['userID'])) {
 
 <body>
     <style>
-        #card{
+        #card {
             box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
             background-image: linear-gradient(to right, #00C8C8, #00A0AA);
             border-radius: 1rem
+        }
+
+        .form-control {
+            text-align: center;
         }
     </style>
 
@@ -36,7 +40,7 @@ if (isset($_SESSION['userID'])) {
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                     <div class="card text-white" id="card">
-                        <div class="card-body p-5 text-center" >
+                        <div class="card-body p-5 text-center">
 
                             <form action="autentica.php" method="POST">
                                 <div class="mb-md-5 mt-md-4 pb-5">
@@ -45,13 +49,15 @@ if (isset($_SESSION['userID'])) {
                                     <p class="text-white-50 mb-5">Insira seu email e senha</p>
 
                                     <div class="form-outline form-white mb-4">
-                                        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" class="form-control form-control-lg" />
                                         <label class="form-label" for="email">Email</label>
+                                        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" class="form-control form-control-lg" />
+
                                     </div>
 
                                     <div class="form-outline form-white mb-4">
-                                        <input type="password" id="senha" name="senha" placeholder="Digite sua senha!" class="form-control form-control-lg" />
                                         <label class="form-label" for="senha">Senha</label>
+                                        <input type="password" id="senha" name="senha" placeholder="Digite sua senha!" class="form-control form-control-lg" />
+
                                     </div>
 
                                     <button class="btn btn-outline-light btn-lg px-5" type="submit" onclick="verifica()">Login</button>
@@ -77,13 +83,13 @@ if (isset($_SESSION['userID'])) {
         </div>
     </section>
     <footer class="bg-light text-center text-lg-start">
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-image: linear-gradient(to right, #00C8C8, #00A0AA);;">
-    © 2022 Copyright:
-    <a class="text-dark">Artur Lima</a>
-  </div>
-  <!-- Copyright -->
-</footer>
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-image: linear-gradient(to right, #00C8C8, #00A0AA);;">
+            © 2022 Copyright:
+            <a class="text-dark">Artur Lima</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
 </body>
 
 </html>
