@@ -39,17 +39,17 @@ if (!isset($_SESSION['userID'])) {
                 <a class="nav-link" href="#">Tarefas <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"></a>
+                <a class="nav-link" href="#">Arquivo</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"></a>
             </li>
         </ul>
         <div>
-        <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
         </div>
         <span class="navbar-text">
             <div class="dropdown">
@@ -67,53 +67,53 @@ if (!isset($_SESSION['userID'])) {
     </div>
 </nav>
 <main class="content">
-        <div class="" style="margin-left: 10%">
-            <h1 class="h3 mb-3">Tarefas</h1>
-            <div class="row">
-                <div class="col-12 col-lg-6 col-xl-3">
-                    <div class="card card-border-primary">
-                        <div class="card-header">
-                            <h5 class="card-title">Em atendimento</h5>
-                            <h6 class="card-subtitle text-muted">Tickets dentro do prazo</h6>
-                        </div>
-                        <div class="card-body p-3">
-                            <div class="">
-                                <div class="atendimento-cards"></div>
-                            </div>
+    <div class="" style="margin-left: 10%">
+        <h1 class="h3 mb-3">Tarefas</h1>
+        <div class="row">
+            <div class="col-12 col-lg-6 col-xl-3">
+                <div class="card card-border-primary">
+                    <div class="card-header">
+                        <h5 class="card-title">Em atendimento</h5>
+                        <h6 class="card-subtitle text-muted">Tickets dentro do prazo</h6>
+                    </div>
+                    <div class="card-body p-3">
+                        <div class="">
+                            <div class="atendimento-cards"></div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-12 col-lg-6 col-xl-3">
-                    <div class="card card-border-primary" style="background-color: yellow;">
-                        <div class="card-header" id="ticketEmVencimento">
-                            <h5 class="card-title">Em atendimento</h5>
-                            <h6 class="card-subtitle text-muted" id="ticketsV">Tickets próximos ao vencimento</h6>
-                        </div>
-                        <div class="card-body p-3">
-                            <div class="">
-                                <div class="atendimento-cards"></div>
-                            </div>
+            <div class="col-12 col-lg-6 col-xl-3">
+                <div class="card card-border-primary" style="background-color: yellow;">
+                    <div class="card-header" id="ticketEmVencimento">
+                        <h5 class="card-title">Em atendimento</h5>
+                        <h6 class="card-subtitle text-muted" id="ticketsV">Tickets próximos ao vencimento</h6>
+                    </div>
+                    <div class="card-body p-3">
+                        <div class="">
+                            <div class="atendimento-cards"></div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-6 col-xl-3">
-                    <div class="card card-border-primary" style="background-color: red;">
-                        <div class="card-header" id="ticketsVencidos">
-                            <h5 class="card-title">Vencidos!</h5>
-                            <h6 class="card-subtitle" id="ticketsV">Tickets vencidos</h6>
-                        </div>
-                        <div class="card-body p-3">
-                            <div class="">
-                                <div class="atendimento-cards"></div>
-                            </div>
+            </div>
+            <div class="col-12 col-lg-6 col-xl-3">
+                <div class="card card-border-primary" style="background-color: red;">
+                    <div class="card-header" id="ticketsVencidos">
+                        <h5 class="card-title">Vencidos!</h5>
+                        <h6 class="card-subtitle" id="ticketsV">Tickets vencidos</h6>
+                    </div>
+                    <div class="card-body p-3">
+                        <div class="">
+                            <div class="atendimento-cards"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-    </main>
+    </div>
+
+</main>
 
 </html>
 
