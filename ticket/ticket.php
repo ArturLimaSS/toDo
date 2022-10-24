@@ -43,8 +43,9 @@ $array = $sql->fetch_assoc();
     <h1>
         <?php
 
-        echo $array['id_chamado'];
-        echo $array['cliente'];
+        echo $array['id_chamado'] . '<br>';
+        echo $array['envolvido'] . '<br>';
+        echo $array['cliente'] . '<br>';
         ?>
     </h1>
 
