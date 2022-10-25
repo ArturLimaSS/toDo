@@ -1,0 +1,37 @@
+.conteudo{
+    display: flex;
+    overflow: auto;
+}
+
+#card-dados{
+    transition: box-shadow .3s, transform .3s;
+    margin: 1%;
+    width: 30%;
+    height: 30%;
+    box-shadow:  rgba(0, 0, 0, 0.3) 0px 1px 2px 0;
+}
+
+#card-dados:hover{
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 4px 6px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    transform: translate(0, -10px);
+}
+
+#sendEmail{
+    width: 70%;
+    margin: 1%;
+}
+
+.side{
+    width: 30%;
+    height: 30%;
+}
+
+#bodyContent{
+    display: inline-block;
+    margin: 1%;
+    width: 29%;
+}
+
+.form-control{
+    margin-top: 1%;
+}

@@ -41,7 +41,8 @@ $array = $sql->fetch_assoc();
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-  <link rel="stylesheet" href="cards.css">
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+  <link rel="stylesheet" href="ticket.css">
   <title>Document</title>
 </head>
 
@@ -49,16 +50,256 @@ $array = $sql->fetch_assoc();
 include '../navbar.php';
 ?>
 
-<div class="card">
-  <div class="card-body">
-    <h6>
-    <?php
-    echo 'SD-'.$array['id_chamado'] . '<br>';
-    echo 'Solicitante: '.$array['envolvido'] . '<br>';
-    echo 'Organização: '.$array['cliente'] . '<br>';
-    ?>
-    </h6>
+<div class="conteudo">
+  <div class="card" id="card-dados">
+    <div class="card-body">
+      <h6>
+        <?php
+        echo 'SD-' . $array['id_chamado'] . '<br>';
+        echo 'Solicitante: <div>' . $array['envolvido'] . '</div><br>';
+        echo 'Organização: <div>' . $array['cliente'] . '</div><br>';
+        ?>
+      </h6>
+    </div>
   </div>
+
+  <textarea class="form-control" name="sendEmail" id="sendEmail"></textarea>
+</div>
+
+<div class="overflow-scroll" id="bodyContent">
+  <div class="input-group mb3">
+    <input type="text" readonly class="form-control" value="<?php echo $array['envolvido'] ?>">
+  </div>
+  <div class="input-group mb3">
+  <select name="" class="form-control" id="responsável">
+    <option value="1">Coordenador Suporte</option>
+    <option value="2">Paulo</option>
+    <option value="3">Artur</option>
+    <option value="4">Gustavo</option>
+  </select>
+  </div>
+  <div class="input-group mb3">
+    <select class="form-control" name="" id="">
+      <option value="0">STATUS DO TICKET</option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>  
+    </select>
+  </div>
+  <div class="input-group mb3">
+    
+  </div>
+  <div class="input-group mb3">
+    
+  </div>
+  <div class="input-group mb3">
+    
+  </div>
+  <div class="input-group mb3">
+    <input type="text" readonly class="form-control" value="<?php echo $array['envolvido'] ?>">
+  </div>
+  <div class="input-group mb3">
+  <select name="" class="form-control" id="responsável">
+    <option value="1">Coordenador Suporte</option>
+    <option value="2">Paulo</option>
+    <option value="3">Artur</option>
+    <option value="4">Gustavo</option>
+  </select>
+  </div>
+  <div class="input-group mb3">
+    <select class="form-control" name="" id="">
+      <option value="0">STATUS DO TICKET</option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>  
+    </select>
+  </div>
+  <div class="input-group mb3">
+    
+  </div>
+  <div class="input-group mb3">
+    
+  </div>
+  <div class="input-group mb3">
+    
+  </div>
+  <div class="input-group mb3">
+    <input type="text" readonly class="form-control" value="<?php echo $array['envolvido'] ?>">
+  </div>
+  <div class="input-group mb3">
+  <select name="" class="form-control" id="responsável">
+    <option value="1">Coordenador Suporte</option>
+    <option value="2">Paulo</option>
+    <option value="3">Artur</option>
+    <option value="4">Gustavo</option>
+  </select>
+  </div>
+  <div class="input-group mb3">
+    <select class="form-control" name="" id="">
+      <option value="0">STATUS DO TICKET</option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>  
+    </select>
+  </div>
+  <div class="input-group mb3">
+    
+  </div>
+  <div class="input-group mb3">
+    
+  </div>
+  <div class="input-group mb3">
+    
+  </div>
+  <div class="input-group mb3">
+    <input type="text" readonly class="form-control" value="<?php echo $array['envolvido'] ?>">
+  </div>
+  <div class="input-group mb3">
+  <select name="" class="form-control" id="responsável">
+    <option value="1">Coordenador Suporte</option>
+    <option value="2">Paulo</option>
+    <option value="3">Artur</option>
+    <option value="4">Gustavo</option>
+  </select>
+  </div>
+  <div class="input-group mb3">
+    <select class="form-control" name="" id="">
+      <option value="0">STATUS DO TICKET</option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>  
+    </select>
+  </div>
+  <div class="input-group mb3">
+    
+  </div>
+  <div class="input-group mb3">
+    
+  </div>
+  <div class="input-group mb3">
+    
+  </div>
+  <div class="input-group mb3">
+    <input type="text" readonly class="form-control" value="<?php echo $array['envolvido'] ?>">
+  </div>
+  <div class="input-group mb3">
+  <select name="" class="form-control" id="responsável">
+    <option value="1">Coordenador Suporte</option>
+    <option value="2">Paulo</option>
+    <option value="3">Artur</option>
+    <option value="4">Gustavo</option>
+  </select>
+  </div>
+  <div class="input-group mb3">
+    <select class="form-control" name="" id="">
+      <option value="0">STATUS DO TICKET</option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>  
+    </select>
+  </div>
+  <div class="input-group mb3">
+    
+  </div>
+  <div class="input-group mb3">
+    
+  </div>
+  <div class="input-group mb3">
+    
+  </div>
+  <div class="input-group mb3">
+    <input type="text" readonly class="form-control" value="<?php echo $array['envolvido'] ?>">
+  </div>
+  <div class="input-group mb3">
+  <select name="" class="form-control" id="responsável">
+    <option value="1">Coordenador Suporte</option>
+    <option value="2">Paulo</option>
+    <option value="3">Artur</option>
+    <option value="4">Gustavo</option>
+  </select>
+  </div>
+  <div class="input-group mb3">
+    <select class="form-control" name="" id="">
+      <option value="0">STATUS DO TICKET</option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>  
+    </select>
+  </div>
+  <div class="input-group mb3">
+    
+  </div>
+  <div class="input-group mb3">
+    
+  </div>
+  <div class="input-group mb3">
+    
+  </div>
+  <div class="input-group mb3">
+    <input type="text" readonly class="form-control" value="<?php echo $array['envolvido'] ?>">
+  </div>
+  <div class="input-group mb3">
+  <select name="" class="form-control" id="responsável">
+    <option value="1">Coordenador Suporte</option>
+    <option value="2">Paulo</option>
+    <option value="3">Artur</option>
+    <option value="4">Gustavo</option>
+  </select>
+  </div>
+  <div class="input-group mb3">
+    <select class="form-control" name="" id="">
+      <option value="0">STATUS DO TICKET</option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>  
+    </select>
+  </div>
+  <div class="input-group mb3">
+    
+  </div>
+  <div class="input-group mb3">
+    
+  </div>
+  <div class="input-group mb3">
+    
+  </div>
+  <div class="input-group mb3">
+    <input type="text" readonly class="form-control" value="<?php echo $array['envolvido'] ?>">
+  </div>
+  <div class="input-group mb3">
+  <select name="" class="form-control" id="responsável">
+    <option value="1">Coordenador Suporte</option>
+    <option value="2">Paulo</option>
+    <option value="3">Artur</option>
+    <option value="4">Gustavo</option>
+  </select>
+  </div>
+  <div class="input-group mb3">
+    <select class="form-control" name="" id="">
+      <option value="0">STATUS DO TICKET</option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>  
+    </select>
+  </div>
+  <div class="input-group mb3">
+    
+  </div>
+  <div class="input-group mb3">
+    
+  </div>
+  <div class="input-group mb3">
+    
+  </div>
+
 </div>
 
 

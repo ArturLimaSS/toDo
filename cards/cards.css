@@ -1,25 +1,26 @@
-#cadKanban{
-        transition: box-shadow .3s;
-        margin: 8px;
-        width: 95%;
-        border-radius:10px;
-        border: 1px solid #ccc;
-        background: #fff;
-        float: left;
-        
-      
+#cadKanban {
+    transition: all .2s ease-in-out;
+    margin: 8px;
+    width: 95%;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background: #fff;
+    float: left;
+    box-shadow:  rgba(0, 0, 0, 0.3) 0px 1px 2px 0;
+
+
 }
 
 #cadKanban:hover {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 4px 6px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-    transform: scale(1.02);
+    transform: translate(0,-10px);
 }
 
 
-#ticketEmVencimento{
+#ticketEmVencimento {
     background-color: yellow;
 }
 
-#ticketsVencidos{
+#ticketsVencidos {
     background-color: red;
 }
