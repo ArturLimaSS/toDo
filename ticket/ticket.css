@@ -27,11 +27,19 @@
 }
 
 #bodyContent{
-    display: inline-block;
+    font-size: medium;
     margin: 1%;
     width: 29%;
 }
 
 .form-control{
     margin-top: 1%;
+}
+
+#emailText{
+    width: 30%;
+}
+
+.box_comment{
+    font-size: medium;
 }

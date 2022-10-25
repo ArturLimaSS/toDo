@@ -72,3 +72,8 @@ JOIN tb_cliente cl
   ALTER TABLE tb_chamados ADD COLUMN cadastrado_em DATETIME DEFAULT CURRENT_TIMESTAMP;
   ALTER TABLE tb_tipo_chamado ADD COLUMN prazo INT(10);
 
+CREATE TABLE tb_comentario(
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	comentario VARCHAR(1000)
+);
+
