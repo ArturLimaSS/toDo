@@ -77,3 +77,4 @@ CREATE TABLE tb_comentario(
 	comentario VARCHAR(1000)
 );
 
+#teste

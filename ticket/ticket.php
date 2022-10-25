@@ -115,6 +115,6 @@ include '../navbar.php';
 <!-- 
 PRECISAMOS ADICIONAR CAMPO PARA INSERIR EMAILS, E CAMPOS PARA BUSCAR E-MAILS. 
 CRIAR BARRA DE STATUS DO TICKET
-
+25/10/2022 -> verificar o motivo de não reconhecer id pelo GET
 
  -->
