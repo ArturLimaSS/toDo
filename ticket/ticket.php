@@ -69,16 +69,18 @@ include '../navbar.php';
     </div>
   </div>
   <div>
-    <span id="alert"></span>
+    <div class="alert alert-danger" style="display: none;" id="alertDanger">
+    </div>
     <form id="textForm">
       <input type="hidden" name="id_chamado" id="id_chamado" value="<?php echo $_GET['id_chamado']; ?>">
-      <input type="hidden" name="userID"       id="userID"       value="<?php echo $_SESSION['userID'];?>">
+      <input type="hidden" name="userID" id="userID" value="<?php echo $_SESSION['userID']; ?>">
       <textarea id="default" name="default"></textarea>
       <button class="form-control" form="textForm" value='<?php $_GET['id_chamado'] ?>' type="submit">Enviar</button>
     </form>
   </div>
 
-  <div class="box_comment"></div>
+  <div class="box_comment" style="display: none;">
+  </div>
 </div>
 
 <div class="overflow-scroll" id="bodyContent">

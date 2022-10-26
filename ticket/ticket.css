@@ -1,45 +1,56 @@
-.conteudo{
+.conteudo {
     display: flex;
     overflow: auto;
 }
 
-#card-dados{
+#card-dados {
     transition: box-shadow .3s, transform .3s;
     margin: 1%;
     width: 30%;
     height: 30%;
-    box-shadow:  rgba(0, 0, 0, 0.3) 0px 1px 2px 0;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 2px 0;
 }
 
-#card-dados:hover{
+#card-dados:hover {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 4px 6px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     transform: translate(0, -10px);
 }
 
-#sendEmail{
+#sendEmail {
     width: 70%;
     margin: 1%;
 }
 
-.side{
+.side {
     width: 30%;
     height: 30%;
 }
 
-#bodyContent{
+#bodyContent {
     font-size: medium;
     margin: 1%;
     width: 29%;
 }
 
-.form-control{
+.form-control {
     margin-top: 1%;
 }
 
-#emailText{
-    width: 30%;
+#textForm {
+    margin-top: 10px;
+    height: 20%;
 }
 
-.box_comment{
+.box_comment {
     font-size: medium;
 }
+
+#alertDanger {
+    font-size: large;
+    align-items: center;
+    text-align: center;
+    transform: translate(20px,20px);
+
+
+}
+
