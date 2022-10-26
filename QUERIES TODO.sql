@@ -74,7 +74,8 @@ JOIN tb_cliente cl
 
 CREATE TABLE tb_comentario(
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	comentario VARCHAR(1000)
+	comentario VARCHAR(1000);
+	responsavel INT(100);
 );
 
 #teste

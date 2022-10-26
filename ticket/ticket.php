@@ -1,6 +1,6 @@
 <?php
 
-$id_chamado = $_GET['id_chamado'];
+$id_chamado = intval($_GET['id_chamado']);
 
 session_start();
 if (!isset($_SESSION['userID'])) {
@@ -24,11 +24,10 @@ JOIN tb_cliente cl
   ON e.`cliente` = cl.`id`
   JOIN tb_tipo_chamado tc 
   ON c.`tipo_chamado` = tc.`id`
-  WHERE c.id = ' . $id_chamado . ';
+  WHERE c.id = ' . intval($_GET['id_chamado']) . ';
 ');
 
 $array = $sql->fetch_assoc();
-$id_chamado = $array['id_chamado'];
 
 ?>
 <!DOCTYPE html>
@@ -70,12 +69,15 @@ include '../navbar.php';
     </div>
   </div>
   <div>
+    <span id="alert"></span>
     <form id="textForm">
-      <input type="hidden" value="<?php echo $_GET['id_chamado'];?>">
+      <input type="hidden" name="id_chamado" id="id_chamado" value="<?php echo $_GET['id_chamado']; ?>">
+      <input type="hidden" name="userID"       id="userID"       value="<?php echo $_SESSION['userID'];?>">
       <textarea id="default" name="default"></textarea>
-      <button class="form-control" form="textForm" type="submit">Enviar</button>
+      <button class="form-control" form="textForm" value='<?php $_GET['id_chamado'] ?>' type="submit">Enviar</button>
     </form>
   </div>
+
   <div class="box_comment"></div>
 </div>
 
