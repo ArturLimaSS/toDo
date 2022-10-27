@@ -44,6 +44,12 @@
 .box_comment {
     margin-top: 2px;
     font-size: medium;
+    position: relative;
+    height: calc(100vh - 24px - 40px - 40px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #fff;
+    padding: 8px;
 }
 
 #alertDanger {
@@ -55,14 +61,6 @@
 
 }
 
-#inputAndComment {
-    display: flex;
-    overflow: auto;
-    width: 100%;
-    position: relative;
-    box-sizing: border-box;
-    flex-direction: column;
-}
 
 #card {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -72,4 +70,8 @@
 p {
     font-size: 14px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#inputAndComment{
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 2px 0;
 }

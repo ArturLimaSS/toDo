@@ -68,7 +68,7 @@ include '../navbar.php';
       </h6>
     </div>
   </div>
-  <div class="col-md-8" id="inputAndComment" style="overflow-y: scroll;">
+  <div class="col-md-8" id="inputAndComment">
     <div class="alert alert-danger" style="display: none;" id="alertDanger">
     </div>
     <button class="btn btn-link" onclick="mostrarTextArea()">Adicionar comentário</button>
@@ -78,8 +78,10 @@ include '../navbar.php';
       <button class="form-control" form="textForm" value='<?php $_GET['id_chamado'] ?>' type="submit">Enviar</button>
       <textarea id="default" name="default"></textarea>
     </form>
+    <section id="content">
     <div class="box_comment" >
     </div>
+    </section>
   </div>
 </div>
 

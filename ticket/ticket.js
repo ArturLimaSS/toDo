@@ -10,7 +10,7 @@ tinymce.init({
   tinycomments_mode: 'embedded',
   tinycomments_author: 'Author name',
   entity_enconding: 'raw',
-  
+
   mergetags_list: [
     { value: 'First.Name', title: 'First Name' },
     { value: 'Email', title: 'Email' },
@@ -38,7 +38,11 @@ $(document).ready(function () {
       $.ajax({
         url: 'teste.php',
         method: 'POST',
-        data: { responsavel: responsavel, id_chamado: id_chamado, comment: comentario },
+        data: {
+          responsavel: responsavel,
+          id_chamado: id_chamado,
+          comment: comentario
+        },
         dataType: 'json',
         success: function (data) {
           $('#alert').css('display', 'block');
@@ -74,6 +78,6 @@ function getComments() {
 
 getComments();
 
-function mostrarTextArea(){
-  $("#textForm").css('display','block')
+function mostrarTextArea() {
+  $("#textForm").css('display', 'block')
 }
