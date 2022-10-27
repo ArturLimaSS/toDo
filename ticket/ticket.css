@@ -1,6 +1,5 @@
 .conteudo {
     display: flex;
-    overflow: auto;
 }
 
 #card-dados {
@@ -42,6 +41,7 @@
 }
 
 .box_comment {
+    margin-top: 2px;
     font-size: medium;
 }
 
@@ -54,3 +54,14 @@
 
 }
 
+#inputAndComment{
+    width: 60%;
+}
+
+#card{
+    font-size: small;
+}
+
+p{
+    font-size: 10px;
+}

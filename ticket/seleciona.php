@@ -12,6 +12,6 @@ $pesquisar = $conn->query($sql);
 if($pesquisar->num_rows > 0){
     echo json_encode($pesquisar->fetch_all(MYSQLI_ASSOC));
 }else{
-    echo json_encode('Nenhum dado encontrado');
+    echo json_encode(['message' => 'Nenhum dado encontrado']);
 }
 ?>
