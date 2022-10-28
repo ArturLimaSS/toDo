@@ -74,7 +74,7 @@ include '../navbar.php';
     <button class="btn btn-link" onclick="mostrarTextArea()">Adicionar comentário</button>
     <form id="textForm" style="display: none;">
       <input type="hidden" name="id_chamado" id="id_chamado" value="<?php echo $_GET['id_chamado']; ?>">
-      <input type="hidden" name="userID" id="userID" value="<?php echo $_SESSION['userID']; ?>">
+      <input type="hidden" name="userID"     id="userID"     value="<?php echo $_SESSION['userID']; ?>">
       <button class="form-control" form="textForm" value='<?php $_GET['id_chamado'] ?>' type="submit">Enviar</button>
       <textarea id="default" name="default"></textarea>
     </form>

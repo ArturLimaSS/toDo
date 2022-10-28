@@ -71,7 +71,7 @@ function getComments() {
     console.log(resultado)
     $('.box_comment').css('display', 'block')
     for (var i = 0; i < resultado.length; i++) {
-      $('.box_comment').prepend('<div class="card"><div class="card-header">' + resultado[i].nomeUsuario + '</div><div class="card-body" style="font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;"><blockquote class="blockquote mb-0"><p>' + resultado[i].comentario + '</p></footer></blockquote></div></div>')
+      $('.box_comment').prepend('<div class="card" style="margin-top:5px;"><div class="card-header">' + resultado[i].nomeUsuario + '</div><div class="card-body" style="font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;"><blockquote class="blockquote mb-0"><p>' + resultado[i].comentario + '</p></footer></blockquote></div></div>')
     }
   })
 }
@@ -80,4 +80,5 @@ getComments();
 
 function mostrarTextArea() {
   $("#textForm").css('display', 'block')
+  $("#bodyContent").css('transform','translate(0,-316.5%)')
 }

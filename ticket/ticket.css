@@ -1,11 +1,12 @@
 .conteudo {
     display: flex;
-    margin-left: 3.5%;
+    margin-left: 2%;
 }
 
 #card-dados {
     transition: box-shadow .3s, transform .3s;
     margin-top: 3%;
+    margin-right: 2%;
     width: 30%;
     height: 30%;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 2px 0;
@@ -30,6 +31,7 @@
     font-size: medium;
     margin: 1%;
     width: 29%;
+    transform: translate(0,-190%);
 }
 
 .form-control {
@@ -38,7 +40,7 @@
 
 #textForm {
     margin-top: 10px;
-    height: 20%;
+    height: 40%;
 }
 
 .box_comment {
