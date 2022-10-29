@@ -1,3 +1,26 @@
+$(document).ready(function enviaId() {
+  var id_chamado_u = $("#id_chamado").val()
+  if (id_chamado_u) {
+    console.log('deu bom')
+    console.log(id_chamado_u)
+    $.ajax({
+      url: 'seleciona.php',
+      method: 'POST',
+      data: { id_chamado: id_chamado_u },
+      dataType: 'json',
+      success: console.log('Deu bom também')
+    }).done(function (resultado) {
+      console.log(resultado)
+      $('.box_comment').css('display', 'block')
+      for (var i = 0; i < resultado.length; i++) {
+        $('.box_comment').prepend('<div class="card" style="margin-top:5px;"><div class="card-header">' + resultado[i].nomeUsuario + '</div><div class="card-body" style="font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;"><blockquote class="blockquote mb-0"><p>' + resultado[i].comentario + '</p></footer></blockquote></div></div>')
+      }
+    })  
+  } else {
+    console.log('Deu ruim')
+  }
+}
+)
 // tinymce.init({
 //   selector: 'textarea#default'
 // });
@@ -17,11 +40,6 @@ tinymce.init({
   ]
 });
 
-
-function exibirId(id) {
-  console.log(id)
-}
-
 $(document).ready(function () {
   $('#textForm').submit(function (e) {
     //e.preventDefault()
@@ -30,7 +48,7 @@ $(document).ready(function () {
     var comentario = $('#default').val();
     if (!comentario) {
       $('#alertDanger').css('display', 'block');
-      $('#alertDanger').html("<p>Nenhum comentário a ser adicionado!</p>")
+      $('#alertDanger').html("<p>Nenhum texto a ser adicionado!</p>")
       setTimeout(function () {
         $('#alertDanger').fadeOut('slow')
       }, 3000)
@@ -61,22 +79,6 @@ $(document).ready(function () {
 
   })
 })
-
-function getComments() {
-  $.ajax({
-    url: 'seleciona.php',
-    method: 'GET',
-    dataType: 'json'
-  }).done(function (resultado) {
-    console.log(resultado)
-    $('.box_comment').css('display', 'block')
-    for (var i = 0; i < resultado.length; i++) {
-      $('.box_comment').prepend('<div class="card" style="margin-top:5px;"><div class="card-header">' + resultado[i].nomeUsuario + '</div><div class="card-body" style="font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;"><blockquote class="blockquote mb-0"><p>' + resultado[i].comentario + '</p></footer></blockquote></div></div>')
-    }
-  })
-}
-
-getComments();
 
 function mostrarTextArea() {
   $("#textForm").css('display', 'block')

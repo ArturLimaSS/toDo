@@ -15,16 +15,20 @@ c.`descricao` AS descricao,
 e.`nome` AS envolvido,
 e.`email` AS email,
 e.`telefone` AS telefone,
-tc.`nome` AS tipo_chamado
+tc.`nome` AS tipo_chamado,
+s.descricao as status_ticket,
+c.status AS id_status
 FROM
 tb_chamados c
 JOIN tb_envolvido e
   ON c.`envolvido` = e.`id`
 JOIN tb_cliente cl
   ON e.`cliente` = cl.`id`
-  JOIN tb_tipo_chamado tc 
+JOIN tb_tipo_chamado tc 
   ON c.`tipo_chamado` = tc.`id`
-  WHERE c.id = ' . intval($_GET['id_chamado']) . ';
+JOIN tb_status s
+  ON s.id = c.status 
+WHERE c.id = ' . intval($_GET['id_chamado']) . ';
 ');
 
 $array = $sql->fetch_assoc();
@@ -53,8 +57,8 @@ $array = $sql->fetch_assoc();
 <?php
 include '../navbar.php';
 ?>
-
-<div class="conteudo" >
+<input type="hidden" name="id_chamado" id="id_chamado" value="<?php echo $_GET['id_chamado'];  ?>" onload="enviaId()">
+<div class="conteudo">
   <div class="col-md-4" id="bodyContent" style="transform: none !important;">
     <div class="card" id="card-dados">
       <div class="card-body">
@@ -65,38 +69,38 @@ include '../navbar.php';
           echo  $array['email'] . '<br>';
           echo  $array['telefone'] . '<br>';
           echo  $array['cliente'] . '<br>';
+          echo $array['status_ticket']
           ?>
         </h6>
       </div>
     </div>
     <form action="" method="POST">
-    <div class="card-body">
-      <div class="row gutters">
-        <div class="col-xl-12 col-lg-12 col-sm-12 col-12">
-          <h6 class="mb-2 text-primary">Dados do ticket</h6>
-        </div>
-        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-          <div class="form-group">
-            <label for="mudarStatusTicket">Alterar status do Ticket</label>
-            <select class="form-control" name="mudarStatusTicket" id="mudarStatusTicket">
-              <option value="1">Em atendimento</option>
-              <option value="2"></option>
-              <option value="3"></option>
-              <option value="4"></option>
-            </select>
-            <label for="phone">Phone</label>
-            <input type="text" class="form-control" id="phone" placeholder="Enter phone number">
-            <label for="data_nasc">Data de Nascimento</label>
-            <input type="date" class="form-control" name="data_nasc" id="data_nasc" value="'. $data.'">
-            <label for="foto">Foto</label>
-            <input type="text" class="form-control" id="foto" name="foto" value="'.$foto.'">
+      <div class="card-body">
+        <div class="row gutters">
+          <div class="col-xl-12 col-lg-12 col-sm-12 col-12">
+            <h6 class="mb-2 text-primary">Dados do ticket</h6>
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+            <div class="form-group">
+              <label for="mudarStatusTicket">Alterar status do Ticket</label>
+              <select class="form-control" name="mudarStatusTicket" id="mudarStatusTicket">
+                <?php
+                while ($selectArray = $selectStatus->fetch_assoc()) {
+                  if ($selectArray['id'] == $array['id_status']) {
+                    $select = 'selected="selected"';
+                  } else {
+                    $select = '';
+                  }
+                  echo '<option value="' . $selectArray['id'] . '"' . $select . '>' . $selectArray['descricao'] . '</option>';
+                }; ?>
+              </select>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </form>
+    </form>
   </div>
-  
+
   <div class="col-md-8" id="inputAndComment">
     <div class="alert alert-danger" style="display: none;" id="alertDanger">
     </div>
@@ -104,7 +108,7 @@ include '../navbar.php';
     <form id="textForm" style="display: none;">
       <input type="hidden" name="id_chamado" id="id_chamado" value="<?php echo $_GET['id_chamado']; ?>">
       <input type="hidden" name="userID" id="userID" value="<?php echo $_SESSION['userID']; ?>">
-      <button class="form-control" form="textForm" value='<?php $_GET['id_chamado'] ?>' type="submit">Enviar</button>
+      <button class="form-control" value='<?php $_GET['id_chamado'] ?>' type="submit">Enviar</button>
       <textarea id="default" name="default"></textarea>
     </form>
     <section id="content">

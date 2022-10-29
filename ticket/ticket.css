@@ -16,11 +16,6 @@
     transform: translate(0, -20px);
 }
 
-#sendEmail {
-    width: 70%;
-    margin: 1%;
-}
-
 .side {
     width: 30%;
     height: 30%;
@@ -28,18 +23,12 @@
 
 #bodyContent {
     font-size: medium;
-    margin: 1%;
-    width: 29%;
 }
 
 .form-control {
     margin-top: 1%;
 }
 
-#textForm {
-    margin-top: 10px;
-    height: 40%;
-}
 
 .box_comment {
     margin-top: 2px;

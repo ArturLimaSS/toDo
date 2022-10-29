@@ -76,6 +76,16 @@ CREATE TABLE tb_comentario(
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	comentario TEXT,
 	responsavel INT(100)
+	referencia  TEXT
 );
+
+DROP TABLE tb_comentario;
+
+CREATE TABLE tb_status(
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	descricao VARCHAR(45)
+);
+
+ALTER TABLE tb_chamados ADD COLUMN STATUS INT(100);
 
 #teste
