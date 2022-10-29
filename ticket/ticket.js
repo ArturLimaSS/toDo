@@ -80,5 +80,4 @@ getComments();
 
 function mostrarTextArea() {
   $("#textForm").css('display', 'block')
-  $("#bodyContent").css('transform','translate(0,-316.5%)')
 }

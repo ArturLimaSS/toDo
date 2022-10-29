@@ -1,20 +1,19 @@
 .conteudo {
     display: flex;
-    margin-left: 2%;
+    margin-left: 3.5%;
 }
 
 #card-dados {
-    transition: box-shadow .3s, transform .3s;
+    transition: box-shadow .3s, transform .5s;
     margin-top: 3%;
-    margin-right: 2%;
-    width: 30%;
-    height: 30%;
+    width: 300px;
+    height: 150px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 2px 0;
 }
 
 #card-dados:hover {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 4px 6px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-    transform: translate(0, -10px);
+    transform: translate(0, -20px);
 }
 
 #sendEmail {
@@ -31,7 +30,6 @@
     font-size: medium;
     margin: 1%;
     width: 29%;
-    transform: translate(0,-190%);
 }
 
 .form-control {
@@ -63,7 +61,6 @@
 
 }
 
-
 #card {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: small;
@@ -76,4 +73,8 @@ p {
 
 #inputAndComment{
     box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 2px 0;
+}
+
+#menuLeft{
+    display: block;
 }

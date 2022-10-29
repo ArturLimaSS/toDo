@@ -54,39 +54,22 @@ $array = $sql->fetch_assoc();
 include '../navbar.php';
 ?>
 
-<div class="conteudo">
-  <div class="card" id="card-dados">
-    <div class="card-body">
-      <h6>
-        <?php
-        echo 'SD-' . $array['id_chamado'] . '<br>';
-        echo $array['envolvido'] . '<br>';
-        echo  $array['email'] . '<br>';
-        echo  $array['telefone'] . '<br>';
-        echo  $array['cliente'] . '<br>';
-        ?>
-      </h6>
+<div class="conteudo" >
+  <div class="col-md-4" id="bodyContent" style="transform: none !important;">
+    <div class="card" id="card-dados">
+      <div class="card-body">
+        <h6>
+          <?php
+          echo 'SD-' . $array['id_chamado'] . '<br>';
+          echo $array['envolvido'] . '<br>';
+          echo  $array['email'] . '<br>';
+          echo  $array['telefone'] . '<br>';
+          echo  $array['cliente'] . '<br>';
+          ?>
+        </h6>
+      </div>
     </div>
-  </div>
-  <div class="col-md-8" id="inputAndComment">
-    <div class="alert alert-danger" style="display: none;" id="alertDanger">
-    </div>
-    <button class="btn btn-link" onclick="mostrarTextArea()">Adicionar comentário</button>
-    <form id="textForm" style="display: none;">
-      <input type="hidden" name="id_chamado" id="id_chamado" value="<?php echo $_GET['id_chamado']; ?>">
-      <input type="hidden" name="userID"     id="userID"     value="<?php echo $_SESSION['userID']; ?>">
-      <button class="form-control" form="textForm" value='<?php $_GET['id_chamado'] ?>' type="submit">Enviar</button>
-      <textarea id="default" name="default"></textarea>
-    </form>
-    <section id="content">
-    <div class="box_comment" >
-    </div>
-    </section>
-  </div>
-</div>
-
-<div class="overflow-scroll" id="bodyContent">
-  <form action="" method="POST">
+    <form action="" method="POST">
     <div class="card-body">
       <div class="row gutters">
         <div class="col-xl-12 col-lg-12 col-sm-12 col-12">
@@ -112,6 +95,27 @@ include '../navbar.php';
       </div>
     </div>
   </form>
+  </div>
+  
+  <div class="col-md-8" id="inputAndComment">
+    <div class="alert alert-danger" style="display: none;" id="alertDanger">
+    </div>
+    <button class="btn btn-link" onclick="mostrarTextArea()">Adicionar comentário</button>
+    <form id="textForm" style="display: none;">
+      <input type="hidden" name="id_chamado" id="id_chamado" value="<?php echo $_GET['id_chamado']; ?>">
+      <input type="hidden" name="userID" id="userID" value="<?php echo $_SESSION['userID']; ?>">
+      <button class="form-control" form="textForm" value='<?php $_GET['id_chamado'] ?>' type="submit">Enviar</button>
+      <textarea id="default" name="default"></textarea>
+    </form>
+    <section id="content">
+      <div class="box_comment">
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="overflow-scroll" id="bodyContent">
+
 </div>
 
 </body>
