@@ -27,18 +27,35 @@ $(document).ready(function enviaId() {
 
 tinymce.init({
   selector: 'textarea#default',
-  menubar: false,
-  plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect',
-  toolbar: 'bold italic underline strikethrough | link image media table mergetags | spellcheckdialog a11ycheck | align lineheight | checklist numlist bullist indent outdent | removeformat',
-  tinycomments_mode: 'embedded',
-  tinycomments_author: 'Author name',
-  entity_enconding: 'raw',
-
-  mergetags_list: [
-    { value: 'First.Name', title: 'First Name' },
-    { value: 'Email', title: 'Email' },
-  ]
+  plugins: [
+    'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
+    'searchreplace', 'wordcount', 'visualblocks', 'code', 'fullscreen', 'insertdatetime', 'media',
+    'table', 'emoticons', 'template', 'help'
+  ],
+  toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | ' +
+    'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
+    'forecolor backcolor emoticons | help',
+  menu: {
+    favs: { title: 'My Favorites', items: 'code visualaid | searchreplace | emoticons' }
+  },
+  menubar: 'favs file edit view insert format tools table help',
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
 });
+
+// tinymce.init({
+//   selector: 'textarea#default',
+//   menubar: false,
+//   plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect',
+//   toolbar: 'bold italic underline strikethrough | link image media table mergetags | spellcheckdialog a11ycheck | align lineheight | checklist numlist bullist indent outdent | removeformat',
+//   tinycomments_mode: 'embedded',
+//   tinycomments_author: 'Author name',
+//   entity_enconding: 'raw',
+
+//   mergetags_list: [
+//     { value: 'First.Name', title: 'First Name' },
+//     { value: 'Email', title: 'Email' },
+//   ]
+// });
 
 $(document).ready(function () {
   $('#textForm').submit(function (e) {
