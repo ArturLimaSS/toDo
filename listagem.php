@@ -1,6 +1,10 @@
 <?php
 
 require_once './db.php';
+session_start();
+if(!isset($_SESSION['userID'])){
+  header("Location: ./index.php");
+}
 
 $sql = $conn->query('SELECT
 c.`id` AS id_chamado,

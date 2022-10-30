@@ -3,6 +3,8 @@
 require_once '../db.php';
 header('Content-type: application/json');
 
+$action = $_POST[''];
+
 
 $texto = $_POST['comment'];
 $usuario = $_POST['responsavel'];

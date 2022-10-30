@@ -10,6 +10,7 @@ require_once '../db.php';
 $sql = $conn->query('SELECT
 c.`id` AS id_chamado,
 cl.`nome` AS cliente,
+cl.id AS idCliente,
 c.`resumo` AS resumo,
 c.`descricao` AS descricao,
 e.`nome` AS envolvido,
@@ -61,10 +62,12 @@ include '../navbar.php';
 <div class="conteudo">
   <div class="col-md-4" id="bodyContent" style="transform: none !important;">
     <div class="card" id="card-dados">
+      <div class="card-header">
+        <?php echo 'SD-' . $array['id_chamado'] . ' - ' . $array['resumo'] . '<br>'; ?>
+      </div>
       <div class="card-body">
         <h6>
           <?php
-          echo 'SD-' . $array['id_chamado'] . '<br>';
           echo $array['envolvido'] . '<br>';
           echo  $array['email'] . '<br>';
           echo  $array['telefone'] . '<br>';
@@ -74,7 +77,7 @@ include '../navbar.php';
         </h6>
       </div>
     </div>
-    <form action="" method="POST">
+    <form id="alteraDadosTicket" name="alteraDadosTicket" method="POST">
       <div class="card-body">
         <div class="row gutters">
           <div class="col-xl-12 col-lg-12 col-sm-12 col-12">
@@ -94,10 +97,26 @@ include '../navbar.php';
                   echo '<option value="' . $selectArray['id'] . '"' . $select . '>' . $selectArray['descricao'] . '</option>';
                 }; ?>
               </select>
+              <label for="selectEmpresa">Construtora / Incorporadora</label>
+              <select name="selectEmpresa" oninput="buscarDadosClientes()" class="form-control" id="selectEmpresa">
+                <?php
+                $resultado2 = $conn->query('SELECT * FROM tb_cliente');
+                while ($array2 = $resultado2->fetch_assoc()) {
+                  if ($array2['id'] == $array['idCliente']) {
+                    $select2 = 'selected="selected"';
+                  } else {
+                    $select2 = '';
+                  }
+                  echo '<option value="' . $array2['id'] . '"' . $select2 . '>' . $array2['nome'] . '</option>';
+                }
+                ?>
+
+              </select>
             </div>
           </div>
         </div>
       </div>
+      <button type="submit" form="alteraDadosTicket" class="btn btn-primary">Salvar</button>
     </form>
   </div>
 
@@ -105,15 +124,17 @@ include '../navbar.php';
     <div class="alert alert-danger" style="display: none;" id="alertDanger">
     </div>
     <button class="btn btn-link" onclick="mostrarTextArea()">Adicionar comentário</button>
-    <form id="textForm" style="display: none;">
+    <form id="textForm" name="textForm" style="display: none;">
       <input type="hidden" name="id_chamado" id="id_chamado" value="<?php echo $_GET['id_chamado']; ?>">
       <input type="hidden" name="userID" id="userID" value="<?php echo $_SESSION['userID']; ?>">
       <button class="form-control" value='<?php $_GET['id_chamado'] ?>' type="submit">Enviar</button>
       <textarea id="default" name="default"></textarea>
     </form>
+    <h3 id="nenhumComentario" class="text-muted">Nenhum comentário adicionado</h3>
     <section id="content">
       <div class="box_comment">
       </div>
+
     </section>
   </div>
 </div>
@@ -130,5 +151,6 @@ include '../navbar.php';
 PRECISAMOS ADICIONAR CAMPO PARA INSERIR EMAILS, E CAMPOS PARA BUSCAR E-MAILS. 
 CRIAR BARRA DE STATUS DO TICKET
 25/10/2022 -> verificar o motivo de não reconhecer id pelo GET
+29/10/2022 -> VERIFICAR COMO REALIZAR SWITCH CASE PEGANDO PELO FORMULÁRIO. 
 
  -->

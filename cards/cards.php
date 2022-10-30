@@ -46,10 +46,32 @@ if (!isset($_SESSION['userID'])) {
             </li>
         </ul>
         <div>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+
+        </div>
+        <div>
+            <button class="btn btn-outline-success my-2 my-sm-0"  data-toggle="modal" data-target="#exampleModal" style="height: 10%; width: 10%; border: none; margin-left: 60%;"><img src="../assets/img/plus.png" width="100%" srcset=""></button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Registrar atendimento</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <input type="text" class="form-control"><br>
+                            <input type="text" class="form-control"><br>
+                            <input type="text" class="form-control"><br>
+                            <input type="text" class="form-control"><br>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <span class="navbar-text">
             <div class="dropdown">
@@ -104,13 +126,13 @@ if (!isset($_SESSION['userID'])) {
                         <h6 class="card-subtitle" id="ticketsV">Tickets vencidos</h6>
                     </div>
                     <div class="card-body p-3">
-                        <div class="">
-                            <div class="atendimento-cards"></div>
-                        </div>
+
+                        <div class="atendimento-cards"></div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 </main>

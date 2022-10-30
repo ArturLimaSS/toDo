@@ -14,3 +14,8 @@ function getTickets() {
 }
 
 getTickets()
+
+function buscarDadosClientes(){
+    var idCliente = $("#optionIdCliente").val()
+    console.log(idCliente)
+}

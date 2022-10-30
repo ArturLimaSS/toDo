@@ -1,7 +1,6 @@
 $(document).ready(function enviaId() {
   var id_chamado_u = $("#id_chamado").val()
   if (id_chamado_u) {
-    console.log('deu bom')
     console.log(id_chamado_u)
     $.ajax({
       url: 'seleciona.php',
@@ -11,7 +10,11 @@ $(document).ready(function enviaId() {
       success: console.log('Deu bom também')
     }).done(function (resultado) {
       console.log(resultado)
-      $('.box_comment').css('display', 'block')
+      if(resultado.length > 0){
+        $("#nenhumComentario").css('display', 'none')
+      }else{
+        $("#nenhumComentario").css('display', 'block')
+      }
       for (var i = 0; i < resultado.length; i++) {
         $('.box_comment').prepend('<div class="card" style="margin-top:5px;"><div class="card-header">' + resultado[i].nomeUsuario + '</div><div class="card-body" style="font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;"><blockquote class="blockquote mb-0"><p>' + resultado[i].comentario + '</p></footer></blockquote></div></div>')
       }
@@ -99,4 +102,17 @@ $(document).ready(function () {
 
 function mostrarTextArea() {
   $("#textForm").css('display', 'block')
+  $("#nenhumComentario").css('display', 'none')
+}
+
+
+function buscarDadosClientes(){
+  var idCliente = $("#selectEmpresa").val()
+  console.log(idCliente)
+  $.ajax({
+    url: 'selectCliente.php',
+    method: 'POST',
+    dataType: 'JSON',
+    data: {idCliente : idCliente}
+  })
 }
