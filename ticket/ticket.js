@@ -31,11 +31,11 @@ $(document).ready(function enviaId() {
 tinymce.init({
   selector: 'textarea#default',
   plugins: [
-    'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
+    'table','advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
     'searchreplace', 'wordcount', 'visualblocks', 'code', 'fullscreen', 'insertdatetime', 'media',
     'table', 'emoticons', 'template', 'help'
   ],
-  toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | ' +
+  toolbar: ' undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | table | ' +
     'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
     'forecolor backcolor emoticons | help',
   menu: {
