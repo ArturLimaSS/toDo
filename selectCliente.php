@@ -1,6 +1,6 @@
 <?php 
 
-require_once '../db.php';
+require_once './db.php';
 
 $selectCliente = $conn->query('SELECT * FROM tb_envolvido WHERE cliente = '.$_POST['idCliente'].'');
 if($selectCliente){

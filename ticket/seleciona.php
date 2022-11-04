@@ -9,12 +9,12 @@ $sql =
 'SELECT
 c.`comentario` AS comentario,
 u.`nome` AS nomeUsuario,
-c.id_ticket AS id_ticket
+c.referencia AS id_ticket
 FROM
 tb_comentario c
 JOIN tb_usuario u
 ON c.`responsavel` = u.`id`
-WHERE c.id_ticket = '.$idChamadoSelect.';';
+WHERE c.referencia ='.$idChamadoSelect.';';
 
 
 $pesquisar = $conn->query($sql);

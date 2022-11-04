@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">
         <img src="/assets/img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -30,18 +29,41 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body">
-                            <label for="resumo" class="form-label">Resumo</label>
-                            <input id="resumo" name="resumo" type="text" placeholder="Digite o resumo ou título" class="form-control"><br>
-                            <label for="inputEmailCadastro">Email</label>
-                            <input type="email" id="inputEmailCadastro" name="inputEmailCadastro" placeholder="Ex: josedasilva@do.com.br" class="form-control"><br>
-                            <label for="inputTelefoneCadastro" class="form-label">Telefone</label>
-                            <input type="number" name="inputTelefoneCadastro" id="inputTelefoneCadastro" placeholder="Ex: (31) 99999-9999" class="form-control"><br>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
+                        <form id="alteraDadosTicket" name="alteraDadosTicket" action="../cadastro.php" method="POST">
+                            <div class="modal-body">
+                                <div>
+                                    <div class="form-group">
+                                        <div>
+                                            <label for="resumo" class="form-label">Resumo</label>
+                                            <input class="form-control" type="text" id="resumo" name="resumo">
+                                        </div>
+                                        <div>
+                                            <label for="selectEmpresa">Construtora / Incorporadora</label>
+                                            <select name="selectEmpresa" oninput="buscarDadosClientes()" class="form-control" id="selectEmpresa">
+                                                <option value="#" selected="selected">Selecione o cliente</option>
+                                                <?php
+                                                $resultado2 = $conn->query('SELECT * FROM tb_cliente');
+                                                while ($array2 = $resultado2->fetch_assoc()) {
+
+                                                    echo '<option value="' . $array2['id'] . '"' . $select2 . '>' . $array2['nome'] . '</option>';
+                                                }
+                                                ?>
+
+                                            </select>
+                                            <label for="selectEnvolvido">Selecione o envolvido</label>
+                                            <select name="selectEnvolvido" class="form-control" id="selectEnvolvido">
+                                                <option value="#" selected="selected">Selecione o envolvido</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-primary">Cadastrar</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -60,4 +82,3 @@
         </span>
     </div>
 </nav>
-<h1>

@@ -108,11 +108,19 @@ function mostrarTextArea() {
 
 function buscarDadosClientes(){
   var idCliente = $("#selectEmpresa").val()
+  $("#selectEnvolvido").html('')
   console.log(idCliente)
   $.ajax({
-    url: 'selectCliente.php',
+    url: '../selectCliente.php',
     method: 'POST',
     dataType: 'JSON',
-    data: {idCliente : idCliente}
+    data: {idCliente : idCliente},
+    success: function(data){
+      for(let i = 0; i < data.length; i++){
+        let option = '<option value="'+data[i].id+'">'+data[i].nome+'</option>'
+        $("#selectEnvolvido").prepend(option)
+      }
+    }
   })
+  
 }

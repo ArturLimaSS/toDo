@@ -13,6 +13,7 @@ cl.`nome` AS cliente,
 cl.id AS idCliente,
 c.`resumo` AS resumo,
 c.`descricao` AS descricao,
+e.id as idEnvolvido,
 e.`nome` AS envolvido,
 e.`email` AS email,
 e.`telefone` AS telefone,
@@ -54,7 +55,6 @@ $array = $sql->fetch_assoc();
   <title>Document</title>
 </head>
 
-
 <?php
 include '../navbar.php';
 ?>
@@ -77,47 +77,6 @@ include '../navbar.php';
         </h6>
       </div>
     </div>
-    <form id="alteraDadosTicket" name="alteraDadosTicket" method="POST">
-      <div class="card-body">
-        <div class="row gutters">
-          <div class="col-xl-12 col-lg-12 col-sm-12 col-12">
-            <h6 class="mb-2 text-primary">Dados do ticket</h6>
-          </div>
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-            <div class="form-group">
-              <label for="mudarStatusTicket">Alterar status do Ticket</label>
-              <select class="form-control" name="mudarStatusTicket" id="mudarStatusTicket">
-                <?php
-                while ($selectArray = $selectStatus->fetch_assoc()) {
-                  if ($selectArray['id'] == $array['id_status']) {
-                    $select = 'selected="selected"';
-                  } else {
-                    $select = '';
-                  }
-                  echo '<option value="' . $selectArray['id'] . '"' . $select . '>' . $selectArray['descricao'] . '</option>';
-                }; ?>
-              </select>
-              <label for="selectEmpresa">Construtora / Incorporadora</label>
-              <select name="selectEmpresa" oninput="buscarDadosClientes()" class="form-control" id="selectEmpresa">
-                <?php
-                $resultado2 = $conn->query('SELECT * FROM tb_cliente');
-                while ($array2 = $resultado2->fetch_assoc()) {
-                  if ($array2['id'] == $array['idCliente']) {
-                    $select2 = 'selected="selected"';
-                  } else {
-                    $select2 = '';
-                  }
-                  echo '<option value="' . $array2['id'] . '"' . $select2 . '>' . $array2['nome'] . '</option>';
-                }
-                ?>
-
-              </select>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button type="submit" form="alteraDadosTicket" class="btn btn-primary">Salvar</button>
-    </form>
   </div>
 
   <div class="col-md-8" id="inputAndComment">

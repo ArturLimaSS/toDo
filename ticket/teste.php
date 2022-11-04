@@ -9,7 +9,7 @@ $action = $_POST[''];
 $texto = $_POST['comment'];
 $usuario = $_POST['responsavel'];
 $id_ticket = $_POST['id_chamado'];
-$sql = "INSERT INTO tb_comentario (responsavel, comentario, id_ticket) values (".$usuario.", '".$texto."', '".$id_ticket."')";
+$sql = "INSERT INTO tb_comentario (responsavel, comentario, referencia) values (".$usuario.", '".$texto."', '".$id_ticket."')";
 if(isset($texto)){
     $conn->query($sql);
     echo json_encode('sucess');

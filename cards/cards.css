@@ -1,13 +1,13 @@
 #cadKanban {
     transition: all .2s ease-in-out;
     margin: 8px;
-    width: 95%;
+    height: 1%;
+    width: 55%;
     border-radius: 10px;
     border: 1px solid #ccc;
     background: #fff;
     float: left;
     box-shadow:  rgba(0, 0, 0, 0.3) 0px 1px 2px 0;
-
 
 }
 
@@ -16,11 +16,7 @@
     transform: translate(0,-10px);
 }
 
-
-#ticketEmVencimento {
-    background-color: yellow;
-}
-
-#ticketsVencidos {
-    background-color: red;
+#bodyCard{
+    max-width: 50%;
+    max-height: 10%;
 }
