@@ -25,11 +25,13 @@ require_once '../db.php';
 
 <body>
     <?php include_once '../navbar.php' ?>
-    <main class="content">
+    <div  class="col-md-12">
+    <main>
         <div class="card-body" id="bodyCard">
             <div class="atendimento-cards"></div>
         </div>
     </main>
+    </div>
 </body>
 
 </html>

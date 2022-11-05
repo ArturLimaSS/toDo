@@ -67,49 +67,60 @@ include '../navbar.php';
         <?php echo 'SD-' . $array['id_chamado'] . ' - ' . $array['resumo'] . '<br>'; ?>
       </div>
       <div class="card-body">
-        <h6>
-          <?php
-          echo $array['envolvido'] . '<br>';
-          echo  $array['email'] . '<br>';
-          echo  $array['telefone'] . '<br>';
-          echo  $array['cliente'] . '<br>';
-          echo $array['status_ticket']
-          ?>
-        </h6>
+
+        <label for="" class="form-label">Envolvido</label>
+        <input class="form-control" readonly value="<?php echo $array['envolvido'] ?>"></input>
+        
+        <label for="" class="form-label">Email</label>
+        <input class="form-control" readonly value="<?php echo  $array['email'] ?>"></input>
+        
+        <label for="" class="form-label">Telefone</label>
+        <input class="form-control" readonly value="<?php echo  $array['telefone'] ?>"></input>
+        
+        <label for="" class="form-label">Empresa</label>
+        <input class="form-control" readonly value="<?php echo  $array['cliente'] ?>"></input>
+        
+        <label for="" class="form-label">Status</label>
+        <input class="form-control" value="<?php echo $array['status_ticket'] ?>"></input>
+
+        <label for="" class="form-label">Resumo</label>
+        <input class="form-control" value="<?php echo $array['resumo'] ?>"></input>
+
+        <label for="responsavelTicket" class="form-label">Responsável</label>
+        <select class="form-control" name="responsavelTicket" id="responsavelTicket">
+          <option value="#">---Selecione---</option>
+          <option value="">COORDENADOR DE SUPORTE</option>
+          <option value="">ARTUR</option>
+          <option value="">NAYARA</option>
+          <option value="">ISADORA</option>
+        </select><br>
+
+        <label for="prazoSla" class="form-label">Urgência / Prazo</label>
+        <select class="form-control" name="prazoSla" id="prazoSla">
+          <option value="#">---Selecione---</option>
+          <option value="">BAIXA</option>
+          <option value="">MEDIA</option>
+          <option value="">ALTA</option>
+          <option value="">URGENTE</option>
+        </select><br>
+
+        <label for="statusTicket" class="form-label">Status</label>
+        <select class="form-control" name="statusTicket" id="statusTicket">
+          <option value="#">---Selecione---</option>
+          <option value="">AM ATENDIMENTO</option>
+          <option value="">EM DESENVOLVIMENTO</option>
+          <option value="">FINALIZAÇÃO SUPORTE</option>
+          <option value="">FINALIZADO</option>
+        </select><br>
+        <div class="py-3 pb-4 border-top">
+          <button class="btn btn-outline-primary mr-3">Salvar</button>
+          <button class="btn btn-outline-secondary">Cancelar</button>
+        </div>
       </div>
     </div><br>
     <div class="teste">
 
-      <label for="responsavelTicket" class="form-label">Responsável</label>
-      <select class="form-control" name="responsavelTicket" id="responsavelTicket">
-        <option value="#">---Selecione---</option>
-        <option value="">COORDENADOR DE SUPORTE</option>
-        <option value="">ARTUR</option>
-        <option value="">NAYARA</option>
-        <option value="">ISADORA</option>
-      </select><br>
 
-      <label for="prazoSla" class="form-label">Urgência / Prazo</label>
-      <select class="form-control" name="prazoSla" id="prazoSla">
-        <option value="#">---Selecione---</option>
-        <option value="">BAIXA</option>
-        <option value="">MEDIA</option>
-        <option value="">ALTA</option>
-        <option value="">URGENTE</option>
-      </select><br>
-
-      <label for="statusTicket" class="form-label">Status</label>
-      <select class="form-control" name="statusTicket" id="statusTicket">
-        <option value="#">---Selecione---</option>
-        <option value="">AM ATENDIMENTO</option>
-        <option value="">EM DESENVOLVIMENTO</option>
-        <option value="">FINALIZAÇÃO SUPORTE</option>
-        <option value="">FINALIZADO</option>
-      </select><br>
-      <div class="py-3 pb-4 border-top">
-        <button class="btn btn-outline-primary mr-3">Salvar</button>
-        <button class="btn btn-outline-secondary">Cancelar</button>
-      </div>
     </div>
   </div>
 
