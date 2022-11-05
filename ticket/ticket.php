@@ -58,6 +58,7 @@ $array = $sql->fetch_assoc();
 <?php
 include '../navbar.php';
 ?>
+
 <input type="hidden" name="id_chamado" id="id_chamado" value="<?php echo $_GET['id_chamado'];  ?>" onload="enviaId()">
 <div class="conteudo">
   <div class="col-md-4" id="bodyContent" style="transform: none !important;">

@@ -10,15 +10,15 @@ $(document).ready(function enviaId() {
       success: console.log('Deu bom também')
     }).done(function (resultado) {
       console.log(resultado)
-      if(resultado.length > 0){
+      if (resultado.length > 0) {
         $("#nenhumComentario").css('display', 'none')
-      }else{
+      } else {
         $("#nenhumComentario").css('display', 'block')
       }
       for (var i = 0; i < resultado.length; i++) {
         $('.box_comment').prepend('<div class="card" style="margin-top:5px;"><div class="card-header">' + resultado[i].nomeUsuario + '</div><div class="card-body" style="font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;"><blockquote class="blockquote mb-0"><p>' + resultado[i].comentario + '</p></footer></blockquote></div></div>')
       }
-    })  
+    })
   } else {
     console.log('Deu ruim')
   }
@@ -31,7 +31,7 @@ $(document).ready(function enviaId() {
 tinymce.init({
   selector: 'textarea#default',
   plugins: [
-    'table','advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
+    'table', 'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
     'searchreplace', 'wordcount', 'visualblocks', 'code', 'fullscreen', 'insertdatetime', 'media',
     'table', 'emoticons', 'template', 'help'
   ],
@@ -95,8 +95,6 @@ $(document).ready(function () {
 
       })
     }
-
-
   })
 })
 
@@ -105,8 +103,7 @@ function mostrarTextArea() {
   $("#nenhumComentario").css('display', 'none')
 }
 
-
-function buscarDadosClientes(){
+function buscarDadosClientes() {
   var idCliente = $("#selectEmpresa").val()
   $("#selectEnvolvido").html('')
   console.log(idCliente)
@@ -114,13 +111,13 @@ function buscarDadosClientes(){
     url: '../selectCliente.php',
     method: 'POST',
     dataType: 'JSON',
-    data: {idCliente : idCliente},
-    success: function(data){
-      for(let i = 0; i < data.length; i++){
-        let option = '<option value="'+data[i].id+'">'+data[i].nome+'</option>'
+    data: { idCliente: idCliente },
+    success: function (data) {
+      for (let i = 0; i < data.length; i++) {
+        let option = '<option value="' + data[i].id + '">' + data[i].nome + '</option>'
         $("#selectEnvolvido").prepend(option)
       }
     }
   })
-  
 }
+
