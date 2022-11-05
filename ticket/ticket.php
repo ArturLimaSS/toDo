@@ -77,6 +77,39 @@ include '../navbar.php';
           ?>
         </h6>
       </div>
+    </div><br>
+    <div class="teste">
+
+      <label for="responsavelTicket" class="form-label">Responsável</label>
+      <select class="form-control" name="responsavelTicket" id="responsavelTicket">
+        <option value="#">---Selecione---</option>
+        <option value="">COORDENADOR DE SUPORTE</option>
+        <option value="">ARTUR</option>
+        <option value="">NAYARA</option>
+        <option value="">ISADORA</option>
+      </select><br>
+
+      <label for="prazoSla" class="form-label">Urgência / Prazo</label>
+      <select class="form-control" name="prazoSla" id="prazoSla">
+        <option value="#">---Selecione---</option>
+        <option value="">BAIXA</option>
+        <option value="">MEDIA</option>
+        <option value="">ALTA</option>
+        <option value="">URGENTE</option>
+      </select><br>
+
+      <label for="statusTicket" class="form-label">Status</label>
+      <select class="form-control" name="statusTicket" id="statusTicket">
+        <option value="#">---Selecione---</option>
+        <option value="">AM ATENDIMENTO</option>
+        <option value="">EM DESENVOLVIMENTO</option>
+        <option value="">FINALIZAÇÃO SUPORTE</option>
+        <option value="">FINALIZADO</option>
+      </select><br>
+      <div class="py-3 pb-4 border-top">
+        <button class="btn btn-outline-primary mr-3">Salvar</button>
+        <button class="btn btn-outline-secondary">Cancelar</button>
+      </div>
     </div>
   </div>
 

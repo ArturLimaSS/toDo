@@ -74,7 +74,7 @@
                     Seja bem vindo <?php echo $_SESSION['username']; ?>!
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Opções do Usuário</a>
+                    <a class="dropdown-item" href="#">Opções</a>
                     <a class="dropdown-item" href="#">Ajuda</a>
                     <a class="dropdown-item" href="../logout.php">Sair</a>
                 </div>
