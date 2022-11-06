@@ -26,6 +26,11 @@ require_once './db.php';
 </head>
 
 <body>
+    <style>
+         #navbar{
+        position: sticky;
+    }
+    </style>
     <?php include "./navbar.php" ?><br>
     <div class="container">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -50,12 +55,12 @@ require_once './db.php';
                         <button class="btn btn-outline-secondary">Cancelar</button>
                     </div>
                 </form>
-                <hr>
+
                 <form action="./cadastros/envolvido.php" method="POST">
                     <div class="row mt-3">
                         <div class="col-md-12">
-                            <label class="labels">Name</label>
-                            <input type="text" class="form-control" name="nomeEnvolvido" id="nomeEnvolvido" placeholder="Digite o nome do usuário! Ex: Artur Lima" value="">
+                            <label class="labels">Nome</label>
+                            <input type="text" class="form-control" name="nomeEnvolvido" id="nomeEnvolvido" placeholder="Digite o nome do envolvido! Ex: Artur Lima" value="">
                         </div>
                     </div>
 
@@ -73,8 +78,9 @@ require_once './db.php';
                             <select name="selectEmpresa" oninput="buscarDadosClientes()" class="form-control" id="selectEmpresa">
                                 <option value="#" selected="selected">Selecione o cliente</option>
                                 <?php
-                                $resultado2 = $conn->query('SELECT * FROM tb_cliente');
+                                $resultado2 = $conn->query('SELECT * FROM tb_cliente ORDER BY nome');
                                 while ($array2 = $resultado2->fetch_assoc()) {
+                                    $select2 = '';
                                     echo '<option value="' . $array2['id'] . '"' . $select2 . '>' . $array2['nome'] . '</option>';
                                 }
                                 ?>
@@ -85,8 +91,8 @@ require_once './db.php';
 
 
                     <div class="py-3 pb-4 border-top border-bottom">
-                        <button class="btn btn-outline-primary mr-3">Salvar</button>
-                        <button class="btn btn-outline-secondary">Cancelar</button>
+                        <button type="submit" class="btn btn-outline-primary mr-3">Salvar</button>
+                        <button class="btn btn-outline-secondary" onclick="">Cancelar</button>
                     </div>
                 </form>
             </div>

@@ -14,7 +14,7 @@
 
 </html>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">
         <img src="/assets/img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
         DO
@@ -55,11 +55,12 @@
                                         </div>
                                         <div>
                                             <label for="selectEmpresa">Construtora / Incorporadora</label>
-                                            <select name="selectEmpresa" oninput="buscarDadosClientes()" class="form-control" id="selectEmpresa">
+                                            <select data-live-search="true" name="selectEmpresa" oninput="buscarDadosClientes()" class="form-control" id="selectEmpresa">
                                                 <option value="#" selected="selected">Selecione o cliente</option>
                                                 <?php
-                                                $resultado2 = $conn->query('SELECT * FROM tb_cliente');
+                                                $resultado2 = $conn->query('SELECT * FROM tb_cliente ORDER BY nome');
                                                 while ($array2 = $resultado2->fetch_assoc()) {
+                                                    $select2 = '';
 
                                                     echo '<option value="' . $array2['id'] . '"' . $select2 . '>' . $array2['nome'] . '</option>';
                                                 }
@@ -67,7 +68,7 @@
 
                                             </select>
                                             <label for="selectEnvolvido">Selecione o envolvido</label>
-                                            <select name="selectEnvolvido" class="form-control" id="selectEnvolvido">
+                                            <select data-live-search="true" name="selectEnvolvido" class="form-control" id="selectEnvolvido">
                                                 <option value="#" selected="selected">Selecione o envolvido</option>
                                             </select>
                                         </div>
