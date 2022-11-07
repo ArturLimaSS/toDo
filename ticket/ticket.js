@@ -121,3 +121,36 @@ function buscarDadosClientes() {
   })
 }
 
+$(document).ready(function(){
+  var id_tipo = $("#selecionaTipo").val();
+  console.log(id_tipo)
+  $("#tituloUrgencia").html('')
+  $.ajax({
+    url: '../cadastros/selectTipoChamado.php',
+    method: "POST",
+    dataType: "JSON",
+    data: {id_tipo : id_tipo},
+    success: function(data){
+      for(let i = 0; i < data.length; i++){
+        $("#tituloUrgencia").prepend('<p class="form-control '+ data[i].color +'">' + data[i].urgencia + '  ' + data[i].prazo + ' HORAS '+ '</p>')
+      }
+    }
+  })
+})
+
+function selectTipo(){
+  var id_tipo = $("#selecionaTipo").val();
+  console.log(id_tipo)
+  $("#tituloUrgencia").html('')
+  $.ajax({
+    url: '../cadastros/selectTipoChamado.php',
+    method: "POST",
+    dataType: "JSON",
+    data: {id_tipo : id_tipo},
+    success: function(data){
+      for(let i = 0; i < data.length; i++){
+        $("#tituloUrgencia").prepend('<p class="form-control '+ data[i].color +'">' + data[i].urgencia + '  ' + data[i].prazo + ' HORAS '+ '</p>')
+      }
+    }
+  })
+}

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,16 +66,27 @@
                                                     echo '<option value="' . $array2['id'] . '"' . $select2 . '>' . $array2['nome'] . '</option>';
                                                 }
                                                 ?>
-
                                             </select>
                                             <label for="selectEnvolvido">Selecione o envolvido</label>
                                             <select data-live-search="true" name="selectEnvolvido" class="form-control" id="selectEnvolvido">
                                                 <option value="#" selected="selected">Selecione o envolvido</option>
                                             </select>
+                                            <label for="selectTipo" class="form-label">Tipo</label>
+                                            <select data-live-search="true" name="selectTipo" class="form-control" id="selectTipo">
+                                                <option value="#" selected="selected">Selecione o tipo</option>
+                                                <?php
+                                                $resultado3 = $conn->query('SELECT * FROM tb_tipo_chamado');
+                                                while ($array3 = $resultado3->fetch_assoc()) {
+                                                    $select2 = '';
+
+                                                    echo '<option value="' . $array3['id'] . '"' . $select2 . '>' . $array3['nome'] . '</option>';
+                                                }
+                                                ?>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
-
+                            <input type="hidden" id="idUsuario" name="idUsuario" value="<?php echo $_SESSION['userID']?>">                 
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>

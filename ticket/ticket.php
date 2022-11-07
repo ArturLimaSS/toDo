@@ -19,7 +19,9 @@ e.`email` AS email,
 e.`telefone` AS telefone,
 tc.`nome` AS tipo_chamado,
 s.descricao as status_ticket,
-c.status AS id_status
+c.status AS id_status,
+c.tipo_chamado AS id_tipo_chamado,
+c.responsavel AS responsavel_ticket
 FROM
 tb_chamados c
 JOIN tb_envolvido e
@@ -67,61 +69,76 @@ include '../navbar.php';
         <?php echo 'SD-' . $array['id_chamado'] . ' - ' . $array['resumo'] . '<br>'; ?>
       </div>
       <div class="card-body">
+        <form action="../updates/update_ticket.php" method="POST">
+          <input type="hidden" value="<?php echo $array['id_chamado']?>" name="idChamado" id="idChamado">
+          <label for="" class="form-label">Envolvido</label>
+          <p id="envolvidoP" class="form-control"><?php echo $array['envolvido'] ?></p>
 
-        <label for="" class="form-label">Envolvido</label>
-        <input class="form-control" readonly value="<?php echo $array['envolvido'] ?>"></input>
-        
-        <label for="" class="form-label">Email</label>
-        <input class="form-control" readonly value="<?php echo  $array['email'] ?>"></input>
-        
-        <label for="" class="form-label">Telefone</label>
-        <input class="form-control" readonly value="<?php echo  $array['telefone'] ?>"></input>
-        
-        <label for="" class="form-label">Empresa</label>
-        <input class="form-control" readonly value="<?php echo  $array['cliente'] ?>"></input>
-        
-        <label for="" class="form-label">Status</label>
-        <input class="form-control" value="<?php echo $array['status_ticket'] ?>"></input>
+          <label for="" class="form-label">Email</label>
+          <p id='emailP' class="form-control"><?php echo  $array['email'] ?></p>
 
-        <label for="" class="form-label">Resumo</label>
-        <input class="form-control" value="<?php echo $array['resumo'] ?>"></input>
+          <label for="" class="form-label">Telefone</label>
+          <p id="telefoneP" class="form-control"><?php echo  $array['telefone'] ?></p>
 
-        <label for="responsavelTicket" class="form-label">Responsável</label>
-        <select class="form-control" name="responsavelTicket" id="responsavelTicket">
-          <option value="#">---Selecione---</option>
-          <option value="">COORDENADOR DE SUPORTE</option>
-          <option value="">ARTUR</option>
-          <option value="">NAYARA</option>
-          <option value="">ISADORA</option>
-        </select><br>
+          <label for="" class="form-label">Empresa</label>
+          <p id="clienteP" class="form-control"><?php echo  $array['cliente'] ?></p>
 
-        <label for="prazoSla" class="form-label">Urgência / Prazo</label>
-        <select class="form-control" name="prazoSla" id="prazoSla">
-          <option value="#">---Selecione---</option>
-          <option value="">BAIXA</option>
-          <option value="">MEDIA</option>
-          <option value="">ALTA</option>
-          <option value="">URGENTE</option>
-        </select><br>
+          <label for="" class="form-label">Resumo</label>
+          <input id="resumo" name="resumo" class="form-control" value="<?php echo $array['resumo'] ?>"></input>
 
-        <label for="statusTicket" class="form-label">Status</label>
-        <select class="form-control" name="statusTicket" id="statusTicket">
-          <option value="#">---Selecione---</option>
-          <option value="">AM ATENDIMENTO</option>
-          <option value="">EM DESENVOLVIMENTO</option>
-          <option value="">FINALIZAÇÃO SUPORTE</option>
-          <option value="">FINALIZADO</option>
-        </select><br>
-        <div class="py-3 pb-4 border-top">
-          <button class="btn btn-outline-primary mr-3">Salvar</button>
-          <button class="btn btn-outline-secondary">Cancelar</button>
-        </div>
+          <label for="selectTipo" class="form-label">Tipo</label>
+          <select name="selecionaTipo" oninput="selectTipo()" class="form-control" id="selecionaTipo">
+            <?php
+            $resultado4 = $conn->query('SELECT * FROM tb_tipo_chamado');
+            while ($array4 = $resultado4->fetch_assoc()) {
+              if ($array['id_tipo_chamado'] == $array4['id']) {
+                $select3 = 'selected="selected"';
+              } else {
+                $select3 = '';
+              }
+              echo '<option ' . $select3 . ' value="' . $array4['id'] . '">' . $array4['nome'] . '</option>';
+            }
+            ?>
+          </select><br>
+
+          <label for="tituloUrgencia" class="form-label">Urgência / Prazo</label>
+          <div id="tituloUrgencia"></div>
+
+          <label for="responsavelTicket" class="form-label">Responsável</label>
+          <select class="form-control" name="responsavelTicket" id="responsavelTicket">
+            <?php
+            $resultado5 = $conn->query('SELECT * FROM tb_usuario');
+            while ($array5 = $resultado5->fetch_assoc()) {
+              if ($array['responsavel_ticket'] == $array5['id']) {
+                $select5 = 'selected="selected"';
+              } else {
+                $select5 = '';
+              }
+              echo '<option ' . $select5 . ' value="' . $array5['id'] . '">' . $array5['nome'] . '</option>';
+            }
+            ?>
+          </select><br>
+
+          <label for="statusTicket" class="form-label">Status</label>
+          <select class="form-control" name="statusTicket" id="statusTicket">
+            <?php
+            $resultado6 = $conn->query('SELECT * FROM tb_status');
+            while ($array6 = $resultado6->fetch_assoc()) {
+              if ($array['id_status'] == $array6['id']) {
+                $select6 = 'selected="selected"';
+              } else {
+                $select6 = '';
+              }
+              echo '<option ' . $select6 . ' value="' . $array6['id'] . '">' . $array6['descricao'] . '</option>';
+            }
+            ?>
+          </select><br>
+          <div class="py-3 pb-4 border-top">
+            <button class="btn btn-outline-primary" id="enviarButton" type="submit">Salvar</button>
+          </div>
+        </form>
       </div>
     </div><br>
-    <div class="teste">
-
-
-    </div>
   </div>
 
   <div class="col-md-8" id="inputAndComment">

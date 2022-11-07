@@ -14,7 +14,6 @@ if(!isset(email)){
 function buscarDadosClientes() {
     var idCliente = $("#selectEmpresa").val()
     $("#selectEnvolvido").html('')
-    console.log(idCliente)
     $.ajax({
       url: '../selectCliente.php',
       method: 'POST',
