@@ -1,3 +1,7 @@
+$(window).on('load', function(){
+  $(".loading").fadeOut('slow')
+})
+
 $(document).ready(function enviaId() {
   var id_chamado_u = $("#id_chamado").val()
   if (id_chamado_u) {

@@ -61,6 +61,8 @@ $array = $sql->fetch_assoc();
 include '../navbar.php';
 ?>
 
+<?php include_once '../assets/load.php';?>
+
 <input type="hidden" name="id_chamado" id="id_chamado" value="<?php echo $_GET['id_chamado'];  ?>" onload="enviaId()">
 <div class="conteudo">
   <div class="col-md-4" id="bodyContent" style="transform: none !important;">
@@ -69,7 +71,7 @@ include '../navbar.php';
         <?php echo 'SD-' . $array['id_chamado'] . ' - ' . $array['resumo'] . '<br>'; ?>
       </div>
       <div class="card-body">
-        <form action="../updates/update_ticket.php" method="POST">
+        <form id="ticketForm" action="../updates/update_ticket.php" method="POST">
           <input type="hidden" value="<?php echo $array['id_chamado']?>" name="idChamado" id="idChamado">
           <label for="" class="form-label">Envolvido</label>
           <p id="envolvidoP" class="form-control"><?php echo $array['envolvido'] ?></p>
@@ -151,9 +153,10 @@ include '../navbar.php';
       <button class="form-control" value='<?php $_GET['id_chamado'] ?>' type="submit">Enviar</button>
       <textarea id="default" name="default"><br><br><br><br><br><p>Atenciosamente,<br><br><?php echo $_SESSION['username']?><br>Suporte Dommus</p></textarea>
     </form>
-    <h3 id="nenhumComentario" class="text-muted">Nenhum comentário adicionado</h3>
+    
     <section id="content">
       <div class="box_comment">
+      <h3 id="nenhumComentario" class="text-muted">Nenhum comentário adicionado</h3>
       </div>
 
     </section>

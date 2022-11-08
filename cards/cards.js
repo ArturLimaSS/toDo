@@ -1,3 +1,8 @@
+$(window).on('load', function(){
+    $(".loading").fadeOut('slow')
+  })
+  
+
 function getTickets() {
     $.ajax({
         url: '../listagem.php',
