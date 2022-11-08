@@ -22,7 +22,8 @@ LEFT JOIN tb_envolvido e
 LEFT JOIN tb_cliente cl
   ON e.`cliente` = cl.`id`
 LEFT JOIN tb_tipo_chamado tc 
-  ON c.`tipo_chamado` = tc.`id`;
+  ON c.`tipo_chamado` = tc.`id`
+WHERE c.status NOT IN (3);
 ');
 
 

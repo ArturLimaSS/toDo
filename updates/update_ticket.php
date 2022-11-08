@@ -8,4 +8,8 @@ status          = '  . $_POST['statusTicket'] . ' ,
 responsavel     = '  . $_POST['responsavelTicket'] . ' 
 WHERE id        = '  . $_POST['idChamado'] . ';';
 $conn->query($sql);
-header('Location: ../ticket/ticket.php?id_chamado='.$_POST['idChamado'].'');
+if($_POST['statusTicket'] == 3){
+    header('Location: ../cards/cards.php');
+}else{
+    header('Location: ../ticket/ticket.php?id_chamado='.$_POST['idChamado'].'');
+}

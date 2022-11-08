@@ -149,7 +149,7 @@ include '../navbar.php';
       <input type="hidden" name="id_chamado" id="id_chamado" value="<?php echo $_GET['id_chamado']; ?>">
       <input type="hidden" name="userID" id="userID" value="<?php echo $_SESSION['userID']; ?>">
       <button class="form-control" value='<?php $_GET['id_chamado'] ?>' type="submit">Enviar</button>
-      <textarea id="default" name="default"></textarea>
+      <textarea id="default" name="default"><br><br><br><br><br><p>Atenciosamente,<br><br><?php echo $_SESSION['username']?><br>Suporte Dommus</p></textarea>
     </form>
     <h3 id="nenhumComentario" class="text-muted">Nenhum comentário adicionado</h3>
     <section id="content">

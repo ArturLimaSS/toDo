@@ -87,5 +87,9 @@ CREATE TABLE tb_status(
 );
 
 ALTER TABLE tb_chamados ADD COLUMN STATUS INT(100);
+ALTER TABLE tb_chamados ADD COLUMN responsavel INT(100);
 
-#teste
+ALTER TABLE tb_tipo_chamado ADD COLUMN urgencia VARCHAR(45);
+ALTER TABLE tb_tipo_chamado ADD COLUMN color 	VARCHAR(45);
+ALTER TABLE tb_tipo_chamado ADD COLUMN background_color VARCHAR(45);
+
