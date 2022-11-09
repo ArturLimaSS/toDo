@@ -20,7 +20,7 @@ $(document).ready(function enviaId() {
         $("#nenhumComentario").css('display', 'block')
       }
       for (var i = 0; i < resultado.length; i++) {
-        $('.box_comment').prepend('<div class="card" style="margin-top:5px;"><div class="card-header">' + resultado[i].nomeUsuario + '</div><div class="card-body" style="font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;"><blockquote class="blockquote mb-0"><p>' + resultado[i].comentario + '</p></footer></blockquote></div></div>')
+        $('.box_comment').prepend('<div class="card" id="cardComentario" style="margin-top:5px;"><div class="card-header">' + resultado[i].nomeUsuario + '</div><div class="card-body"><blockquote class="blockquote mb-0"><p>' + resultado[i].comentario + '</p></footer></blockquote></div></div>')
       }
     })
   } else {
@@ -70,7 +70,15 @@ $(document).ready(function () {
     var responsavel = $('#userID').val();
     var id_chamado = $('#id_chamado').val();
     var comentario = $('#default').val();
+    var assinaturaVal = $("#assinaturaVal");
+    console.log(assinaturaVal)
     if (!comentario) {
+      $('#alertDanger').css('display', 'block');
+      $('#alertDanger').html("<p>Nenhum texto a ser adicionado!</p>")
+      setTimeout(function () {
+        $('#alertDanger').fadeOut('slow')
+      }, 3000)
+    } else if (comentario == assinaturaVal) {
       $('#alertDanger').css('display', 'block');
       $('#alertDanger').html("<p>Nenhum texto a ser adicionado!</p>")
       setTimeout(function () {

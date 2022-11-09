@@ -37,6 +37,8 @@ WHERE c.id = ' . intval($_GET['id_chamado']) . ';
 
 $array = $sql->fetch_assoc();
 
+$assinatura = '<br><br><br><br><br><p>Atenciosamente,<br><br>'.$_SESSION['username'].'<br>Suporte Dommus';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -149,9 +151,10 @@ include '../navbar.php';
     <button class="btn btn-link" onclick="mostrarTextArea()">Adicionar comentário</button>
     <form id="textForm" name="textForm" style="display: none;">
       <input type="hidden" name="id_chamado" id="id_chamado" value="<?php echo $_GET['id_chamado']; ?>">
+      <input type="hidden" name="assinaturaVal" id="assinaturaVal" value="<?php echo $assinatura;?>">
       <input type="hidden" name="userID" id="userID" value="<?php echo $_SESSION['userID']; ?>">
       <button class="form-control" value='<?php $_GET['id_chamado'] ?>' type="submit">Enviar</button>
-      <textarea id="default" name="default"><br><br><br><br><br><p>Atenciosamente,<br><br><?php echo $_SESSION['username']?><br>Suporte Dommus</p></textarea>
+      <textarea id="default" name="default"><?php echo $assinatura?></p></textarea>
     </form>
     
     <section id="content">

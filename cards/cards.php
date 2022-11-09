@@ -24,14 +24,17 @@ require_once '../db.php';
 </head>
 
 <body>
-    <?php include_once '../assets/load.php'; ?>
-    <?php include_once '../navbar.php' ?>
-    <div class="col-md-12">
-        <main>
-            <div class="card-body" id="bodyCard">
-                <div class="atendimento-cards"></div>
-            </div>
-        </main>
+<?php include_once '../assets/load.php'; ?>
+        <?php include_once '../navbar.php' ?>
+    <div class="conteudo">
+        
+        <div class="col-md-12">
+            <main>
+                <div class="card-body" id="bodyCard">
+                    <div class="atendimento-cards"></div>
+                </div>
+            </main>
+        </div>
     </div>
 </body>
 

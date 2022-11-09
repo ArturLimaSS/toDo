@@ -6,12 +6,13 @@
     
     try {
         if($verifica->num_rows == 0){
-            if(isset($cliente)){
+            if(!isset($cliente)){
+                echo "nenhum dado inserido!";
+            }else{
+                
                 $sql = 'INSERT INTO tb_cliente (nome) values ("'.$cliente.'");';
                 $conn->query($sql);
                 header('Location: ../options.php');
-            }else{
-                echo "nenhum dado inserido!";
             }
         }else{
             echo 'Já existe um cliente com este nome fantasia!';
@@ -19,4 +20,3 @@
     } catch (Exception $e) {
         $e->getMessage();
     }
-?>

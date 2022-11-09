@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar.css">
     <title>Document</title>
 </head>
 <body>
@@ -62,9 +62,9 @@
                                                 }
                                                 ?>
                                             </select>
-                                            <label for="selectEnvolvido">Selecione o envolvido</label>
+                                            <label for="selectEnvolvido">Solicitante</label>
                                             <select data-live-search="true" name="selectEnvolvido" class="form-control" id="selectEnvolvido">
-                                                <option value="#" selected="selected">Selecione o envolvido</option>
+                                                <option value="#" selected="selected">Solicitante</option>
                                             </select>
                                             <label for="selectTipo" class="form-label">Tipo</label>
                                             <select data-live-search="true" name="selectTipo" class="form-control" id="selectTipo">
