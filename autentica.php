@@ -27,6 +27,7 @@ if(!$sql->num_rows >0){
     header("Location: cards/cards.php");
 }
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

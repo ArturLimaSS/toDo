@@ -20,7 +20,7 @@ $(document).ready(function enviaId() {
         $("#nenhumComentario").css('display', 'block')
       }
       for (var i = 0; i < resultado.length; i++) {
-        $('.box_comment').prepend('<div class="card" id="cardComentario" style="margin-top:5px;"><div class="card-header">' + resultado[i].nomeUsuario + '</div><div class="card-body"><blockquote class="blockquote mb-0"><p>' + resultado[i].comentario + '</p></footer></blockquote></div></div>')
+        $('.box_comment').prepend('<div class="card" id="cardComentario" style="font-size: 78%; margin-top:5px;"><div class="card-header">' + resultado[i].nomeUsuario + '</div><div class="card-body""><blockquote class="blockquote mb-0"><p>' + resultado[i].comentario + '</p></footer></blockquote></div></div>')
       }
     })
   } else {
@@ -39,14 +39,15 @@ tinymce.init({
     'searchreplace', 'wordcount', 'visualblocks', 'code', 'fullscreen', 'insertdatetime', 'media',
     'table', 'emoticons', 'template', 'help'
   ],
-  toolbar: ' undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | table | ' +
+  toolbar: ' undo redo | styles | fontsizeselect | bold italic | alignleft aligncenter alignright alignjustify | table | ' +
     'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
     'forecolor backcolor emoticons | help',
   menu: {
     favs: { title: 'My Favorites', items: 'code visualaid | searchreplace | emoticons' }
   },
+  fontsize_formats: "8pt 9pt 10pt 11pt 12pt 14pt 18pt 24pt 30pt 36pt 48pt 60pt 72pt 96pt",
+  content_style: "body { font-size: 10pt; }",
   menubar: 'favs file edit view insert format tools table help',
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
 });
 
 // tinymce.init({

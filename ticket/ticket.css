@@ -23,13 +23,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#EBEBEB", en
 
 }
 
-#bodyContent {
-    margin-top: 1%;
 
-
-    /* height: calc(100vh - 14px - 10px - 10px);
-    overflow-y: auto; */
-}
 
 #cardComentario{
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
@@ -37,7 +31,6 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#EBEBEB", en
 
 .box_comment {
     margin-top: 2px;
-
     position: relative;
     height: calc(100vh - 136px);
     overflow-y: auto;
@@ -92,8 +85,11 @@ p {
 
 }
 
+
+
 .form-control {
     border: none;
+    font-size: 78%;
     text-align: center;
     box-shadow: 0 0 0.50em grey;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
@@ -109,8 +105,7 @@ p {
 }
 
 #card-dados{
-    margin-top: 26px;
-
+    margin-top: 40px;
     position: relative;
     height: calc(100vh - 136px);
     overflow-y: scroll;
@@ -119,3 +114,22 @@ p {
     padding: 8px;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 }
+
+::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }

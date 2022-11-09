@@ -1,11 +1,14 @@
 <?php
 
+
 $id_chamado = intval($_GET['id_chamado']);
 
 session_start();
 if (!isset($_SESSION['userID'])) {
   header("Location: ../index.php");
 }
+
+
 require_once '../db.php';
 $sql = $conn->query('SELECT
 c.`id` AS id_chamado,
@@ -37,7 +40,7 @@ WHERE c.id = ' . intval($_GET['id_chamado']) . ';
 
 $array = $sql->fetch_assoc();
 
-$assinatura = '<br><br><br><br><br><p>Atenciosamente,<br><br>'.$_SESSION['username'].'<br>Suporte Dommus';
+$assinatura = '<br><br><br><br><br><p>Atenciosamente,<br><br>' . $_SESSION['username'] . '<br>Suporte Dommus';
 
 ?>
 <!DOCTYPE html>
@@ -57,13 +60,16 @@ $assinatura = '<br><br><br><br><br><p>Atenciosamente,<br><br>'.$_SESSION['userna
   <link rel="stylesheet" href="ticket.css">
   <script src="ticket.js"></script>
   <title>Document</title>
+
 </head>
 
 <?php
+include_once '../assets/load.php';
 include '../navbar.php';
+
 ?>
 
-<?php include_once '../assets/load.php';?>
+
 
 <input type="hidden" name="id_chamado" id="id_chamado" value="<?php echo $_GET['id_chamado'];  ?>" onload="enviaId()">
 <div class="conteudo">
@@ -74,7 +80,7 @@ include '../navbar.php';
       </div>
       <div class="card-body">
         <form id="ticketForm" action="../updates/update_ticket.php" method="POST">
-          <input type="hidden" value="<?php echo $array['id_chamado']?>" name="idChamado" id="idChamado">
+          <input type="hidden" value="<?php echo $array['id_chamado'] ?>" name="idChamado" id="idChamado">
           <label for="" class="form-label">Envolvido</label>
           <p id="envolvidoP" class="form-control"><?php echo $array['envolvido'] ?></p>
 
@@ -151,15 +157,20 @@ include '../navbar.php';
     <button class="btn btn-link" onclick="mostrarTextArea()">Adicionar comentário</button>
     <form id="textForm" name="textForm" style="display: none;">
       <input type="hidden" name="id_chamado" id="id_chamado" value="<?php echo $_GET['id_chamado']; ?>">
-      <input type="hidden" name="assinaturaVal" id="assinaturaVal" value="<?php echo $assinatura;?>">
+      <input type="hidden" name="assinaturaVal" id="assinaturaVal" value="<?php echo $assinatura; ?>">
       <input type="hidden" name="userID" id="userID" value="<?php echo $_SESSION['userID']; ?>">
       <button class="form-control" value='<?php $_GET['id_chamado'] ?>' type="submit">Enviar</button>
-      <textarea id="default" name="default"><?php echo $assinatura?></p></textarea>
+      <textarea id="default" name="default"><?php echo $assinatura ?></p></textarea>
     </form>
-    
+
     <section id="content">
       <div class="box_comment">
-      <h3 id="nenhumComentario" class="text-muted">Nenhum comentário adicionado</h3>
+        <div class="alert  alert-light" id="nenhumComentario" role="alert">
+        <hr>
+          <h4 class="alert-heading">Nenhum comentário adicionado!</h4>
+          <p>Utilizando o DO você comunica com a sua equipe, compartilhando dados sobre o atendimento pelos comentários</p>
+          <hr>
+        </div>
       </div>
 
     </section>
