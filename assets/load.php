@@ -157,7 +157,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
 	 content: '';
 	 width: 50px;
 	 height: 50px;
-	 background: #33FFBE;
+	 background: #f7941d;
 	 position: absolute;
 	 top: 0;
 	 left: 0;

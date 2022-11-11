@@ -10,10 +10,10 @@
     <title>Document</title>
 </head>
 <body>
-<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">
-        <img src="/assets/img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-        DO
+<nav id="navbar" class="navbar navbar-expand-lg bg-light">
+    <a class="navbar-brand" href="#" style="width: 12%; margin-left: 65px;">
+    <img src="/assets/img/zyro-image.png" width="25%" class="d-inline-block align-top" alt="">
+
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -21,12 +21,12 @@
     <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="../cards/cards.php">Tarefas <span class="sr-only">(current)</span></a>
+                <a class="nav-link"  href="../cards/cards.php">Tarefas <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Arquivado</a>
+                <a class="nav-link"  href="#">Arquivado</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" >
                 <a class="nav-link" href="#"></a>
             </li>
         </ul>

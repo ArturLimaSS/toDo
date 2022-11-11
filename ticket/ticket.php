@@ -81,7 +81,7 @@ include '../navbar.php';
       <div class="card-body">
         <form id="ticketForm" action="../updates/update_ticket.php" method="POST">
           <input type="hidden" value="<?php echo $array['id_chamado'] ?>" name="idChamado" id="idChamado">
-          <label for="" class="form-label">Envolvido</label>
+          <label for="" class="form-label">Solicitante</label>
           <p id="envolvidoP" class="form-control"><?php echo $array['envolvido'] ?></p>
 
           <label for="" class="form-label">Email</label>
