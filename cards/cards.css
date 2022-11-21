@@ -1,5 +1,5 @@
 
-
+/* 
 #cadKanban {
     transition: all .2s ease-in-out;
     margin: 8px;
@@ -26,11 +26,12 @@
     -o-transform-origin: 50% 100%;
     -ms-transform-origin: 50% 100%;
     transform-origin: 50% 100%;
+} */
+.card{
+  width: 100%;
 }
-
-#bodyCard {
-    max-width: 50%;
-    max-height: 10%;
+p{
+  line-height: 0.5;
 }
 
 ::-webkit-scrollbar {
@@ -50,4 +51,21 @@
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #555; 
+  }
+
+  .container{
+    -webkit-transition: opacity 2s ease-in;
+    -moz-transition: opacity 2s ease-in;
+    -o-transition: opacity 2s ease-in;
+    -ms-transition: opacity 2s ease-in;
+    transition: opacity 2s ease-in;
+  }
+
+  .conteudo{
+      -webkit-transition: opacity 2s ease-in;
+      -moz-transition: opacity 2s ease-in;
+      -o-transition: opacity 2s ease-in;
+      -ms-transition: opacity 2s ease-in;
+      
+    
   }

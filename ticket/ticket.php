@@ -73,7 +73,7 @@ include '../navbar.php';
 
 <input type="hidden" name="id_chamado" id="id_chamado" value="<?php echo $_GET['id_chamado'];  ?>" onload="enviaId()">
 <div class="conteudo">
-  <div class="col-md-4" id="bodyContent" style="transform: none !important;">
+  <div class="col-md-3" id="bodyContent" style="transform: none !important;">
     <div class="card" id="card-dados">
       <div class="card-header">
         <?php echo 'SD-' . $array['id_chamado'] . ' - ' . $array['resumo'] . '<br>'; ?>
@@ -81,18 +81,14 @@ include '../navbar.php';
       <div class="card-body">
         <form id="ticketForm" action="../updates/update_ticket.php" method="POST">
           <input type="hidden" value="<?php echo $array['id_chamado'] ?>" name="idChamado" id="idChamado">
-          <label for="" class="form-label">Solicitante</label>
-          <p id="envolvidoP" class="form-control"><?php echo $array['envolvido'] ?></p>
-
-          <label for="" class="form-label">Email</label>
-          <p id='emailP' class="form-control"><?php echo  $array['email'] ?></p>
-
-          <label for="" class="form-label">Telefone</label>
-          <p id="telefoneP" class="form-control"><?php echo  $array['telefone'] ?></p>
-
-          <label for="" class="form-label">Empresa</label>
-          <p id="clienteP" class="form-control"><?php echo  $array['cliente'] ?></p>
-
+          <div class="card">
+            <div class="card-header">
+              <p id="envolvidoP">Solicitante: <?php echo $array['envolvido'] ?></p><br>
+              <p id='emailP'>Email: <?php echo  $array['email'] ?></p><br>
+              <p id="telefoneP">Telefone: <?php echo  $array['telefone'] ?></p><br>
+              <p id="clienteP">Empresa: <?php echo  $array['cliente'] ?></p><br>
+            </div>
+          </div>
           <label for="" class="form-label">Resumo</label>
           <input id="resumo" name="resumo" class="form-control" value="<?php echo $array['resumo'] ?>"></input>
 
@@ -151,7 +147,7 @@ include '../navbar.php';
     </div><br>
   </div>
 
-  <div class="col-md-8" id="inputAndComment">
+  <div class="col-md-9" id="inputAndComment">
     <div class="alert alert-danger" style="display: none;" id="alertDanger">
     </div>
     <button class="btn btn-link" onclick="mostrarTextArea()">Adicionar comentário</button>
@@ -166,7 +162,7 @@ include '../navbar.php';
     <section id="content">
       <div class="box_comment">
         <div class="alert  alert-light" id="nenhumComentario" role="alert">
-        <hr>
+          <hr>
           <h4 class="alert-heading">Nenhum comentário adicionado!</h4>
           <p>Utilizando o DO você comunica com a sua equipe, compartilhando dados sobre o atendimento pelos comentários</p>
           <hr>

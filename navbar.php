@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="../navbar.css">
     <title>Document</title>
 </head>
 <body>
@@ -27,7 +27,7 @@
                 <a class="nav-link"  href="#">Arquivado</a>
             </li>
             <li class="nav-item" >
-                <a class="nav-link" href="#"></a>
+                <a class="nav-link" href="../graficos.php">Gráficos</a>
             </li>
         </ul>
         <div>
