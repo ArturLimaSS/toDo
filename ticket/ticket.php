@@ -69,9 +69,8 @@ include '../navbar.php';
 
 ?>
 
-
-
 <input type="hidden" name="id_chamado" id="id_chamado" value="<?php echo $_GET['id_chamado'];  ?>" onload="enviaId()">
+<input type="hidden" name="id_chamado" id="id_chamado" value="<?php echo $_GET['id_chamado'];  ?>" onload="enviaId2()">
 <div class="conteudo">
   <div class="col-md-3" id="bodyContent" style="transform: none !important;">
     <div class="card" id="card-dados">
@@ -81,8 +80,8 @@ include '../navbar.php';
       <div class="card-body">
         <form id="ticketForm" action="../updates/update_ticket.php" method="POST">
           <input type="hidden" value="<?php echo $array['id_chamado'] ?>" name="idChamado" id="idChamado">
-          <div class="card">
-            <div class="card-header">
+          <div>
+            <div>
               <p id="envolvidoP">Solicitante: <?php echo $array['envolvido'] ?></p><br>
               <p id='emailP'>Email: <?php echo  $array['email'] ?></p><br>
               <p id="telefoneP">Telefone: <?php echo  $array['telefone'] ?></p><br>
