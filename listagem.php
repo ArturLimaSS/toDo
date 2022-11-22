@@ -36,7 +36,7 @@ if($sql->num_rows > 0){
     $array = $sql->fetch_all(MYSQLI_ASSOC);
     echo json_encode($array);
 }else{
-    echo "Nenhum";
+    echo json_encode(0);
 }
 
 ?>

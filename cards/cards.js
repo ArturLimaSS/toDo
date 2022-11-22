@@ -11,11 +11,11 @@ function getTickets() {
     dataType: 'json'
   }).done(function (resultado) {
     console.log(resultado)
-    if (resultado.length > 0) {
+    if (resultado == 0) {
+      $('#emAtendimentoEquipe').prepend('<p><i class="fa-solid fa-headphones"></i>&nbsp Tickets em atendimento 0 </p>')
+    } else if (resultado.length > 0) {
       $('#emAtendimentoEquipe').prepend('<p><i class="fa-solid fa-headphones"></i>&nbsp Tickets em atendimento ' + resultado.length + '</p>')
-      if (resultado.length == 0) {
-        $("#animation").css('display', 'block')
-      }
+
       for (var i = 0; i < resultado.length; i++) {
         var data = resultado[i].data_cadastro
         var dataFormatada = new Date(data)
@@ -24,7 +24,7 @@ function getTickets() {
 
         //         // $('.atendimento-cards').prepend('<div class="card" id="cadKanban"><a href="../ticket/ticket.php?id_chamado='+resultado[i].id_chamado+'"><h5 class="card-header">'+resultado[i].envolvido+'<div><a href="../ticket/ticket.php?id_chamado='+resultado[i].id_chamado+'">SD-'+resultado[i].id_chamado+'</a></a></div>'+'</h5><h6 class="mb-4 text-muted">'+resultado[i].cliente+'<br>'+resultado[i].tipo_chamado+'</h6><div class="card-body"><h6 class="text-muted">'+resultado[i].resumo+'</h6></div>')
 
-        $('#tabelaConteudo').prepend('<tr><td><a class="btn btn-outline" style="color: black;" href="../ticket/ticket.php?id_chamado=' + resultado[i].id_chamado +'">SD - ' + resultado[i].id_chamado + '</td><td>' + resultado[i].cliente +'<td>'+resultado[i].envolvido+'</td>' +'</td><td>' + resultado[i].resumo + '</td><td>' +  dataFormatada2 + '</td></td></tr>')
+        $('#tabelaConteudo').prepend('<tr><td><a class="btn btn-outline" style="color: black;" href="../ticket/ticket.php?id_chamado=' + resultado[i].id_chamado + '">SD - ' + resultado[i].id_chamado + '</td><td>' + resultado[i].cliente + '<td>' + resultado[i].envolvido + '</td>' + '</td><td>' + resultado[i].resumo + '</td><td>' + dataFormatada2 + '</td></td></tr>')
       }
     }
   })
