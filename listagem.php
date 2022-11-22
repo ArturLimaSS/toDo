@@ -9,6 +9,7 @@ if(!isset($_SESSION['userID'])){
 $sql = $conn->query('SELECT
 c.`id` AS id_chamado,
 cl.`nome` AS cliente,
+cl.id AS id_cliente,
 c.`resumo` AS resumo,
 c.`descricao` AS descricao,
 e.`nome` AS envolvido,

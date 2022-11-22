@@ -1,4 +1,3 @@
-
 /* 
 #cadKanban {
     transition: all .2s ease-in-out;
@@ -27,52 +26,58 @@
     -ms-transform-origin: 50% 100%;
     transform-origin: 50% 100%;
 } */
-.card{
+
+body{
+  scroll-behavior: smooth;
+}
+.card {
   width: 100%;
 }
-p{
+
+p {
   line-height: 0.5;
 }
 
+
 ::-webkit-scrollbar {
-    width: 3px;
-  }
+  width: 3px;
+}
 
-  #listCard{
-    position: relative;
-    height: calc(100vh - 50vh);
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #888; 
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  }
+#listCard {
+  position: relative;
+  height: calc(100vh - 50vh);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
 
-  .container{
-    -webkit-transition: opacity 2s ease-in;
-    -moz-transition: opacity 2s ease-in;
-    -o-transition: opacity 2s ease-in;
-    -ms-transition: opacity 2s ease-in;
-    transition: opacity 2s ease-in;
-  }
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
 
-  .conteudo{
-      -webkit-transition: opacity 2s ease-in;
-      -moz-transition: opacity 2s ease-in;
-      -o-transition: opacity 2s ease-in;
-      -ms-transition: opacity 2s ease-in;
-      
-    
-  }
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.container {
+  -webkit-transition: opacity 2s ease-in;
+  -moz-transition: opacity 2s ease-in;
+  -o-transition: opacity 2s ease-in;
+  -ms-transition: opacity 2s ease-in;
+  transition: opacity 2s ease-in;
+}
+
+.conteudo {
+  -webkit-transition: opacity 2s ease-in;
+  -moz-transition: opacity 2s ease-in;
+  -o-transition: opacity 2s ease-in;
+  -ms-transition: opacity 2s ease-in;
+
+
+}

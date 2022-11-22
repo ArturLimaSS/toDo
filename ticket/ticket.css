@@ -5,7 +5,7 @@ body {
     background: -moz-linear-gradient(270deg, hsla(0, 0%, 92%, 1) 0%, hsla(0, 0%, 76%, 1) 100%, hsla(0, 0%, 77%, 1) 100%);
     background: -webkit-linear-gradient(270deg, hsla(0, 0%, 92%, 1) 0%, hsla(0, 0%, 76%, 1) 100%, hsla(0, 0%, 77%, 1) 100%);
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#EBEBEB", endColorstr="#C2C2C2", GradientType=1); */
-    font-size: large;
+    scroll-behavior: smooth;
 }
 
 .conteudo {

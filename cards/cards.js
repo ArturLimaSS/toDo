@@ -22,9 +22,10 @@ function getTickets() {
         let dataFormatada2 = ((dataFormatada.getDate())) + "/" + ((dataFormatada.getMonth() + 1)) + "/" + dataFormatada.getFullYear();
         console.log(dataFormatada2);
 
+
         //         // $('.atendimento-cards').prepend('<div class="card" id="cadKanban"><a href="../ticket/ticket.php?id_chamado='+resultado[i].id_chamado+'"><h5 class="card-header">'+resultado[i].envolvido+'<div><a href="../ticket/ticket.php?id_chamado='+resultado[i].id_chamado+'">SD-'+resultado[i].id_chamado+'</a></a></div>'+'</h5><h6 class="mb-4 text-muted">'+resultado[i].cliente+'<br>'+resultado[i].tipo_chamado+'</h6><div class="card-body"><h6 class="text-muted">'+resultado[i].resumo+'</h6></div>')
 
-        $('#tabelaConteudo').prepend('<tr><td><a class="btn btn-outline" style="color: black;" href="../ticket/ticket.php?id_chamado=' + resultado[i].id_chamado + '">SD - ' + resultado[i].id_chamado + '</td><td>' + resultado[i].cliente + '<td>' + resultado[i].envolvido + '</td>' + '</td><td>' + resultado[i].resumo + '</td><td>' + dataFormatada2 + '</td></td></tr>')
+        $('#tabelaConteudo').prepend('<tr><td><a class="btn btn-outline" style="color: black;" href="../ticket/ticket.php?id_chamado=' + resultado[i].id_chamado + '">SD - ' + resultado[i].id_chamado + '</td><td>' + resultado[i].cliente + '<td>' + resultado[i].envolvido + '</td>' + '</td><td>' + resultado[i].resumo + '</td><td>' + resultado[i].responsavel + '</td><td>' + dataFormatada2 + '</td></td></tr>')
       }
     }
   })

@@ -45,25 +45,27 @@ require_once '../db.php';
                                     <div class="card-body">
                                         <h6 id="emAtendimentoEquipe"></h6>
                                     </div>
-                                    <div class="card" id="listCard">
-                                        <div class="card-body">
-                                            <table class="table table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th>ID</th>
-                                                        <th>Cliente</th>
-                                                        <th>Solicitante</th>
-                                                        <th>Resumo</th>
-                                                        <th>Cadastro</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="tabelaConteudo"></tbody>
-                                            </table>
-                                        </div>
 
-                                    </div>
                                 </div>
-                            </div><br>  
+                            </div><br>
+                        </div>
+                    </div>
+                    <div class="card" id="listCard">
+                        <div class="card-body" id="tabela-card">
+
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr class="table" style='position: sticky; top: -1px; box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 1px,  rgba(0, 0, 0, 0.2) 0px -3px 0px inset;'>
+                                        <th>ID</th>
+                                        <th>Cliente</th>
+                                        <th>Solicitante</th>
+                                        <th>Resumo</th>
+                                        <th>Responsável</th>
+                                        <th>Cadastro</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tabelaConteudo"></tbody>
+                            </table>
                         </div>
                     </div>
             </main>
