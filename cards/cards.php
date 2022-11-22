@@ -43,121 +43,33 @@ require_once '../db.php';
                             <div class="col">
                                 <div class="card">
                                     <div class="card-body">
-                                        <p><i class="fa-solid fa-headphones"></i>&nbsp Meus tickets</p>
-                                        <hr>
-                                        <ul>
-                                            <h6 class="mb-4 text-muted" onclick="showTable()">
-                                                <p style="cursor: pointer;" id="emAtendimento">&nbsp Em atendimento</p>
-                                            </h6>
-                                            <h6 class="mb-4 text-muted" onclick="showTable()">
-                                                <p style="cursor: pointer;" id="pendentes">&nbsp Pendentes</p>
-                                            </h6>
-                                            <h6 class="mb-4 text-muted">
-                                                <p style="cursor: pointer;">&nbsp Parados</p>
-                                            </h6>
-
-                                        </ul>
-                                        <hr>
-                                        <p>Vencimento</p>
-                                        <ul>
-                                            <p id="vencidos">&nbsp Vencidos</p>
-                                            <p>&nbsp Venceram hoje</p>
-                                            <p>&nbsp Vencem esta semana</p>
-                                        </ul>
+                                        <h6 id="emAtendimentoEquipe"></h6>
                                     </div>
+                                    <div class="card" id="listCard">
+                                        <div class="card-body">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>ID</th>
+                                                        <th>Cliente</th>
+                                                        <th>Solicitante</th>
+                                                        <th>Resumo</th>
+                                                        <th>Cadastro</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="tabelaConteudo"></tbody>
+                                            </table>
+                                        </div>
 
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <p><i class="fa-solid fa-headphones"></i>&nbsp Tickets da minha equipe</p>
-                                        <hr>
-                                        <ul>
-                                            <h6 class="mb-4 text-muted" onclick="showTable()">
-                                                <p style="cursor: pointer;" id="emAtendimentoEquipe">&nbsp Em atendimento</p>
-                                            </h6>
-                                            <h6 class="mb-4 text-muted" onclick="showTable()">
-                                                <p style="cursor: pointer;" id="pendentes">&nbsp Pendentes</p>
-                                            </h6>
-                                            <h6 class="mb-4 text-muted">
-                                                <p style="cursor: pointer;">&nbsp Parados</p>
-                                            </h6>
-
-                                        </ul>
-                                        <hr>
-                                        <p>Vencimento</p>
-                                        <ul>
-                                            <p id="vencidos">&nbsp Vencidos</p>
-                                            <p>&nbsp Venceram hoje</p>
-                                            <p>&nbsp Vencem esta semana</p>
-                                        </ul>
                                     </div>
-
                                 </div>
-                            </div>
-                            <div class="col">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <p><i class="fa-solid fa-headphones"></i>&nbsp Tickets de todos os agentes</p>
-                                        <hr>
-                                        <ul>
-                                            <h6 class="mb-4 text-muted" onclick="showTable()">
-                                                <p style="cursor: pointer;" id="emAtendimento">&nbsp Em atendimento</p>
-                                            </h6>
-                                            <h6 class="mb-4 text-muted" onclick="showTable()">
-                                                <p style="cursor: pointer;" id="pendentes">&nbsp Pendentes</p>
-                                            </h6>
-                                            <h6 class="mb-4 text-muted">
-                                                <p style="cursor: pointer;">&nbsp Parados</p>
-                                            </h6>
-
-                                        </ul>
-                                        <hr>
-                                        <p>Vencimento</p>
-                                        <ul>
-                                            <p id="vencidos">
-                                            </p>
-                                            <p>&nbsp Venceram hoje</p>
-                                            <p>&nbsp Vencem esta semana</p>
-                                        </ul>
-                                    </div>
-
-                                </div>
-                            </div>
+                            </div><br>  
                         </div>
                     </div>
-                </div>
             </main>
         </div>
     </div>
-    <div class="container" style="display: none; transition: 'opacity 2s ease-in'">
-        <a href="#" onclick="hideTable()"><i class="fi fi-rs-angle-left"></i>&nbsp; Voltar</a>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>
-                        Nº
-                    </th>
-                    <th>
-                        Cliente
-                    </th>
-                    <th>
-                        Resumo
-                    </th>
-                    <th>
-                        Responsável
-                    </th>
-                    <th>
-                        Cadastrado em 
-                    </th>
-                </tr>
-            </thead>
-            <tbody class='tabelaConteudo'>
 
-            </tbody>
-        </table>
-    </div>
 </body>
 
 </html>

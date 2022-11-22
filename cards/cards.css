@@ -37,6 +37,13 @@ p{
 ::-webkit-scrollbar {
     width: 3px;
   }
+
+  #listCard{
+    position: relative;
+    height: calc(100vh - 50vh);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
   
   /* Track */
   ::-webkit-scrollbar-track {

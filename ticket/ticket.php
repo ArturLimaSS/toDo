@@ -40,7 +40,7 @@ WHERE c.id = ' . intval($_GET['id_chamado']) . ';
 
 $array = $sql->fetch_assoc();
 
-$assinatura = '<br><br><br><br><br><p>Atenciosamente,<br><br>' . $_SESSION['username'] . '<br>Suporte Dommus';
+$assinatura = '<br><br><br><br><br><p>Atenciosamente,<br><br>' . $_SESSION['username'] . '<br>CEO';
 
 ?>
 <!DOCTYPE html>
@@ -60,6 +60,10 @@ $assinatura = '<br><br><br><br><br><p>Atenciosamente,<br><br>' . $_SESSION['user
   <link rel="stylesheet" href="ticket.css">
   <script src="ticket.js"></script>
   <title>Document</title>
+
+  <script>
+    
+  </script>
 
 </head>
 
@@ -82,14 +86,18 @@ include '../navbar.php';
           <input type="hidden" value="<?php echo $array['id_chamado'] ?>" name="idChamado" id="idChamado">
           <div>
             <div>
-              <p id="envolvidoP">Solicitante: <?php echo $array['envolvido'] ?></p><br>
-              <p id='emailP'>Email: <?php echo  $array['email'] ?></p><br>
-              <p id="telefoneP">Telefone: <?php echo  $array['telefone'] ?></p><br>
-              <p id="clienteP">Empresa: <?php echo  $array['cliente'] ?></p><br>
+              <label for="envolvidoP" class="form-label">Solicitante</label>
+              <p class="form-control" id="envolvidoP"><?php echo $array['envolvido'] ?></p>
+              <label for="emailP" class="form-label">Email</label>
+              <p class="form-control" id='emailP'><?php echo  $array['email'] ?></p>
+              <label for="telefoneP" class="form-label">Telefone</label>
+              <p class="form-control" id="telefoneP"><script>phoneMask(<?php echo  $array['telefone'] ?>)</script></p>
+              <label for="clienteP" class="form-label">Empresa</label>
+              <p class="form-control" id="clienteP"><?php echo  $array['cliente'] ?></p>
             </div>
           </div>
           <label for="" class="form-label">Resumo</label>
-          <input id="resumo" name="resumo" class="form-control" value="<?php echo $array['resumo'] ?>"></input>
+          <input id="resumo" name="resumo" class="form-control" value="<?php echo $array['resumo'] ?>"></input><br>
 
           <label for="selectTipo" class="form-label">Tipo</label>
           <select name="selecionaTipo" oninput="selectTipo()" class="form-control" id="selecionaTipo">

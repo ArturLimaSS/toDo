@@ -2,6 +2,14 @@ $(window).on('load', function(){
   $(".loading").fadeOut('slow')
 })
 
+const phoneMask = (value) => {
+  if (!value) return ""
+  value = value.toString().replace(/\D/g,'')
+  value = value.toString().replace(/(\d{2})(\d)/,"($1) $2")
+  value = value.toString().replace(/(\d)(\d{4})$/,"$1-$2")
+  document.write(value)
+}
+
 $(document).ready(function enviaId() {
   var id_chamado_u = $("#id_chamado").val()
   if (id_chamado_u) {

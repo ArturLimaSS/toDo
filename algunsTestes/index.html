@@ -1,1 +1,8 @@
-<tr><td><a href="../ticket/ticket.php?id_chamado=' + resultado[i].id_chamado + '">' + resultado[i].id_chamado + '</a></td><td><a href="../ticket/ticket.php?id_chamado=' + resultado[i].id_chamado + '">' + resultado[i].cliente + '</a></td><td><a href="../ticket/ticket.php?id_chamado=' + resultado[i].id_chamado + '">' + resultado[i].resumo + '</a></td><td><a href="../ticket/ticket.php?id_chamado=' + resultado[i].id_chamado + '">' + resultado[i].responsavel + '</a><td><a href="../ticket/ticket.php?id_chamado=' + resultado[i].id_chamado + '">' + resultado[i].data_cadastro + '</a></td></tr>
+<tr href="../ticket/ticket.php?id_chamado=' + resultado[i].id_chamado +'">
+    <a href="../ticket/ticket.php?id_chamado=' + resultado[i].id_chamado +'">
+        <td>SD - ' + resultado[i].id_chamado + '</td>
+        <td>Cliente: ' + resultado[i].cliente + '</td>
+        <td>Resumo: ' + resultado[i].resumo + '</td>
+        <td>Cadastrado em: ' + dataFormatada2 + '</td>
+    </a>
+</tr>
