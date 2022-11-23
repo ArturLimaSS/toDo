@@ -39,34 +39,44 @@ require_once '../db.php';
             <main>
                 <div class="card-body" id="bodyCard">
                     <div class="atendimento-cards">
-                        <div class="row">
-                            <div class="col">
-                                <div class="card">
-                                    <div class="card-body">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-3">
                                         <h6 id="emAtendimentoEquipe"></h6>
                                     </div>
-                                </div>
-                            </div><br>
-                        </div>
-                    </div>
-                    <div class="card" id="listCard">
-                        <div class="card-body" id="tabela-card">
+                                    <div class="col" id="listCard">
+                                        <div class="card-body" id="tabela-card">
+                                            <div class="row">
+                                                <div class="col">
+                                                <i class="fa-solid fa-cog fa-spin" style="--fa-animation-direction: reverse;" ></i>
+                                                    <div class="collapse multi-collapse" id="multiCollapseExample1">
+                                                        <div style="box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 1px;">
 
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr class="table" style='position: sticky; top: -1px; box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 1px,  rgba(0, 0, 0, 0.2) 0px -3px 0px inset;'>
-                                        <th>ID</th>
-                                        <th>Cliente</th>
-                                        <th>Solicitante</th>
-                                        <th>Resumo</th>
-                                        <th>Responsável</th>
-                                        <th>Cadastro</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="tabelaConteudo"></tbody>
-                            </table>
+                                                            <table class="table table-hover">
+                                                                <thead>
+                                                                    <tr class="table" style='position: sticky; top: -1px;box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 1px; '>
+                                                                        <th>ID</th>
+                                                                        <th>Cliente</th>
+                                                                        <th>Solicitante</th>
+                                                                        <th>Resumo</th>
+                                                                        <th>Responsável</th>
+                                                                        <th>Cadastro</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody id="tabelaConteudo"></tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
-                    </div>
+
             </main>
         </div>
     </div>

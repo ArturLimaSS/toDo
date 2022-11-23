@@ -1,8 +1,34 @@
-<tr href="../ticket/ticket.php?id_chamado=' + resultado[i].id_chamado +'">
-    <a href="../ticket/ticket.php?id_chamado=' + resultado[i].id_chamado +'">
-        <td>SD - ' + resultado[i].id_chamado + '</td>
-        <td>Cliente: ' + resultado[i].cliente + '</td>
-        <td>Resumo: ' + resultado[i].resumo + '</td>
-        <td>Cadastrado em: ' + dataFormatada2 + '</td>
-    </a>
-</tr>
+<hr>
+<p><i class="fa-solid fa-people-group"></i></i>&nbsp Tickets na minha equipe ' + resultado.length + '</p>
+<hr>
+<p><i class="fa-solid fa-exclamation"></i>&nbsp Tickets pendentes ' + resultado.length + '</p>
+<hr>'
+
+<a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false"
+    aria-controls="multiCollapseExample1"><i class="fa-solid fa-headphones"></i>&nbsp Tickets em atendimento ' +
+    resultado.length + '</a><button class="btn btn-primary" type="button" data-toggle="collapse"
+    data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2"><i
+        class="fa-solid fa-people-group"></i></i>&nbsp Tickets na minha equipe ' + resultado.length + '</button><button
+    class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false"
+    aria-controls="multiCollapseExample1 multiCollapseExample2"><i class="fa-solid fa-exclamation"></i>&nbsp Tickets
+    pendentes ' + resultado.length + '</button>
+
+
+<p></p>
+<hr>
+<p><i class="fa-solid fa-people-group"></i></i>&nbsp Tickets na minha equipe ' + resultado.length + '</p>
+<hr>
+<p><i class="fa-solid fa-exclamation"></i>&nbsp Tickets pendentes ' + resultado.length + '</p>
+<hr>')
+
+<a data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false"
+    aria-controls="multiCollapseExample1"><i class="fa-solid fa-headphones"></i>&nbsp Tickets em atendimento ' +
+    resultado.length + '</a>
+<a type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false"
+    aria-controls="multiCollapseExample2"><i class="fa-solid fa-people-group"></i></i>&nbsp
+    Tickets na minha equipe ' + resultado.length + '</a>
+
+<a type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false"
+    aria-controls="multiCollapseExample1 multiCollapseExample2"><i class="fa-solid fa-exclamation"></i>&nbsp Tickets
+    pendentes ' + resultado.length + '
+</a>
