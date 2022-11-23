@@ -98,7 +98,7 @@
                     Seja bem vindo <?php echo $_SESSION['username']; ?>!
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="../options.php">Opções</a>
+                    <a id="optionButton" class="dropdown-item" href="../options.php"><img id="optionIcon" src="../assets/img/gear.png" width="20px" srcset=""> Opções</a>
                     <a class="dropdown-item" href="#">Ajuda</a>
                     <a class="dropdown-item" href="../logout.php">Sair</a>
                 </div>

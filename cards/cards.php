@@ -45,7 +45,6 @@ require_once '../db.php';
                                     <div class="card-body">
                                         <h6 id="emAtendimentoEquipe"></h6>
                                     </div>
-
                                 </div>
                             </div><br>
                         </div>

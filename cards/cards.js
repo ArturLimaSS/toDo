@@ -14,7 +14,7 @@ function getTickets() {
     if (resultado == 0) {
       $('#emAtendimentoEquipe').prepend('<p><i class="fa-solid fa-headphones"></i>&nbsp Tickets em atendimento 0 </p>')
     } else if (resultado.length > 0) {
-      $('#emAtendimentoEquipe').prepend('<p><i class="fa-solid fa-headphones"></i>&nbsp Tickets em atendimento ' + resultado.length + '</p>')
+      $('#emAtendimentoEquipe').prepend('<div class="alert alert-primary" role="alert"><p><i class="fa-solid fa-headphones"></i>&nbsp Tickets em atendimento ' + resultado.length + '</p></div><p><i class="fa-solid fa-people-group"></i></i>&nbsp Tickets na minha equipe ' + resultado.length + '</p><div class="alert alert-danger" role="alert"><p><i class="fa-solid fa-exclamation"></i>&nbsp Tickets pendentes ' + resultado.length + '</p></div>')
 
       for (var i = 0; i < resultado.length; i++) {
         var data = resultado[i].data_cadastro
