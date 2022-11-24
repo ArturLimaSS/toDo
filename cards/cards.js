@@ -1,10 +1,10 @@
 
 
 $(window).on('load', function () {
-  $(".loading").fadeOut('slow')
+  $(".loading").fadeOut('fast')
 })
 
-function getTickets() {
+$(document).ready(function() {
   $.ajax({
     url: '../listagem.php',
     method: 'GET',
@@ -32,13 +32,7 @@ function getTickets() {
     }
   })
 }
-
-getTickets()
-
-function buscarDadosClientes() {
-  var idCliente = $("#optionIdCliente").val()
-  console.log(idCliente)
-}
+)
 
 function buscarDadosClientes() {
   var idCliente = $("#selectEmpresa").val()

@@ -49,7 +49,6 @@ require_once '../db.php';
                                         <div class="card-body" id="tabela-card">
                                             <div class="row">
                                                 <div class="col">
-                                                <i class="fa-solid fa-cog fa-spin" style="--fa-animation-direction: reverse;" ></i>
                                                     <div class="collapse multi-collapse" id="multiCollapseExample1">
                                                         <div style="box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 1px;">
 
