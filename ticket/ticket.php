@@ -1,5 +1,6 @@
 <?php
 
+use Discord\Parts\Embed\Embed;
 
 $id_chamado = intval($_GET['id_chamado']);
 
@@ -8,6 +9,27 @@ if (!isset($_SESSION['userID'])) {
   header("Location: ../index.php");
 }
 
+require_once '../integracao/discord/discord.php';
+
+$embed = new Embed($discord);
+$embed->setTitle('Uma mensagem embed')
+  ->setDescription("O campo descrição!")
+  ->setFooter('Conteudo do rodapé')
+  ->setColor(0xFF0000)
+  ->addField([
+    'name' => "Campo 1:",
+    'value' => 'Valor campo 1',
+    'inline' => false,
+  ])
+  ->addField([
+    'name' => 'Campo 2',
+    'value' => "Valor Campo 2",
+    'inline' => false,
+  ])
+  ->setThumbnail('https://www.botecodigital.dev.br/wp-content/themes/boteco_v4/img/logob.png')
+  ->setImage('https://ferramentas.botecodigital.dev.br/qrcode_generator/imagem.php?c=Um%20qr%20code&ec=QR_ECLEVEL_L&t=10');
+
+$message->channel->sendEmbed($embed);
 
 require_once '../db.php';
 $sql = $conn->query('SELECT
@@ -62,7 +84,7 @@ $assinatura = '<br><br><br><br><br><p>Atenciosamente,<br><br>' . $_SESSION['user
   <title>Document</title>
 
   <script>
-    
+
   </script>
 
 </head>
@@ -91,7 +113,11 @@ include '../navbar.php';
               <label for="emailP" class="form-label">Email</label>
               <p class="form-control" id='emailP'><?php echo  $array['email'] ?></p>
               <label for="telefoneP" class="form-label">Telefone</label>
-              <p class="form-control" id="telefoneP"><script>phoneMask(<?php echo  $array['telefone'] ?>)</script></p>
+              <p class="form-control" id="telefoneP">
+                <script>
+                  phoneMask(<?php echo  $array['telefone'] ?>)
+                </script>
+              </p>
               <label for="clienteP" class="form-label">Empresa</label>
               <p class="form-control" id="clienteP"><?php echo  $array['cliente'] ?></p>
             </div>
