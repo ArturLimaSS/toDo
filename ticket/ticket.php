@@ -9,28 +9,6 @@ if (!isset($_SESSION['userID'])) {
   header("Location: ../index.php");
 }
 
-require_once '../integracao/discord/discord.php';
-
-$embed = new Embed($discord);
-$embed->setTitle('Uma mensagem embed')
-  ->setDescription("O campo descrição!")
-  ->setFooter('Conteudo do rodapé')
-  ->setColor(0xFF0000)
-  ->addField([
-    'name' => "Campo 1:",
-    'value' => 'Valor campo 1',
-    'inline' => false,
-  ])
-  ->addField([
-    'name' => 'Campo 2',
-    'value' => "Valor Campo 2",
-    'inline' => false,
-  ])
-  ->setThumbnail('https://www.botecodigital.dev.br/wp-content/themes/boteco_v4/img/logob.png')
-  ->setImage('https://ferramentas.botecodigital.dev.br/qrcode_generator/imagem.php?c=Um%20qr%20code&ec=QR_ECLEVEL_L&t=10');
-
-$message->channel->sendEmbed($embed);
-
 require_once '../db.php';
 $sql = $conn->query('SELECT
 c.`id` AS id_chamado,
@@ -79,6 +57,16 @@ $assinatura = '<br><br><br><br><br><p>Atenciosamente,<br><br>' . $_SESSION['user
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
   <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
   <script src="https://cdn.tiny.cloud/1/q720jt59xb1dil3g4csxi4kvmlpsscwd448ty95bzovcu8kj/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+  <!-- MDB icon -->
+  <link rel="icon" href="../assets/libs/mdbootstrap/img/mdb-favicon.ico" type="image/x-icon">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="../assets/libs/mdbootstrap/css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="../assets/libs/mdbootstrap/css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="../assets/libs/mdbootstrap/css/style.css">
   <link rel="stylesheet" href="ticket.css">
   <script src="ticket.js"></script>
   <title>Document</title>
@@ -100,6 +88,7 @@ include '../navbar.php';
 <div class="conteudo">
   <div class="col-md-3" id="bodyContent" style="transform: none !important;">
     <div class="card" id="card-dados">
+
       <div class="card-header">
         <?php echo 'SD-' . $array['id_chamado'] . ' - ' . $array['resumo'] . '<br>'; ?>
       </div>
@@ -173,7 +162,7 @@ include '../navbar.php';
             ?>
           </select><br>
           <div class="py-3 pb-4 border-top">
-            <button class="btn btn-outline-primary" id="enviarButton" type="submit">Salvar</button>
+            <button class="btn btn-outline-primary waves-effect" id="enviarButton" type="submit">Salvar</button>
           </div>
         </form>
       </div>
@@ -209,6 +198,16 @@ include '../navbar.php';
 <div class="overflow-scroll" id="bodyContent">
 
 </div>
+
+
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="../assets/libs/mdbootstrap/js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="../assets/libs/mdbootstrap/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="../assets/libs/mdbootstrap/js/mdb.min.js"></script>
+<!-- Your custom scripts (optional) -->
+<script type="text/javascript"></script>
 
 </body>
 

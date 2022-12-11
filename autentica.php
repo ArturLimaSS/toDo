@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $host = 'localhost';
 $pass = '2609';
@@ -6,18 +6,17 @@ $user = 'root';
 $db   = 'todo';
 
 $conn = new mysqli($host, $user, $pass, $db);
-if($conn -> connect_errno){
-    echo "Falha na conexão". $conn -> connect_error;
+if ($conn->connect_errno) {
+    echo "Falha na conexão" . $conn->connect_error;
 }
 
 $email = isset($_POST['email']) ? trim(addslashes($_POST['email'])) : FALSE;
 $senha = isset($_POST['senha']) ? md5(addslashes($_POST['senha'])) : FALSE;
 
-$sql = $conn ->query('SELECT * FROM tb_usuario WHERE email = "'.$email.'" AND senha = "'.$senha.'";');
+$sql = $conn->query('SELECT * FROM tb_usuario WHERE email = "' . $email . '" AND senha = "' . $senha . '";');
 
-if(!$sql->num_rows >0){
-    
-}else{
+if (!$sql->num_rows > 0) {
+} else {
     $arrow = $sql->fetch_assoc();
     session_start();
     $_SESSION['username'] = $arrow['nome'];
@@ -45,24 +44,50 @@ if(!$sql->num_rows >0){
     <title>toDO</title>
 </head>
 <style>
-        #card{
-            box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
-            background-image: linear-gradient(to right, #00C8C8, #00A0AA);
-            border-radius: 1rem
-        }
-    </style>
-<section class="vh-100 gradient-custom" id="login">
+    body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('https://wallpapercave.com/wp/wp9139711.jpg');
+        background-size: cover;
+        position: relative;
+    }
+
+    #card {
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+        border-radius: 1rem;
+        background: rgba(189, 189, 189, 0.22);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(8.1px);
+        -webkit-backdrop-filter: blur(8.1px);
+
+        animation: myAnim 1s ease 0s 1 normal forwards;
+}
+
+
+@keyframes myAnim {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+</style>
+
+<body>
+    <section class="vh-100 gradient-custom" id="login">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                     <div class="card text-white" id="card">
-                        <div class="card-body p-5 text-center" >
-                        <?php echo 'Dados não encontrados ou não preenchidos!. <a href="/"><button class="btn btn-outline-light btn-lg px-5" type="submit">Voltar</button></a>';?>
+                        <div class="card-body p-5 text-center">
+                            <?php echo 'Dados não encontrados ou não preenchidos!. <a href="/"><button class="btn btn-outline-light btn-lg px-5" type="submit">Voltar</button></a>'; ?>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+</body>
 
 </html>

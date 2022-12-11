@@ -21,7 +21,7 @@ $(document).ready(function() {
       for (var i = 0; i < resultado.length; i++) {
         var data = resultado[i].data_cadastro
         var dataFormatada = new Date(data)
-        let dataFormatada2 = ((dataFormatada.getDate())) + "/" + ((dataFormatada.getMonth() + 1)) + "/" + dataFormatada.getFullYear();
+        let dataFormatada2 = ((dataFormatada.getDate().toString().padStart(2,"0"))) + "/" + (((dataFormatada.getMonth()+1).toString().padStart(2,"0"))) + "/" + dataFormatada.getFullYear();
         console.log(dataFormatada2);
 
 

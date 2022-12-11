@@ -25,6 +25,16 @@ require_once '../db.php';
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
     <link rel="stylesheet" href="cards.css">
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <!-- MDB icon -->
+    <link rel="icon" href="../assets/libs/mdbootstrap/img/mdb-favicon.ico" type="image/x-icon">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../assets/libs/mdbootstrap/css/bootstrap.min.css">
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="../assets/libs/mdbootstrap/css/mdb.min.css">
+    <!-- Your custom styles (optional) -->
+    <link rel="stylesheet" href="../assets/libs/mdbootstrap/css/style.css">
     <script src="cards.js"></script>
     <title>Document</title>
 </head>
@@ -49,23 +59,21 @@ require_once '../db.php';
                                         <div class="card-body" id="tabela-card">
                                             <div class="row">
                                                 <div class="col">
-                                                    <div class="collapse multi-collapse" id="multiCollapseExample1">
-                                                        <div style="box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 1px;">
+                                                    <div style="box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 1px;">
 
-                                                            <table class="table table-hover">
-                                                                <thead>
-                                                                    <tr class="table" style='position: sticky; top: -1px;box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 1px; '>
-                                                                        <th>ID</th>
-                                                                        <th>Cliente</th>
-                                                                        <th>Solicitante</th>
-                                                                        <th>Resumo</th>
-                                                                        <th>Responsável</th>
-                                                                        <th>Cadastro</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody id="tabelaConteudo"></tbody>
-                                                            </table>
-                                                        </div>
+                                                        <table class="table table-hover">
+                                                            <thead>
+                                                                <tr class="table" style='position: sticky; top: -1px;box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 1px; '>
+                                                                    <th>ID</th>
+                                                                    <th>Cliente</th>
+                                                                    <th>Solicitante</th>
+                                                                    <th>Resumo</th>
+                                                                    <th>Responsável</th>
+                                                                    <th>Cadastro</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody id="tabelaConteudo"></tbody>
+                                                        </table>
                                                     </div>
                                                 </div>
                                             </div>
@@ -73,14 +81,20 @@ require_once '../db.php';
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-
+                    </div>
+                </div>
             </main>
         </div>
     </div>
 
 </body>
+
+<script type="text/javascript" src="../assets/libs/mdbootstrap/js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="../assets/libs/mdbootstrap/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="../assets/libs/mdbootstrap/js/mdb.min.js"></script>
 
 </html>
 

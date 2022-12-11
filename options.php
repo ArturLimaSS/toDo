@@ -21,15 +21,25 @@ require_once './db.php';
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
     <script src="https://cdn.tiny.cloud/1/q720jt59xb1dil3g4csxi4kvmlpsscwd448ty95bzovcu8kj/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <!-- MDB icon -->
+    <link rel="icon" href="./assets/libs/mdbootstrap/img/mdb-favicon.ico" type="image/x-icon">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="./assets/libs/mdbootstrap/css/bootstrap.min.css">
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="./assets/libs/mdbootstrap/css/mdb.min.css">
+    <!-- Your custom styles (optional) -->
+    <link rel="stylesheet" href="./assets/libs/mdbootstrap/css/style.css">
     <script src="index.js"></script>
     <title>Document</title>
 </head>
 
 <body>
     <style>
-         #navbar{
-        position: sticky;
-    }
+        #navbar {
+            position: sticky;
+        }
     </style>
     <?php include "./navbar.php" ?><br>
     <div class="container">
@@ -48,34 +58,43 @@ require_once './db.php';
             <div class="tab-pane fade show active" id="cadastro" role="tabpanel" aria-labelledby="cadastro-tab"><br>
                 <form action="../cadastros/cliente.php" method="POST">
                     <div class="">
-                        <input type="text" id="nomeCliente" name="nomeCliente" class="form-control" placeholder="Digite o nome fantasia do cliente. Ex: Do Tecnologia">
+                        <div class="md-form">
+                            <label for="nomeCliente" class="form-label">Empresa</label>
+                        <input type="text" id="nomeCliente" name="nomeCliente" class="form-control" >
+                        </div>
                     </div>
                     <div class="py-3 pb-4 border-bottom">
-                        <button class="btn btn-outline-primary mr-3">Salvar</button>
-                        <button class="btn btn-outline-secondary">Cancelar</button>
+                        <button class="btn btn-primary mr-3">Salvar</button>
+                        <button class="btn btn-secondary">Cancelar</button>
                     </div>
                 </form>
 
                 <form action="./cadastros/envolvido.php" method="POST">
                     <div class="row mt-3">
                         <div class="col-md-12">
-                            <label class="labels">Nome</label>
-                            <input type="text" class="form-control" name="nomeEnvolvido" id="nomeEnvolvido" placeholder="Digite o nome do envolvido! Ex: Artur Lima" value="">
+                            <div class="md-form">
+                                <label class="labels">Nome</label>
+                                <input type="text" class="form-control" name="nomeEnvolvido" id="nomeEnvolvido" value="">
+                            </div>
                         </div>
                     </div>
 
                     <div class="row mt-3">
                         <div class="col-md-12">
-                            <label class="labels">Email</label>
-                            <input type="text" name="emailEnvolvido" id="emailEnvolvido" class="form-control" placeholder="Ex: artur@do.com.br" value="">
+                            <div class="md-form">
+                                <input type="text" name="emailEnvolvido" id="emailEnvolvido" class="form-control" value="">
+                                <label class="labels">Email</label>
+                            </div>
                         </div>
                         <div class="col-md-12">
-                            <label class="labels">Contato</label>
-                            <input type="number" name="contatoEnvolvido" id="contatoEnvolvido" class="form-control" placeholder="Ex: 31999999999" value="">
+                            <div class="md-form">
+                                <label class="labels">Contato</label>
+                                <input type="number" name="contatoEnvolvido" id="contatoEnvolvido" class="form-control" value="">
+                            </div>
                         </div>
                         <div class="col-md-12">
                             <label class="labels">Empresa</label>
-                            <select name="selectEmpresa" oninput="buscarDadosClientes()" class="form-control" id="selectEmpresa">
+                            <select name="selectEmpresa" oninput="buscarDadosClientes()" class="form-control select-input placeholder-active active" id="selectEmpresa">
                                 <option value="#" selected="selected">Selecione o cliente</option>
                                 <?php
                                 $resultado2 = $conn->query('SELECT * FROM tb_cliente ORDER BY nome');
@@ -91,8 +110,8 @@ require_once './db.php';
 
 
                     <div class="py-3 pb-4 border-top border-bottom">
-                        <button type="submit" class="btn btn-outline-primary mr-3">Salvar</button>
-                        <button class="btn btn-outline-secondary" onclick="">Cancelar</button>
+                        <button type="submit" class="btn btn-primary mr-3">Salvar</button>
+                        <button class="btn btn-secondary" onclick="">Cancelar</button>
                     </div>
                 </form>
             </div>
@@ -124,13 +143,21 @@ require_once './db.php';
 
 
                 <div class="py-3 pb-4 border-top border-bottom">
-                    <button class="btn btn-outline-primary mr-3">Salvar</button>
-                    <button class="btn btn-outline-secondary">Cancelar</button>
+                    <button class="btn btn-primary mr-3">Salvar</button>
+                    <button class="btn btn-secondary">Cancelar</button>
                 </div>
             </div>
         </div>
     </div>
     </div>
 </body>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="../assets/libs/mdbootstrap/js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="../assets/libs/mdbootstrap/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="../assets/libs/mdbootstrap/js/mdb.min.js"></script>
+<!-- Your custom scripts (optional) -->
+
 
 </html>

@@ -20,6 +20,12 @@ if (isset($_SESSION['username'])) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="index.js"></script>
     <link rel="stylesheet" href="index.css">
+        <!-- Font Awesome -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.css" rel="stylesheet" />
 
     <title>toDO</title>
 </head>
@@ -37,13 +43,15 @@ if (isset($_SESSION['username'])) {
                                     <p class="text-white-50 mb-5">Insira seu email e senha</p>
 
                                     <div class="form-outline form-white mb-4">
-                                        <label class="form-label" for="email">Email</label>
-                                        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" class="form-control form-control-lg" />
+                                        
+                                        <input type="email" id="email" name="email" placeholder="Email" class="inputDo" />
+                                        <div class="line"></div>
                                     </div>
 
                                     <div class="form-outline form-white mb-4">
-                                        <label class="form-label" for="senha">Senha</label>
-                                        <input type="password" id="senha" name="senha" placeholder="Digite sua senha!" class="form-control form-control-lg" />
+                                       
+                                        <input type="password" id="senha" name="senha" placeholder="Senha" class="inputDo" />
+                                        <div class="line"></div>
 
                                     </div>
 

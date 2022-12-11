@@ -1,12 +1,12 @@
-$(window).on('load', function(){
+$(window).on('load', function () {
   $(".loading").fadeOut('fast')
 })
 
 const phoneMask = (value) => {
   if (!value) return ""
-  value = value.toString().replace(/\D/g,'')
-  value = value.toString().replace(/(\d{2})(\d)/,"($1) $2")
-  value = value.toString().replace(/(\d)(\d{4})$/,"$1-$2")
+  value = value.toString().replace(/\D/g, '')
+  value = value.toString().replace(/(\d{2})(\d)/, "($1) $2")
+  value = value.toString().replace(/(\d)(\d{4})$/, "$1-$2")
   document.write(value)
 }
 
@@ -73,6 +73,10 @@ tinymce.init({
 //   ]
 // });
 
+
+
+//PEGA COMENTÁRIOS
+
 $(document).ready(function () {
   $('#textForm').submit(function (e) {
     //e.preventDefault()
@@ -113,11 +117,20 @@ $(document).ready(function () {
       }).done(function (resultado) {
         console.log(resultado)
         getComments()
-
       })
     }
   })
 })
+
+function mostraSideBar(){
+  $('#bodyContent').css('width','100%')
+}
+
+function fechaSideBar(){
+  $('#bodyContent').css('width','0')
+}
+
+//mostra 
 
 function mostrarTextArea() {
   $("#textForm").css('display', 'block')
@@ -142,12 +155,12 @@ function buscarDadosClientes() {
   })
 }
 
-function inserirTelefoneDadosCliente(){
+function inserirTelefoneDadosCliente() {
   const phoneMask = (value) => {
     if (!value) return ""
-    value = value.replace(/\D/g,'')
-    value = value.replace(/(\d{2})(\d)/,"($1) $2")
-    value = value.replace(/(\d)(\d{4})$/,"$1-$2")
+    value = value.replace(/\D/g, '')
+    value = value.replace(/(\d{2})(\d)/, "($1) $2")
+    value = value.replace(/(\d)(\d{4})$/, "$1-$2")
     return value
   }
   $.ajax({
@@ -158,7 +171,7 @@ function inserirTelefoneDadosCliente(){
   })
 }
 
-$(document).ready(function(){
+$(document).ready(function () {
   var id_tipo = $("#selecionaTipo").val();
   console.log(id_tipo)
   $("#tituloUrgencia").html('')
@@ -166,16 +179,16 @@ $(document).ready(function(){
     url: '../cadastros/selectTipoChamado.php',
     method: "POST",
     dataType: "JSON",
-    data: {id_tipo : id_tipo},
-    success: function(data){
-      for(let i = 0; i < data.length; i++){
-        $("#tituloUrgencia").prepend('<p class="form-control '+ data[i].color +'">' + data[i].urgencia + '  ' + data[i].prazo + ' HORAS '+ '</p>')
+    data: { id_tipo: id_tipo },
+    success: function (data) {
+      for (let i = 0; i < data.length; i++) {
+        $("#tituloUrgencia").prepend('<p class="form-control ' + data[i].color + '">' + data[i].urgencia + '  ' + data[i].prazo + ' HORAS ' + '</p>')
       }
     }
   })
 })
 
-function selectTipo(){
+function selectTipo() {
   var id_tipo = $("#selecionaTipo").val();
   console.log(id_tipo)
   $("#tituloUrgencia").html('')
@@ -183,10 +196,10 @@ function selectTipo(){
     url: '../cadastros/selectTipoChamado.php',
     method: "POST",
     dataType: "JSON",
-    data: {id_tipo : id_tipo},
-    success: function(data){
-      for(let i = 0; i < data.length; i++){
-        $("#tituloUrgencia").prepend('<p class="form-control '+ data[i].color +'">' + data[i].urgencia + '  ' + data[i].prazo + ' HORAS '+ '</p>')
+    data: { id_tipo: id_tipo },
+    success: function (data) {
+      for (let i = 0; i < data.length; i++) {
+        $("#tituloUrgencia").prepend('<p class="form-control ' + data[i].color + '">' + data[i].urgencia + '  ' + data[i].prazo + ' HORAS ' + '</p>')
       }
     }
   })
