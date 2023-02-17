@@ -1,0 +1,86 @@
+/* 
+#cadKanban {
+    transition: all .2s ease-in-out;
+    margin: 8px;
+    height: 1%;
+    width: 55%;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background: #fff;
+    float: left;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 2px 0;
+
+}
+
+#cadKanban:hover {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 4px 6px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    transform: scale(1.02);
+
+    -webkit-transform-origin: 50% 100%;
+    -moz-transform-origin: 50% 100%;
+    -o-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+} */
+
+body{
+    scroll-behavior: smooth;
+  }
+  .card {
+    width: 100%;
+  }
+  
+  p {
+    line-height: 0.5;
+  }
+  
+  
+  ::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  #listCard {
+    position: relative;
+    height: calc(100vh - 26vh);
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;*/
+  }
+  
+  
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+  .container {
+    -webkit-transition: opacity 2s ease-in;
+    -moz-transition: opacity 2s ease-in;
+    -o-transition: opacity 2s ease-in;
+    -ms-transition: opacity 2s ease-in;
+    transition: opacity 2s ease-in;
+  }
+  
+  .conteudo {
+    -webkit-transition: opacity 2s ease-in;
+    -moz-transition: opacity 2s ease-in;
+    -o-transition: opacity 2s ease-in;
+    -ms-transition: opacity 2s ease-in;
+  
+  
+  }

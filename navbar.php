@@ -34,7 +34,7 @@
                     <a class="nav-link" href="../cards/cards.php">Tarefas <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Arquivado</a>
+                    <a class="nav-link" href="../arquivo/arquivo.php">Arquivado</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../graficos.php">Gráficos</a>

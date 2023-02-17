@@ -9,6 +9,7 @@ $sql =
 'SELECT
 c.`comentario` AS comentario,
 u.`nome` AS nomeUsuario,
+u.url_foto as foto,
 c.referencia AS id_ticket
 FROM
 tb_comentario c

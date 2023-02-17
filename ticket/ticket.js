@@ -28,7 +28,17 @@ $(document).ready(function enviaId() {
         $("#nenhumComentario").css('display', 'block')
       }
       for (var i = 0; i < resultado.length; i++) {
-        $('.box_comment').prepend('<div class="card" id="cardComentario" style="font-size: 78%; margin-top:5px;"><div class="card-header">' + resultado[i].nomeUsuario + '</div><div class="card-body""><blockquote class="blockquote mb-0"><p>' + resultado[i].comentario + '</p></footer></blockquote></div></div>')
+        $('.box_comment').prepend(`<div class="media">
+        <img src="../` + resultado[i].foto + `" class="mr-3 rounded-circle" width="5%" alt="Foto do usuário">
+        <div class="media-body">
+          <h5 class="mt-0">` + resultado[i].nomeUsuario + `</h5>
+          <hr>
+          <p>` + resultado[i].comentario + `</p>
+          <hr>
+          </div>
+        
+      </div>`)
+        // $('.box_comment').prepend('<div class="card" id="cardComentario" style="font-size: 78%; margin-top:5px;"><div class="card-header">' + resultado[i].nomeUsuario + '</div><div class="card-body""><blockquote class="blockquote mb-0"><p>' + resultado[i].comentario + '</p></footer></blockquote></div></div>')
       }
     })
   } else {
@@ -204,3 +214,13 @@ function selectTipo() {
     }
   })
 }
+
+$(document).ready(function(e){
+  $.ajax({
+    url: '../updates/update_ticket.php',
+    method: 'GET',
+    dataType: 'JSON'
+  }).done(function(data){
+    console.log(data)
+  })
+})

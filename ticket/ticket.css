@@ -26,8 +26,9 @@ body {
 
 .box_comment {
     /* margin-top: 2px; */
+    margin-top: 10px;
     position: relative;
-    height: calc(100vh - 136px);
+    height: calc(100vh - 100px);
     overflow-y: auto;
     overflow-x: hidden;
     background: #fff;
@@ -36,8 +37,13 @@ body {
 }
 
 #bodyContent{
+    margin-top: 20px;
     transition: 0.8s;
     width: 0;
+}
+
+#header_card_dados{
+    position: sticky;
 }
 
 #alertDanger {
@@ -60,9 +66,10 @@ p {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* #inputAndComment {
+ #inputAndComment {
+    margin-top: 20px;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
-} */
+} 
 
 #menuLeft {
     display: block;
@@ -111,7 +118,7 @@ label{
     /* margin-top: 40px; */
     line-height: 12px;
     position: relative;
-    height: calc(100vh - 136px);
+    height: calc(100vh - 100px);
     overflow-y: scroll;
     overflow-x: hidden;
     background: #fff;

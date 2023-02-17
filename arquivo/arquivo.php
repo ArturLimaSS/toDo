@@ -23,7 +23,7 @@ require_once '../db.php';
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <script src="https://kit.fontawesome.com/32e5a2bfd6.js" crossorigin="anonymous"></script>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
-    <link rel="stylesheet" href="cards.css">
+    <link rel="stylesheet" href="arquivo.css">
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <!-- MDB icon -->
     <link rel="icon" href="../assets/libs/mdbootstrap/img/mdb-favicon.ico" type="image/x-icon">
@@ -35,7 +35,7 @@ require_once '../db.php';
     <link rel="stylesheet" href="../assets/libs/mdbootstrap/css/mdb.min.css">
     <!-- Your custom styles (optional) -->
     <link rel="stylesheet" href="../assets/libs/mdbootstrap/css/style.css">
-    <script src="cards.js"></script>
+    <script src="arquivo.js"></script>
     <title>Document</title>
 </head>
 
@@ -52,9 +52,10 @@ require_once '../db.php';
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
-
-                                    <div class="col" id="listCard">
+                                    <div class="col-md-3">
                                         <h6 id="emAtendimentoEquipe"></h6>
+                                    </div>
+                                    <div class="col" id="listCard">
                                         <div class="card-body" id="tabela-card">
                                             <div class="row">
                                                 <div class="col">

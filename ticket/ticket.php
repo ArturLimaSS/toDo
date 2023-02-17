@@ -86,10 +86,9 @@ include '../navbar.php';
 <input type="hidden" name="id_chamado" id="id_chamado" value="<?php echo $_GET['id_chamado'];  ?>" onload="enviaId()">
 <input type="hidden" name="id_chamado" id="id_chamado" value="<?php echo $_GET['id_chamado'];  ?>" onload="enviaId2()">
 <div class="conteudo">
-  <div class="col-md-3" id="bodyContent" style="transform: none !important;">
+  <div class="col-md-4" id="bodyContent" style="transform: none !important;">
     <div class="card" id="card-dados">
-
-      <div class="card-header">
+      <div class="card-header" id="header_card_dados">
         <?php echo 'SD-' . $array['id_chamado'] . ' - ' . $array['resumo'] . '<br>'; ?>
       </div>
       <div class="card-body">
@@ -97,70 +96,71 @@ include '../navbar.php';
           <input type="hidden" value="<?php echo $array['id_chamado'] ?>" name="idChamado" id="idChamado">
           <div>
             <div>
-              <label for="envolvidoP" class="form-label">Solicitante</label>
-              <p class="form-control" id="envolvidoP"><?php echo $array['envolvido'] ?></p>
-              <label for="emailP" class="form-label">Email</label>
-              <p class="form-control" id='emailP'><?php echo  $array['email'] ?></p>
-              <label for="telefoneP" class="form-label">Telefone</label>
-              <p class="form-control" id="telefoneP">
-                <script>
-                  phoneMask(<?php echo  $array['telefone'] ?>)
-                </script>
-              </p>
-              <label for="clienteP" class="form-label">Empresa</label>
-              <p class="form-control" id="clienteP"><?php echo  $array['cliente'] ?></p>
+              <ul class="list-group mb-3">
+                <li class="list-group-item"><strong>Solicitante:</strong> <?php echo $array['envolvido'] ?></li>
+                <li class="list-group-item"><strong>Email: </strong> <?php echo $array['email'] ?></li>
+                <li class="list-group-item"><strong>Telefone: </strong>
+                  <script>
+                    phoneMask(<?php echo  $array['telefone'] ?>)
+                  </script>
+                </li>
+                <li class="list-group-item"><strong>Empresa:</strong> <?php echo $array['cliente'] ?></li>
+                <li class="list-group-item"><strong>Resumo:</strong>
+                  <input id="resumo" name="resumo" class="form-control" style="border: none;" value="<?php echo $array['resumo'] ?>"></input>
+                </li>
+              </ul>
+              <label for="selectTipo" class="form-label">Tipo</label>
+              <select name="selecionaTipo" oninput="selectTipo()" class="form-control" style="border: none;" id="selecionaTipo">
+                <?php
+                $resultado4 = $conn->query('SELECT * FROM tb_tipo_chamado');
+                while ($array4 = $resultado4->fetch_assoc()) {
+                  if ($array['id_tipo_chamado'] == $array4['id']) {
+                    $select3 = 'selected="selected"';
+                  } else {
+                    $select3 = '';
+                  }
+                  echo '<option ' . $select3 . ' value="' . $array4['id'] . '">' . $array4['nome'] . '</option>';
+                }
+                ?>
+              </select><br>
+
+              <label for="tituloUrgencia" class="form-label">Urgência / Prazo</label>
+              <div id="tituloUrgencia"></div>
+
+              <label for="responsavelTicket" class="form-label">Responsável</label>
+              <select class="form-control" style="border: none;" name="responsavelTicket" id="responsavelTicket">
+                <?php
+                $resultado5 = $conn->query('SELECT * FROM tb_usuario');
+                while ($array5 = $resultado5->fetch_assoc()) {
+                  if ($array['responsavel_ticket'] == $array5['id']) {
+                    $select5 = 'selected="selected"';
+                  } else {
+                    $select5 = '';
+                  }
+                  echo '<option ' . $select5 . ' value="' . $array5['id'] . '">' . $array5['nome'] . '</option>';
+                }
+                ?>
+              </select><br>
+
+              <label for="statusTicket" class="form-label">Status</label>
+              <select class="form-control" style="border: none;" name="statusTicket" id="statusTicket">
+                <?php
+                $resultado6 = $conn->query('SELECT * FROM tb_status');
+                while ($array6 = $resultado6->fetch_assoc()) {
+                  if ($array['id_status'] == $array6['id']) {
+                    $select6 = 'selected="selected"';
+                  } else {
+                    $select6 = '';
+                  }
+                  echo '<option ' . $select6 . ' value="' . $array6['id'] . '">' . $array6['descricao'] . '</option>';
+                }
+                ?>
+              </select><br>
+
             </div>
+
           </div>
-          <label for="" class="form-label">Resumo</label>
-          <input id="resumo" name="resumo" class="form-control" value="<?php echo $array['resumo'] ?>"></input><br>
 
-          <label for="selectTipo" class="form-label">Tipo</label>
-          <select name="selecionaTipo" oninput="selectTipo()" class="form-control" id="selecionaTipo">
-            <?php
-            $resultado4 = $conn->query('SELECT * FROM tb_tipo_chamado');
-            while ($array4 = $resultado4->fetch_assoc()) {
-              if ($array['id_tipo_chamado'] == $array4['id']) {
-                $select3 = 'selected="selected"';
-              } else {
-                $select3 = '';
-              }
-              echo '<option ' . $select3 . ' value="' . $array4['id'] . '">' . $array4['nome'] . '</option>';
-            }
-            ?>
-          </select><br>
-
-          <label for="tituloUrgencia" class="form-label">Urgência / Prazo</label>
-          <div id="tituloUrgencia"></div>
-
-          <label for="responsavelTicket" class="form-label">Responsável</label>
-          <select class="form-control" name="responsavelTicket" id="responsavelTicket">
-            <?php
-            $resultado5 = $conn->query('SELECT * FROM tb_usuario');
-            while ($array5 = $resultado5->fetch_assoc()) {
-              if ($array['responsavel_ticket'] == $array5['id']) {
-                $select5 = 'selected="selected"';
-              } else {
-                $select5 = '';
-              }
-              echo '<option ' . $select5 . ' value="' . $array5['id'] . '">' . $array5['nome'] . '</option>';
-            }
-            ?>
-          </select><br>
-
-          <label for="statusTicket" class="form-label">Status</label>
-          <select class="form-control" name="statusTicket" id="statusTicket">
-            <?php
-            $resultado6 = $conn->query('SELECT * FROM tb_status');
-            while ($array6 = $resultado6->fetch_assoc()) {
-              if ($array['id_status'] == $array6['id']) {
-                $select6 = 'selected="selected"';
-              } else {
-                $select6 = '';
-              }
-              echo '<option ' . $select6 . ' value="' . $array6['id'] . '">' . $array6['descricao'] . '</option>';
-            }
-            ?>
-          </select><br>
           <div class="py-3 pb-4 border-top">
             <button class="btn btn-outline-primary waves-effect" id="enviarButton" type="submit">Salvar</button>
           </div>
@@ -169,7 +169,7 @@ include '../navbar.php';
     </div><br>
   </div>
 
-  <div class="col-md-9" id="inputAndComment">
+  <div class="col-md-8" id="inputAndComment">
     <div class="alert alert-danger" style="display: none;" id="alertDanger">
     </div>
     <button class="btn btn-link" onclick="mostrarTextArea()">Adicionar comentário</button>

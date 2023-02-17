@@ -21,6 +21,7 @@ if (!$sql->num_rows > 0) {
     session_start();
     $_SESSION['username'] = $arrow['nome'];
     $_SESSION['userID']   = $arrow['id'];
+    $_SESSION['userphoto'] = $arrow['url_foto'];
     echo $_SESSION['userID'] . '<br>';
     echo $_SESSION['username'];
     header("Location: cards/cards.php");
