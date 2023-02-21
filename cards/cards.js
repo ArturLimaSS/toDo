@@ -28,28 +28,29 @@ $(document).ready(function () {
       }
       for (var tipo in countTipoChamado) {
         console.log(tipo)
-        if(tipo == 1){
+        if (tipo == 1) {
           $('#indicador_urgente').append(countTipoChamado[tipo]);
         }
-        else if(tipo == 2){
+        else if (tipo == 2) {
           $('#indicador_media').append(countTipoChamado[tipo]);
         }
-        else if(tipo == 3){
+        else if (tipo == 3) {
           $('#indicador_alta2').append(countTipoChamado[tipo]);
         }
-        else if(tipo == 4){
+        else if (tipo == 4) {
           $('#indicador_alta1').append(countTipoChamado[tipo]);
         }
-        else if(tipo == 5){
+        else if (tipo == 5) {
           $('#indicador_baixa').append(countTipoChamado[tipo]);
         }
-      
-    }
+
+      }
       var emAtendimento = '<a style="color: white;" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false"aria-controls="multiCollapseExample1">'
       emAtendimento += resultado.length + ' Abertos</a>'
       $('#emAtendimentoEquipe').prepend(emAtendimento)
 
       for (var i = 0; i < resultado.length; i++) {
+        console.log(resultado[i].indicador_prioridade)
         var data = resultado[i].data_cadastro
         var dataFormatada = new Date(data)
         let dataFormatada2 = ((dataFormatada.getDate().toString().padStart(2, "0"))) + "/" + (((dataFormatada.getMonth() + 1).toString().padStart(2, "0"))) + "/" + dataFormatada.getFullYear();
@@ -59,8 +60,8 @@ $(document).ready(function () {
         //         // $('.atendimento-cards').prepend('<div class="card" id="cadKanban"><a href="../ticket/ticket.php?id_chamado='+resultado[i].id_chamado+'"><h5 class="card-header">'+resultado[i].envolvido+'<div><a href="../ticket/ticket.php?id_chamado='+resultado[i].id_chamado+'">SD-'+resultado[i].id_chamado+'</a></a></div>'+'</h5><h6 class="mb-4 text-muted">'+resultado[i].cliente+'<br>'+resultado[i].tipo_chamado+'</h6><div class="card-body"><h6 class="text-muted">'+resultado[i].resumo+'</h6></div>')
 
         $('#tabelaConteudo').prepend(`<a href="../ticket/ticket.php?id_chamado=` + resultado[i].id_chamado + `">
-        <li class="list-group-item">
-          <div class="media">
+        <li class="list-group-item" style="padding: 15px 20px 12px 20px" data-toggle="" data-target="">
+        <div class="media">
               <div class="media-body">
                   <strong>` + resultado[i].resumo.toUpperCase() + `</strong> ` + resultado[i].prioridade + `
                   <span class="float-right"><strong>SD - ` + resultado[i].id_chamado + `  </strong></span>

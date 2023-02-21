@@ -81,6 +81,7 @@ require_once '../db.php';
                                 <button type="button" class="btn btn-default">95,721 Closed</button>
                             </div>
                             <div class="padding"></div>
+                            
                             <div class="row">
                                 <div class="col-md-12">
                                     <ul class="list-group fa-padding" id="tabelaConteudo">
