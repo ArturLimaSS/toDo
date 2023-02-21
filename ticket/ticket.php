@@ -164,7 +164,7 @@ include '../navbar.php';
     </div><br>
   </div>
 
-  <div class="col-md-8" id="inputAndComment">
+  <div class="col-md-9" id="inputAndComment">
     <div class="alert alert-danger" style="display: none;" id="alertDanger">
     </div>
     <div class="alert alert-success" id="alertSuccess">
