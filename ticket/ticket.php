@@ -68,6 +68,8 @@ $assinatura = '<br><br><br><br><br><p>Atenciosamente,<br><br>' . $_SESSION['user
   <!-- Your custom styles (optional) -->
   <link rel="stylesheet" href="../assets/libs/mdbootstrap/css/style.css">
   <link rel="stylesheet" href="ticket.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/6.0.0/bootbox.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/6.0.0/bootbox.js" integrity="sha512-kwtW9vT4XIHyDa+WPb1m64Gpe1jCeLQLorYW1tzT5OL2l/5Q7N0hBib/UNH+HFVjWgGzEIfLJt0d8sZTNZYY6Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="ticket.js"></script>
   <title>Document</title>
 
@@ -86,81 +88,74 @@ include '../navbar.php';
 <input type="hidden" name="id_chamado" id="id_chamado" value="<?php echo $_GET['id_chamado'];  ?>" onload="enviaId()">
 <input type="hidden" name="id_chamado" id="id_chamado" value="<?php echo $_GET['id_chamado'];  ?>" onload="enviaId2()">
 <div class="conteudo">
-  <div class="col-md-4" id="bodyContent" style="transform: none !important;">
+  <div class="col-md-3" id="bodyContent" style="transform: none !important;">
     <div class="card" id="card-dados">
       <div class="card-header" id="header_card_dados">
         <?php echo 'SD-' . $array['id_chamado'] . ' - ' . $array['resumo'] . '<br>'; ?>
       </div>
       <div class="card-body">
         <form id="ticketForm" action="../updates/update_ticket.php" method="POST">
-          <input type="hidden" value="<?php echo $array['id_chamado'] ?>" name="idChamado" id="idChamado">
+          <input type="hidden" value="<?= $array['id_chamado'] ?>" name="idChamado" id="idChamado">
           <div>
             <div>
-              <ul class="list-group mb-3">
-                <li class="list-group-item"><strong>Solicitante:</strong> <?php echo $array['envolvido'] ?></li>
-                <li class="list-group-item"><strong>Email: </strong> <?php echo $array['email'] ?></li>
-                <li class="list-group-item"><strong>Telefone: </strong>
-                  <script>
-                    phoneMask(<?php echo  $array['telefone'] ?>)
-                  </script>
-                </li>
-                <li class="list-group-item"><strong>Empresa:</strong> <?php echo $array['cliente'] ?></li>
-                <li class="list-group-item"><strong>Resumo:</strong>
-                  <input id="resumo" name="resumo" class="form-control" style="border: none;" value="<?php echo $array['resumo'] ?>"></input>
-                </li>
-              </ul>
-              <label for="selectTipo" class="form-label">Tipo</label>
-              <select name="selecionaTipo" oninput="selectTipo()" class="form-control" style="border: none;" id="selecionaTipo">
-                <?php
-                $resultado4 = $conn->query('SELECT * FROM tb_tipo_chamado');
-                while ($array4 = $resultado4->fetch_assoc()) {
-                  if ($array['id_tipo_chamado'] == $array4['id']) {
-                    $select3 = 'selected="selected"';
-                  } else {
-                    $select3 = '';
-                  }
-                  echo '<option ' . $select3 . ' value="' . $array4['id'] . '">' . $array4['nome'] . '</option>';
-                }
-                ?>
-              </select><br>
+              <div class="">
+                <p class="form-control" style="border: none; text-align: left;">
+                  <strong>Solicitante:</strong> <?= $array['envolvido'] ?>
+                </p>
+                <p class="form-control" style="border: none; text-align: left;">
+                  <strong>Email:</strong> <?= $array['email'] ?>
+                </p>
+                <p class="form-control" style="border: none; text-align: left;">
+                  <strong>Telefone:</strong>
+                  <span id="telefone"><?= $array['telefone'] ?></span>
+                </p>
+                <p class="form-control" style="border: none; text-align: left;">
+                  <strong>Empresa:</strong> <?= $array['cliente'] ?>
+                </p>
+                <p class="form-control" style="border: none; text-align: left;">
+                <strong>Resumo:</strong><input id="resumo" name="resumo" class="form-control" style="border: none;" value="<?= $array['resumo'] ?>">
+                </p>
+              </div>
+              <br>
+              <div class="mb-3">
+                <label for="selecionaTipo" class="form-label"><strong>Tipo:</strong></label>
+                <select name="selecionaTipo" oninput="selectTipo()" class="form-control" style="" id="selecionaTipo">
+                  <?php foreach ($conn->query('SELECT * FROM tb_tipo_chamado') as $tipo) { ?>
+                    <option value="<?= $tipo['id'] ?>" <?= ($array['id_tipo_chamado'] == $tipo['id']) ? 'selected' : '' ?>>
+                      <?= $tipo['nome'] ?>
+                    </option>
+                  <?php } ?>
+                </select>
+              </div><br>
 
-              <label for="tituloUrgencia" class="form-label">Urgência / Prazo</label>
-              <div id="tituloUrgencia"></div>
+              <div class="mb-3">
+                <label for="tituloUrgencia" class="form-label"><strong>Urgência / Prazo:</strong></label>
+                <div id="tituloUrgencia"></div>
+              </div>
 
-              <label for="responsavelTicket" class="form-label">Responsável</label>
-              <select class="form-control" style="border: none;" name="responsavelTicket" id="responsavelTicket">
-                <?php
-                $resultado5 = $conn->query('SELECT * FROM tb_usuario');
-                while ($array5 = $resultado5->fetch_assoc()) {
-                  if ($array['responsavel_ticket'] == $array5['id']) {
-                    $select5 = 'selected="selected"';
-                  } else {
-                    $select5 = '';
-                  }
-                  echo '<option ' . $select5 . ' value="' . $array5['id'] . '">' . $array5['nome'] . '</option>';
-                }
-                ?>
-              </select><br>
+              <div class="mb-3">
+                <label for="responsavelTicket" class="form-label"><strong>Responsável:</strong></label>
+                <select class="form-control" style=";" name="responsavelTicket" id="responsavelTicket">
+                  <?php foreach ($conn->query('SELECT * FROM tb_usuario') as $usuario) { ?>
+                    <option value="<?= $usuario['id'] ?>" <?= ($array['responsavel_ticket'] == $usuario['id']) ? 'selected' : '' ?>>
+                      <?= $usuario['nome'] ?>
+                    </option>
+                  <?php } ?>
+                </select>
+              </div><br>
 
-              <label for="statusTicket" class="form-label">Status</label>
-              <select class="form-control" style="border: none;" name="statusTicket" id="statusTicket">
-                <?php
-                $resultado6 = $conn->query('SELECT * FROM tb_status');
-                while ($array6 = $resultado6->fetch_assoc()) {
-                  if ($array['id_status'] == $array6['id']) {
-                    $select6 = 'selected="selected"';
-                  } else {
-                    $select6 = '';
-                  }
-                  echo '<option ' . $select6 . ' value="' . $array6['id'] . '">' . $array6['descricao'] . '</option>';
-                }
-                ?>
-              </select><br>
-
+              <div class="mb-3">
+                <label for="statusTicket" class="form-label"><strong>Status:</strong></label>
+                <select class="form-control" style=";" name="statusTicket" id="statusTicket">
+                  <?php foreach ($conn->query('SELECT * FROM tb_status') as $status) { ?>
+                    <option value="<?= $status['id'] ?>" <?= ($array['id_status'] == $status['id']) ? 'selected' : '' ?>>
+                      <?= $status['descricao'] ?>
+                    </option>
+                  <?php } ?>
+                </select>
+              </div><br>
             </div>
-
           </div>
-
           <div class="py-3 pb-4 border-top">
             <button class="btn btn-outline-primary waves-effect" id="enviarButton" type="submit">Salvar</button>
           </div>
@@ -172,8 +167,12 @@ include '../navbar.php';
   <div class="col-md-8" id="inputAndComment">
     <div class="alert alert-danger" style="display: none;" id="alertDanger">
     </div>
-    <button class="btn btn-link" onclick="mostrarTextArea()">Adicionar comentário</button>
-    <form id="textForm" name="textForm" style="display: none;">
+    <div class="alert alert-success" id="alertSuccess">
+    </div>
+    <button class="btn" id="mostrarTextArea" onclick="mostrarTextArea()">Adicionar comentário</button>
+    <button class="btn" id="cancelaComentario" onclick="cancelaComentario()" onclick="">Cancelar</button>
+    <form id="textForm" name="textForm" style="display: none; box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);">
+      <input type="hidden" name="action" value="add_comment">
       <input type="hidden" name="id_chamado" id="id_chamado" value="<?php echo $_GET['id_chamado']; ?>">
       <input type="hidden" name="assinaturaVal" id="assinaturaVal" value="<?php echo $assinatura; ?>">
       <input type="hidden" name="userID" id="userID" value="<?php echo $_SESSION['userID']; ?>">

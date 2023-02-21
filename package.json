@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "chart.js": "^3.9.1",
-    "chartjs": "^0.3.24"
+    "chartjs": "^0.3.24",
+    "noty": "^3.2.0-beta-deprecated"
   }
 }

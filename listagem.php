@@ -16,7 +16,11 @@ e.`nome` AS envolvido,
 e.`email` AS email,
 e.`telefone` AS telefone,
 tc.`nome` AS tipo_chamado,
+tc.prioridade AS prioridade,
+tc.id as id_tipo_chamado,
 u.nome AS responsavel,
+tc.urgencia AS urgencia,
+tc.indicador_prioridade AS indicador_prioridade,
 u.id AS id_session,
 c.cadastrado_em AS data_cadastro
 FROM

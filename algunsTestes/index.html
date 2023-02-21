@@ -1,123 +1,19 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
+`<tr>
+  <a class="btn btn-outline" style="color: White;"
+      href="../ticket/ticket.php?id_chamado=` + resultado[i].id_chamado + `">
+  <td>` + resultado[i].cliente + `
+  <td>` + resultado[i].envolvido + `</td>` + `</td>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Informações do Ticket</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-</head>
+  </td>
+</tr>`
 
-<body>
-  <div class="container">
-    <div class="row justify-content-center mt-5">
-      <div class="col-md-8">
-        <div class="card mb-4">
-          <div class="card-header">
-            Informações do Ticket
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Título do Ticket</h5>
-            <p class="card-text">Descrição do ticket</p>
-            <ul class="list-group mb-3">
-              <li class="list-group-item"><strong>Responsável:</strong> Nome do responsável</li>
-              <li class="list-group-item"><strong>Status:</strong> Status atual do ticket</li>
-              <li class="list-group-item"><strong>Data de criação:</strong> Data de criação do ticket</li>
-              <li class="list-group-item"><strong>Data de atualização:</strong> Data da última atualização do ticket
-              </li>
-            </ul>
-            <h6 class="mb-3">Comentários</h6>
-            <div class="media mb-3">
-              <img src="https://via.placeholder.com/50" class="mr-3 rounded-circle" alt="Foto do usuário">
-              <div class="media-body">
-                <h5 class="mt-0">Nome do usuário</h5>
-                <p>Comentário do usuário</p>
-              </div>
-            </div>
-            <div class="media">
-              <img src="https://via.placeholder.com/50" class="mr-3 rounded-circle" alt="Foto do usuário">
-              <div class="media-body">
-                <h5 class="mt-0">Nome do usuário</h5>
-                <p>Comentário do usuário</p>
-              </div>
-            </div>
-          </div>
-        </div>
+`<a href="../ticket/ticket.php?id_chamado=` + resultado[i].id_chamado + `">
+<li class="list-group-item">
+  <div class="media">
+      <i class="fa fa-cog pull-left"></i>
+      <div class="media-body">
+          <strong>` + resultado[i].resumo + `</strong> <span class="label label-danger">IMPORTANT</span><span class="number pull-right">SD - ` + resultado[i].id_chamado + `</span>
+          <p class="info">Responsável ` + resultado[i].responsavel + | ` + dataFormatada2 + `</p>
       </div>
-    </div>
   </div>
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-</body>
-
-</html>
-
-<div class="media">
-  <img src="https://via.placeholder.com/50" class="mr-3 rounded-circle" alt="Foto do usuário">
-  <div class="media-body">
-    <h5 class="mt-0">' + resultado[i].nomeUsuario + '</h5>
-    <p>' + resultado[i].comentario + '</p>
-  </div>
-</div>
-
-
-'<div class="card" id="cardComentario" style="font-size: 78%; margin-top:5px;">
-  <div class="card-header">' + resultado[i].nomeUsuario + '</div>
-  <div class="card-body""><blockquote class=" blockquote mb-0">
-    <p>' + resultado[i].comentario + '</p>
-    </footer>
-    </blockquote>
-  </div>
-</div>') -->
-
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Tela de Listagem de Tickets</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  </head>
-  <body>
-    <div class="container">
-      <h1>Tickets</h1>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Assunto</th>
-            <th>Descrição</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Problema com o sistema</td>
-            <td>O sistema está travando constantemente</td>
-            <td>Aberto</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Pedido de suporte</td>
-            <td>Não consigo acessar minha conta</td>
-            <td>Em andamento</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Problema com a entrega</td>
-            <td>O produto não chegou na data prevista</td>
-            <td>Fechado</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  </body>
-</html>
+</li>`

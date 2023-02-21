@@ -10,7 +10,8 @@ $sql =
 c.`comentario` AS comentario,
 u.`nome` AS nomeUsuario,
 u.url_foto as foto,
-c.referencia AS id_ticket
+c.referencia AS id_ticket,
+c.cadastrado_em as cadastro
 FROM
 tb_comentario c
 JOIN tb_usuario u

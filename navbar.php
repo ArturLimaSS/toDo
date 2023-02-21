@@ -41,7 +41,10 @@
                 </li>
             </ul>
             <div>
-                <button class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#exampleModal" style="height: 10%; width: 10%; border: none; margin-left: 60%;"><img src="../assets/img/plus.png" width="100%" srcset=""></button>
+                <button class="btn" id="botao_cadastro" style="border:none ; background-color: transparent;" data-toggle="modal" data-target="#exampleModal">
+                    <img src="../assets/img/plus.png" width="30px" alt="">
+                </button>
+                <!-- <button class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#exampleModal" style="height: 10%; width: 10%; border: none; margin-left: 60%;"><img src="../assets/img/plus.png" width="100%" srcset=""></button> -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">

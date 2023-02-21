@@ -28,16 +28,31 @@ $(document).ready(function enviaId() {
         $("#nenhumComentario").css('display', 'block')
       }
       for (var i = 0; i < resultado.length; i++) {
-        $('.box_comment').prepend(`<div class="media">
+        const dataHoraSql = resultado[i].cadastro;
+
+        // Crie um objeto Date a partir da string do SQL
+        const dataHora = new Date(dataHoraSql);
+
+        // Use os métodos de formatação de data e hora do JavaScript para formatar a data
+        const dia = dataHora.getDate().toString().padStart(2, "0"); // obtém o dia do mês e adiciona um zero à esquerda, se necessário
+        const mes = (dataHora.getMonth() + 1).toString().padStart(2, "0"); // obtém o mês e adiciona um zero à esquerda, se necessário (o método getMonth() retorna um valor entre 0 e 11, por isso adicionamos 1)
+        const ano = dataHora.getFullYear().toString(); // obtém o ano como uma string de 4 dígitos
+        const hora = dataHora.getHours().toString().padStart(2, "0"); // obtém a hora e adiciona um zero à esquerda, se necessário
+        const minuto = dataHora.getMinutes().toString().padStart(2, "0"); // obtém o minuto e adiciona um zero à esquerda, se necessário
+        const segundo = dataHora.getSeconds().toString().padStart(2, "0"); // obtém o segundo e adiciona um zero à esquerda, se necessário
+        const dataHoraFormatada = `${dia}/${mes}/${ano} ${hora}:${minuto}:${segundo}`; // combina os valores do dia, mês, ano, hora, minuto e segundo em uma string formatada
+
+        console.log(dataHoraFormatada);
+        $('.box_comment').prepend(`<br><div class="media" style="box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.15);">
+        <hr>
         <img src="../` + resultado[i].foto + `" class="mr-3 rounded-circle" width="5%" alt="Foto do usuário">
         <div class="media-body">
           <h5 class="mt-0">` + resultado[i].nomeUsuario + `</h5>
+          <span class="data-cadastro">` + dataHoraFormatada + `</span>
           <hr>
           <p>` + resultado[i].comentario + `</p>
-          <hr>
-          </div>
-        
-      </div>`)
+        </div>
+      </div><br>`)
         // $('.box_comment').prepend('<div class="card" id="cardComentario" style="font-size: 78%; margin-top:5px;"><div class="card-header">' + resultado[i].nomeUsuario + '</div><div class="card-body""><blockquote class="blockquote mb-0"><p>' + resultado[i].comentario + '</p></footer></blockquote></div></div>')
       }
     })
@@ -89,7 +104,7 @@ tinymce.init({
 
 $(document).ready(function () {
   $('#textForm').submit(function (e) {
-    //e.preventDefault()
+    e.preventDefault()
     var responsavel = $('#userID').val();
     var id_chamado = $('#id_chamado').val();
     var comentario = $('#default').val();
@@ -118,33 +133,53 @@ $(document).ready(function () {
         },
         dataType: 'json',
         success: function (data) {
-          $('#alert').css('display', 'block');
-          $('#alert').html(data)
+          console.log('Deu bom')
+          $("#textForm").css('display', 'block')
+          $("#textForm").toggle("fadeInDown")
+          $("#mostrarTextArea").css('display', 'none')
+          $("#cancelaComentario").css('display', 'none')
+          $('#alertSuccess').css('display', 'block');
+          $('#alertSuccess').html(data)
           setTimeout(function () {
-            $('#alert').fadeOut('slow')
-          }, 3000)
+            $('#alertSuccess').fadeOut('slow')
+            location.reload()
+          }, 1000)
+
+
         }
       }).done(function (resultado) {
         console.log(resultado)
-        getComments()
+        // $('#alertSuccess').css('display', 'block');
+        //   $('#alertSuccess').html(resultado)
+        //   setTimeout(function () {
+        //     $('#alertSuccess').fadeOut('slow')
+        //   }, 3000)
+        //   location.reload();
       })
     }
   })
 })
 
-function mostraSideBar(){
-  $('#bodyContent').css('width','100%')
+function mostraSideBar() {
+  $('#bodyContent').css('width', '100%')
 }
 
-function fechaSideBar(){
-  $('#bodyContent').css('width','0')
+function fechaSideBar() {
+  $('#bodyContent').css('width', '0')
 }
 
-//mostra 
+function cancelaComentario() {
+  $("#textForm").css('display', 'block')
+  $("#textForm").toggle("fadeInDown")
+  $("#mostrarTextArea").css('display', 'block')
+  $("#cancelaComentario").css('display', 'none')
+}
 
 function mostrarTextArea() {
-  $("#textForm").css('display', 'block')
-  $("#nenhumComentario").css('display', 'none')
+  $("#textForm").css('display', 'none')
+  $("#textForm").toggle("fadeOutDown")
+  $("#mostrarTextArea").css('display', 'none')
+  $("#cancelaComentario").css('display', 'block')
 }
 
 function buscarDadosClientes() {
@@ -215,12 +250,12 @@ function selectTipo() {
   })
 }
 
-$(document).ready(function(e){
+$(document).ready(function (e) {
   $.ajax({
     url: '../updates/update_ticket.php',
     method: 'GET',
     dataType: 'JSON'
-  }).done(function(data){
+  }).done(function (data) {
     console.log(data)
   })
 })

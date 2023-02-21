@@ -1,5 +1,5 @@
 body {
-/* 
+    /* 
     background: hsla(0, 0%, 92%, 1);
     background: linear-gradient(270deg, hsla(0, 0%, 92%, 1) 0%, hsla(0, 0%, 76%, 1) 100%, hsla(0, 0%, 77%, 1) 100%);
     background: -moz-linear-gradient(270deg, hsla(0, 0%, 92%, 1) 0%, hsla(0, 0%, 76%, 1) 100%, hsla(0, 0%, 77%, 1) 100%);
@@ -28,7 +28,7 @@ body {
     /* margin-top: 2px; */
     margin-top: 10px;
     position: relative;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 200px);
     overflow-y: auto;
     overflow-x: hidden;
     background: #fff;
@@ -36,13 +36,13 @@ body {
     /* box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px; */
 }
 
-#bodyContent{
+#bodyContent {
     margin-top: 20px;
     transition: 0.8s;
     width: 0;
 }
 
-#header_card_dados{
+#header_card_dados {
     position: sticky;
 }
 
@@ -61,15 +61,36 @@ body {
 
 }
 
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #2E8B57;
+    transform: translateY(-3px);
+}
+
 p {
 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
- #inputAndComment {
+#inputAndComment {
     margin-top: 20px;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
-} 
+}
 
 #menuLeft {
     display: block;
@@ -92,7 +113,7 @@ p {
 
 } */
 
-label{
+label {
     margin-top: 7px;
 }
 
@@ -100,7 +121,7 @@ label{
 .form-control {
     /* border: none; */
     /* font-size: 78%;*/
-    text-align: center; 
+    text-align: center;
     /* box-shadow: 0 0 0.50em grey;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px; */
 }
@@ -109,6 +130,87 @@ label{
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px inset, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px inset;
 
 } */
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  @-webkit-keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -20%, 0);
+      transform: translate3d(0, -20%, 0);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -20%, 0);
+      transform: translate3d(0, -20%, 0);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+
+.fadeOutDown {
+    -webkit-animation-name: fadeOutDown;
+    animation-name: fadeOutDown;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeOutDown {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 20%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+}
+
+@keyframes fadeOutDown {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 20%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+}
+
+#alertSuccess {
+    display: none;
+    margin-top: 10px;
+}
+
+#cancelaComentario {
+    display: none;
+    width: 257px;
+    background-color: red;
+    color: white;
+}
+
 
 #enviarButton {
     width: 100%;
