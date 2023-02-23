@@ -50,24 +50,31 @@ require_once '../db.php';
                 <div class="col-md-3">
                     <div class="grid support">
                         <div class="grid-body">
-                            <h2>Resumo</h2>
+                            <h2 class="active">Resumo</h2>
                             <hr>
-                            <ul>
-                                <li class="active"><a href="#">Todos os tickets<span class="pull-right">142</span></a>
-                                </li>
-                                <li><a href="#">Meus Tickets<span class="pull-right">52</span></a></li>
-                                <li><a href="#">Criados por mim<span class="pull-right">18</span></a></li>
-                                <h1 id="tiposChamado"></h1>
-                            </ul>
-                            <hr>
-                            <p><strong>Indicador</strong></p>
-                            <ul class="support-label">
-                                <li><span class="bg-black">&nbsp;</span>&nbsp;&nbsp;&nbsp;Urgente <span class="float-right" id="indicador_urgente"></span></li>
-                                <li><span class="bg-red">&nbsp;</span>&nbsp;&nbsp;&nbsp;Alta <span class="float-right" id="indicador_alta1"></span></a></li>
-                                <li><span class="bg-yellow">&nbsp;</span>&nbsp;&nbsp;&nbsp;Alta <span class="float-right" id="indicador_alta2"></span></li>
-                                <li><span class="bg-yellow">&nbsp;</span>&nbsp;&nbsp;&nbsp;Media <span class="float-right" id="indicador_media"></span></li>
-                                <li><span class="bg-blue">&nbsp;</span>&nbsp;&nbsp;&nbsp;Baixa <span class="float-right" id="indicador_baixa"></span></li>
-                            </ul>
+                            <div class="indicadorAtivos" style="display: block;">
+                                <p><strong>Indicador</strong></p>
+                                <ul class="support-label">
+                                    <li><span class="bg-black">&nbsp;</span>&nbsp;&nbsp;&nbsp;Urgente <span class="float-right" id="indicador_urgente_ativos"></span></li>
+                                    <li><span class="bg-red">&nbsp;</span>&nbsp;&nbsp;&nbsp;Muito Alta <span class="float-right" id="indicador_muito_alta_ativos"></span></a></li>
+                                    <li><span class="bg-yellow">&nbsp;</span>&nbsp;&nbsp;&nbsp;Alta <span class="float-right" id="indicador_alta_ativos"></span></li>
+                                    <li><span class="bg-yellow">&nbsp;</span>&nbsp;&nbsp;&nbsp;Media <span class="float-right" id="indicador_media_ativos"></span></li>
+                                    <li><span class="bg-blue">&nbsp;</span>&nbsp;&nbsp;&nbsp;Baixa <span class="float-right" id="indicador_baixa_ativos"></span></li>
+                                    <li><span class="bg-blue">&nbsp;</span>&nbsp;&nbsp;&nbsp;Muito Baixa <span class="float-right" id="indicador_muito_baixa_ativos"></span></li>
+                                </ul>
+                                </ul>
+                            </div>
+                            <div class="indicadorInativos" style="display: none;">
+                                <p><strong>Indicador</strong></p>
+                                <ul class="support-label">
+                                    <li><span class="bg-black">&nbsp;</span>&nbsp;&nbsp;&nbsp;Urgente <span class="float-right" id="indicador_urgente"></span></li>
+                                    <li><span class="bg-red">&nbsp;</span>&nbsp;&nbsp;&nbsp;Muito Alta <span class="float-right" id="indicador_muito_alta"></span></a></li>
+                                    <li><span class="bg-yellow">&nbsp;</span>&nbsp;&nbsp;&nbsp;Alta <span class="float-right" id="indicador_alta"></span></li>
+                                    <li><span class="bg-yellow">&nbsp;</span>&nbsp;&nbsp;&nbsp;Media <span class="float-right" id="indicador_media"></span></li>
+                                    <li><span class="bg-blue">&nbsp;</span>&nbsp;&nbsp;&nbsp;Baixa <span class="float-right" id="indicador_baixa"></span></li>
+                                    <li><span class="bg-blue">&nbsp;</span>&nbsp;&nbsp;&nbsp;Muito Baixa <span class="float-right" id="indicador_muito_baixa"></span></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -77,14 +84,17 @@ require_once '../db.php';
                             <h2>Chamados</h2>
                             <hr>
                             <div class="btn-group">
-                                <button type="button" id="emAtendimentoEquipe" class="btn btn-default"></button>
-                                <button type="button" class="btn btn-default">95,721 Closed</button>
+                                <button type="button" id="emAtendimentoEquipe" onclick="alternarListagem('listCard1')" class="btn btn-default active"></button>
+                                <button type="button" id="quantidadeArquivado" onclick="alternarListagem('listCard2')" class="btn btn-default"></button>
                             </div>
                             <div class="padding"></div>
-                            
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-12" id="listCard1" style="display: block;">
                                     <ul class="list-group fa-padding" id="tabelaConteudo">
+                                    </ul>
+                                </div>
+                                <div class="col-md-12" id="listCard2" style="display: none;">
+                                    <ul class="list-group fa-padding" id="tabelaArquivado">
                                     </ul>
                                 </div>
 

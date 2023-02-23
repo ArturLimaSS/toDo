@@ -1,55 +1,21 @@
-body {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('https://wallpapercave.com/wp/wp9139711.jpg');
-    background-size: cover;
-    position: relative;
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
 }
-
-#card {
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
-    border-radius: 1rem;
-    background: rgba(189, 189, 189, 0.22);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(8.1px);
-    -webkit-backdrop-filter: blur(8.1px);
-
-    animation: myAnim 1s ease 0s 1 normal forwards;
+.h-custom {
+height: calc(100% - 73px);
 }
-
-
-
-.inputDo {
-    text-align: center;
-    border: none;
-    background-color: inherit;
-    display: block;
-    width: 100%;
-    margin: none;
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
 }
 
 
-
-.inputDo:focus {
-    outline: none;
-}
-
-.form-outline .line {
-    height: 2px;
-    width: 0px;
-    position: absolute;
-    background-color: darkgrey;
-    display: inline-block;
-    transition: .3s width ease-in-out;
-    position: relative;
-    top: -14px;
-}
-
-.form-outline .inputDo:focus+.line {
-    width: 100%;
-    background-color: #00C8C8;
-}
-
-.btn{
+#entrarButton{
     display: inline-block;
     padding: 12px 24px;
     font-size: 16px;
@@ -65,26 +31,7 @@ body {
     cursor: pointer;
   }
   
-  .btn:hover {
+  #entrarButton:hover {
     background-color: #2E8B57;
     transform: translateY(-3px);
   }
-
-.inputDo:invalid+.line {
-    width: 100%;
-    background-color: #00C8C8;
-}
-
-.inputDo::placeholder {
-    color: rgb(160, 160, 160);
-}
-
-@keyframes myAnim {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}

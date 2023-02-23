@@ -21,8 +21,8 @@
 
 <body>
     <nav id="navbar" class="navbar navbar-expand-lg bg-light">
-        <a class="navbar-brand" href="#" style="width: 12%; margin-left: 65px;">
-            <img src="/assets/img/zyro-image.png" width="25%" class="d-inline-block align-top" alt="">
+        <a class="navbar-brand" href="#" style="width: 5%; margin-left: 65px;">
+            <img src="/assets/img/logo.svg" width="100%" class="d-inline-block align-top" alt="">
 
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,9 +32,6 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="../cards/cards.php">Tarefas <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../arquivo/arquivo.php">Arquivado</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../graficos.php">Gráficos</a>

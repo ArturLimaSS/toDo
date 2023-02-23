@@ -11,15 +11,15 @@ c.`id` AS id_chamado,
 cl.`nome` AS cliente,
 cl.id AS id_cliente,
 c.`resumo` AS resumo,
-c.`descricao` AS descricao,
 e.`nome` AS envolvido,
 e.`email` AS email,
 e.`telefone` AS telefone,
 tc.`nome` AS tipo_chamado,
-tc.prioridade AS prioridade,
-tc.id as id_tipo_chamado,
+tu.prioridade AS prioridade,
+tc.id AS id_tipo_chamado,
 u.nome AS responsavel,
-tc.urgencia AS urgencia,
+tu.id AS id_urgencia,
+tu.descricao AS urgencia,
 tc.indicador_prioridade AS indicador_prioridade,
 u.id AS id_session,
 c.cadastrado_em AS data_cadastro
@@ -29,8 +29,10 @@ LEFT JOIN tb_envolvido e
   ON c.`envolvido` = e.`id`
 LEFT JOIN tb_cliente cl
   ON e.`cliente` = cl.`id`
-LEFT JOIN tb_tipo_chamado tc 
+LEFT JOIN tb_tipo_chamado tc
   ON c.`tipo_chamado` = tc.`id`
+LEFT JOIN tb_urgencia tu
+  ON c.urgencia = tu.id
 LEFT JOIN tb_usuario u
   ON c.responsavel = u.id
 WHERE c.status NOT IN (3);

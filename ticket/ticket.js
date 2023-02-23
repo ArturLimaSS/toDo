@@ -170,14 +170,14 @@ function fechaSideBar() {
 
 function cancelaComentario() {
   $("#textForm").css('display', 'block')
-  $("#textForm").toggle("fadeInDown")
+  $("#textForm").toggle("")
   $("#mostrarTextArea").css('display', 'block')
   $("#cancelaComentario").css('display', 'none')
 }
 
 function mostrarTextArea() {
   $("#textForm").css('display', 'none')
-  $("#textForm").toggle("fadeOutDown")
+  $("#textForm").toggle("")
   $("#mostrarTextArea").css('display', 'none')
   $("#cancelaComentario").css('display', 'block')
 }
@@ -217,34 +217,51 @@ function inserirTelefoneDadosCliente() {
 }
 
 $(document).ready(function () {
-  var id_tipo = $("#selecionaTipo").val();
-  console.log(id_tipo)
+  var id_urgencia = $("#selecionaUrgencia").val();
+  console.log(id_urgencia)
   $("#tituloUrgencia").html('')
   $.ajax({
-    url: '../cadastros/selectTipoChamado.php',
+    url: '../cadastros/selectUrgencia.php',
     method: "POST",
     dataType: "JSON",
-    data: { id_tipo: id_tipo },
+    data: { id_urgencia: id_urgencia },
     success: function (data) {
       for (let i = 0; i < data.length; i++) {
-        $("#tituloUrgencia").prepend('<p class="form-control ' + data[i].color + '">' + data[i].urgencia + '  ' + data[i].prazo + ' HORAS ' + '</p>')
+        $("#tituloUrgencia").prepend('<p class="form-control ' + data[i].color + '">' + data[i].descricao + '  ' + data[i].prazo + ' HORAS ' + '</p>')
       }
     }
   })
 })
 
-function selectTipo() {
-  var id_tipo = $("#selecionaTipo").val();
-  console.log(id_tipo)
+// function selectTipo() {
+//   var id_tipo = $("#selecionaTipo").val();
+//   console.log(id_tipo)
+//   $("#tituloUrgencia").html('')
+//   $.ajax({
+//     url: '../cadastros/selectTipoChamado.php',
+//     method: "POST",
+//     dataType: "JSON",
+//     data: { id_tipo: id_tipo },
+//     success: function (data) {
+//       for (let i = 0; i < data.length; i++) {
+//         $("#tituloUrgencia").prepend('<p class="form-control ' + data[i].color + '">' + data[i].urgencia + '  ' + data[i].prazo + ' HORAS ' + '</p>')
+//       }
+//     }
+//   })
+// }
+
+function selectUrgencia() {
+  var id_urgencia = $("#selecionaUrgencia").val();
+  console.log(id_urgencia)
   $("#tituloUrgencia").html('')
   $.ajax({
-    url: '../cadastros/selectTipoChamado.php',
+    url: '../cadastros/selectUrgencia.php',
     method: "POST",
     dataType: "JSON",
-    data: { id_tipo: id_tipo },
+    data: { id_urgencia: id_urgencia },
     success: function (data) {
       for (let i = 0; i < data.length; i++) {
-        $("#tituloUrgencia").prepend('<p class="form-control ' + data[i].color + '">' + data[i].urgencia + '  ' + data[i].prazo + ' HORAS ' + '</p>')
+        $("#tituloUrgencia").prepend('<p class="form-control ' + data[i].color + '">' + data[i].descricao + '  ' + data[i].prazo + ' HORAS ' + '</p>')
       }
     }
   })

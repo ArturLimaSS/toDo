@@ -3,7 +3,8 @@ require_once '../db.php';
 $sql = '
 UPDATE tb_chamados 
 SET resumo      = "' . $_POST['resumo'] . '", 
-tipo_chamado    = '  . $_POST['selecionaTipo'] . ' , 
+tipo_chamado    = '  . $_POST['selecionaTipo'] . ' ,
+urgencia        = '  . $_POST['selecionaUrgencia'] .',
 status          = '  . $_POST['statusTicket'] . ' , 
 responsavel     = '  . $_POST['responsavelTicket'] . ' 
 WHERE id        = '  . $_POST['idChamado'] . ';';

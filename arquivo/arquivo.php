@@ -45,17 +45,65 @@ require_once '../db.php';
 
     <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_8edlac32.json" id="animation" style="display: none;" mode="bounce" background="transparent" speed="1" style="width: 600px; height: 600px;"></lottie-player>
     <div class="conteudo" style="display: block; transition: 'opacity 2s ease-in';">
-        <div class="col-md-12">
+        <section class="content">
+            <div class="row" style="margin-right: none !important; margin-left: none !important ;">
+                <div class="col-md-3">
+                    <div class="grid support">
+                        <div class="grid-body">
+                            <h2>Resumo</h2>
+                            <hr>
+                            <ul>
+                                <li class="active"><a href="#">Todos os tickets<span class="pull-right">142</span></a>
+                                </li>
+                                <li><a href="#">Meus Tickets<span class="pull-right">52</span></a></li>
+                                <li><a href="#">Criados por mim<span class="pull-right">18</span></a></li>
+                                <h1 id="tiposChamado"></h1>
+                            </ul>
+                            <hr>
+                            <p><strong>Indicador</strong></p>
+                            <ul class="support-label">
+                                <li><span class="bg-black">&nbsp;</span>&nbsp;&nbsp;&nbsp;Urgente <span class="float-right" id="indicador_urgente"></span></li>
+                                <li><span class="bg-red">&nbsp;</span>&nbsp;&nbsp;&nbsp;Alta <span class="float-right" id="indicador_alta1"></span></a></li>
+                                <li><span class="bg-yellow">&nbsp;</span>&nbsp;&nbsp;&nbsp;Alta <span class="float-right" id="indicador_alta2"></span></li>
+                                <li><span class="bg-yellow">&nbsp;</span>&nbsp;&nbsp;&nbsp;Media <span class="float-right" id="indicador_media"></span></li>
+                                <li><span class="bg-blue">&nbsp;</span>&nbsp;&nbsp;&nbsp;Baixa <span class="float-right" id="indicador_baixa"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="grid support-content">
+                        <div class="grid-body">
+                            <h2>Chamados</h2>
+                            <hr>
+                            <div class="btn-group">
+                                <button type="button" id="emAtendimentoEquipe" class="btn btn-default"></button>
+                                <button type="button" class="btn btn-default">95,721 Closed</button>
+                            </div>
+                            <div class="padding"></div>
+                            
+                            <div class="row">
+                                <div class="col-md-12" id="listCard">
+                                    <ul class="list-group fa-padding" id="tabelaConteudo">
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- <div class="col-md-12">
             <main>
                 <div class="card-body" id="bodyCard">
                     <div class="atendimento-cards">
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-md-3">
-                                        <h6 id="emAtendimentoEquipe"></h6>
-                                    </div>
                                     <div class="col" id="listCard">
+                                        <h6 id="emAtendimentoEquipe"></h6>
                                         <div class="card-body" id="tabela-card">
                                             <div class="row">
                                                 <div class="col">
@@ -85,7 +133,7 @@ require_once '../db.php';
                     </div>
                 </div>
             </main>
-        </div>
+        </div> -->
     </div>
 
 </body>

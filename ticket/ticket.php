@@ -15,7 +15,6 @@ c.`id` AS id_chamado,
 cl.`nome` AS cliente,
 cl.id AS idCliente,
 c.`resumo` AS resumo,
-c.`descricao` AS descricao,
 e.id as idEnvolvido,
 e.`nome` AS envolvido,
 e.`email` AS email,
@@ -24,6 +23,8 @@ tc.`nome` AS tipo_chamado,
 s.descricao as status_ticket,
 c.status AS id_status,
 c.tipo_chamado AS id_tipo_chamado,
+tu.id as id_urgencia,
+tu.descricao as descricao_urgencia,
 c.responsavel AS responsavel_ticket
 FROM
 tb_chamados c
@@ -35,12 +36,13 @@ JOIN tb_tipo_chamado tc
   ON c.`tipo_chamado` = tc.`id`
 JOIN tb_status s
   ON s.id = c.status 
+JOIN tb_urgencia tu on c.urgencia = tu.id
 WHERE c.id = ' . intval($_GET['id_chamado']) . ';
 ');
 
 $array = $sql->fetch_assoc();
 
-$assinatura = '<br><br><br><br><br><p>Atenciosamente,<br><br>' . $_SESSION['username'] . '<br>CEO';
+$assinatura = '<br><br><br><br><br><p>Atenciosamente,<br><br>' . $_SESSION['username'] . '<br>';
 
 ?>
 <!DOCTYPE html>
@@ -107,7 +109,7 @@ include '../navbar.php';
                 </p>
                 <p class="form-control" style="border: none; text-align: left;">
                   <strong>Telefone:</strong>
-                  <span id="telefone"><?= $array['telefone'] ?></span>
+                  <span id="telefone"><script>phoneMask(<?= $array['telefone'] ?>)</script></span>
                 </p>
                 <p class="form-control" style="border: none; text-align: left;">
                   <strong>Empresa:</strong> <?= $array['cliente'] ?>
@@ -119,15 +121,23 @@ include '../navbar.php';
               <br>
               <div class="mb-3">
                 <label for="selecionaTipo" class="form-label"><strong>Tipo:</strong></label>
-                <select name="selecionaTipo" oninput="selectTipo()" class="form-control" style="" id="selecionaTipo">
+                <select name="selecionaTipo" class="form-control" style="" id="selecionaTipo">
                   <?php foreach ($conn->query('SELECT * FROM tb_tipo_chamado') as $tipo) { ?>
                     <option value="<?= $tipo['id'] ?>" <?= ($array['id_tipo_chamado'] == $tipo['id']) ? 'selected' : '' ?>>
                       <?= $tipo['nome'] ?>
                     </option>
                   <?php } ?>
                 </select>
+                <label for="selecionaUrgencia" class="form-label"><strong>Urgencia:</strong></label>
+                <select name="selecionaUrgencia" oninput="selectUrgencia()" class="form-control" style="" id="selecionaUrgencia">
+                  <?php foreach ($conn->query('SELECT * FROM tb_urgencia') as $urgencia) { ?>
+                    <option value="<?= $urgencia['id'] ?>" <?= ($array['id_urgencia'] == $urgencia['id']) ? 'selected' : '' ?>>
+                      <?= $urgencia['descricao'] ?>
+                    </option>
+                  <?php } ?>
+                </select>
               </div><br>
-
+              
               <div class="mb-3">
                 <label for="tituloUrgencia" class="form-label"><strong>Urgência / Prazo:</strong></label>
                 <div id="tituloUrgencia"></div>
@@ -135,7 +145,7 @@ include '../navbar.php';
 
               <div class="mb-3">
                 <label for="responsavelTicket" class="form-label"><strong>Responsável:</strong></label>
-                <select class="form-control" style=";" name="responsavelTicket" id="responsavelTicket">
+                <select class="form-control" name="responsavelTicket" id="responsavelTicket">
                   <?php foreach ($conn->query('SELECT * FROM tb_usuario') as $usuario) { ?>
                     <option value="<?= $usuario['id'] ?>" <?= ($array['responsavel_ticket'] == $usuario['id']) ? 'selected' : '' ?>>
                       <?= $usuario['nome'] ?>
@@ -146,7 +156,7 @@ include '../navbar.php';
 
               <div class="mb-3">
                 <label for="statusTicket" class="form-label"><strong>Status:</strong></label>
-                <select class="form-control" style=";" name="statusTicket" id="statusTicket">
+                <select class="form-control" name="statusTicket" id="statusTicket">
                   <?php foreach ($conn->query('SELECT * FROM tb_status') as $status) { ?>
                     <option value="<?= $status['id'] ?>" <?= ($array['id_status'] == $status['id']) ? 'selected' : '' ?>>
                       <?= $status['descricao'] ?>
