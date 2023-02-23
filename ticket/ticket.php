@@ -1,7 +1,5 @@
 <?php
 
-use Discord\Parts\Embed\Embed;
-
 $id_chamado = intval($_GET['id_chamado']);
 
 session_start();

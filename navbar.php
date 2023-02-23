@@ -88,6 +88,19 @@
                                                     }
                                                     ?>
                                                 </select>
+
+                                                <label for="selecionaUrgencianav" class="form-label"><strong>Urgência:</strong></label>
+                                                <select data-live-search="true" name="selecionaUrgencianav" class="form-control" id="selecionaUrgencianav">
+                                                    <option value="#" selected="selected">Selecione a urgência</option>
+                                                    <?php
+                                                    $resultado4 = $conn->query('SELECT * FROM tb_urgencia');
+                                                    while ($array4 = $resultado4->fetch_assoc()) {
+                                                        $select2 = '';
+
+                                                        echo '<option value="' . $array4['id'] . '"' . $select2 . '>' . $array4['descricao'] . '</option>';
+                                                    }
+                                                    ?>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
