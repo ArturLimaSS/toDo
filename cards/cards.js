@@ -93,10 +93,11 @@ $(document).ready(function () {
 
       const tipoParaElemento = {
         1: '#indicador_urgente',
-        2: '#indicador_media',
-        3: '#indicador_alta2',
-        4: '#indicador_alta1',
+        2: '#indicador_muito_alta',
+        3: '#indicador_alta',
+        4: '#indicador_media',
         5: '#indicador_baixa',
+        6: '#indicador_muito_baixa',
       };
       
       for (let tipo in countTipoChamado) {

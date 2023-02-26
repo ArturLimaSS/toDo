@@ -18,6 +18,7 @@ tc.`nome` AS tipo_chamado,
 tu.prioridade AS prioridade,
 tc.id AS id_tipo_chamado,
 u.nome AS responsavel,
+tu.id AS id_urgencia,
 tu.descricao AS urgencia,
 tc.indicador_prioridade AS indicador_prioridade,
 u.id AS id_session,
@@ -34,7 +35,7 @@ LEFT JOIN tb_urgencia tu
   ON c.urgencia = tu.id
 LEFT JOIN tb_usuario u
   ON c.responsavel = u.id
-WHERE c.status = 3;
+WHERE c.status = 3 ;
 ');
 
 

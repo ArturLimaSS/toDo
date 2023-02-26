@@ -1,19 +1,84 @@
-`<tr>
-  <a class="btn btn-outline" style="color: White;"
-      href="../ticket/ticket.php?id_chamado=` + resultado[i].id_chamado + `">
-  <td>` + resultado[i].cliente + `
-  <td>` + resultado[i].envolvido + `</td>` + `</td>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Anúncio Salão de Beleza</title>
+	<style>
+		body {
+			background-color: #f8f8f8;
+		}
 
-  </td>
-</tr>`
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			background-color: #fff;
+			border: 2px solid #ccc;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.2);
+		}
 
-`<a href="../ticket/ticket.php?id_chamado=` + resultado[i].id_chamado + `">
-<li class="list-group-item">
-  <div class="media">
-      <i class="fa fa-cog pull-left"></i>
-      <div class="media-body">
-          <strong>` + resultado[i].resumo + `</strong> <span class="label label-danger">IMPORTANT</span><span class="number pull-right">SD - ` + resultado[i].id_chamado + `</span>
-          <p class="info">Responsável ` + resultado[i].responsavel + | ` + dataFormatada2 + `</p>
-      </div>
-  </div>
-</li>`
+		.image {
+			flex: 1;
+			margin: 10px;
+			text-align: center;
+		}
+
+		.image img {
+			max-width: 100%;
+			height: auto;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.2);
+		}
+
+		.text {
+			flex: 1;
+			margin: 10px;
+			padding: 20px;
+			text-align: center;
+		}
+
+		.text h1 {
+			font-size: 36px;
+			margin-bottom: 20px;
+			color: #333;
+		}
+
+		.text p {
+			font-size: 18px;
+			margin-bottom: 20px;
+			color: #666;
+		}
+
+		.button {
+			background-color: #333;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			font-size: 18px;
+			cursor: pointer;
+			transition: background-color 0.3s ease-in-out;
+		}
+
+		.button:hover {
+			background-color: #555;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="image">
+			<img src="https://www.example.com/salao-beleza.jpg" alt="Salão de Beleza">
+		</div>
+		<div class="text">
+			<h1>Salão de Beleza XYZ</h1>
+			<p>Venha conhecer os nossos serviços de corte de cabelo, tratamentos de beleza, manicure e pedicure, e maquiagem. Nossos profissionais altamente treinados e qualificados vão garantir que você saia do salão se sentindo linda e confiante.</p>
+			<button class="button">Agende já o seu horário!</button>
+		</div>
+	</div>
+</body>
+</html>
